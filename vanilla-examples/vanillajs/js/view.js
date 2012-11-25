@@ -23,7 +23,7 @@
       var template = self.defaultTemplate
         , complete = ''
         , checked  = '';
-      if (data[i].complete == 1) {
+      if (data[i].completed == 1) {
         complete = 'complete';
         checked = 'checked';
       }

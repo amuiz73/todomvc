@@ -43,4 +43,8 @@
 
   document.querySelector('#toggle-all').addEventListener('click', function () {
   });
+
+  document.querySelector('#clear-completed').addEventListener('click', function () {
+    todo.controller.removeCompletedItems()
+  });
 })( window );

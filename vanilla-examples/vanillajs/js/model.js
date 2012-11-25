@@ -15,12 +15,17 @@
     this.storage.save(newItem, callback);
   }
 
-  Model.prototype.read = function (id, callback) {
-    if (typeof id == 'function') {
-      callback = id;
+  Model.prototype.read = function (query, callback) {
+    if (typeof query == 'function') {
+      callback = query;
       return this.storage.findAll(callback);
     }
-    this.storage.findById(id, callback);
+    else if (typeof query == 'string' || typeof query == 'number') {
+      this.storage.find({id: query}, callback);
+    }
+    else {
+      this.storage.find(query, callback)
+    }
   }
 
   Model.prototype.update = function (id, data, callback) {

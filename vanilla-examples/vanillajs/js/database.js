@@ -20,22 +20,37 @@
   };
 
   /**
-   * Will retrieve a specific item and return that 1 item
-   * @param {number} id The id of the item to look for
-   * @returns {object|undefined} if an item is found it returns an object,
-   * otherwise it returns undefined
+   * Finds items based on a query given as a JS object
+   * @param {object} query The query to match against (i.e. {foo: 'bar'})
+   * @param {function} callback  The callback to fire when the query has
+   * completed running
+   * @example
+   * db.find({foo: 'bar', hello: 'world'}, function (data) {
+   *   // data will return any items that have foo: bar and
+   *   // hello: world in their properties
+   * });
    */
-  Database.prototype.findById = function (id, callback) {
+  Database.prototype.find = function (query, callback) {
     var data = JSON.parse(localStorage[this._dbName]).todos
       , callback = callback || function () {}
+      , items = []
       , found;
     for (var i = 0; i < data.length; i++) {
-      if (data[i].id == id) {
-        found = data[i];
-        break;
+      for (var q in query) {
+        console.log(query[q], data[i][q])
+        if (query[q] !== data[i][q]) {
+          found = false;
+          break;
+        }
+        else {
+          found = true;
+        }
+      }
+      if (found) {
+        items.push(data[i]);
       }
     }
-    callback.call(this, found);
+    callback.call(this, items);
   }
 
   /**

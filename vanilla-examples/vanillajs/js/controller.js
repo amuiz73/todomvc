@@ -35,11 +35,22 @@
     });
   }
 
+  Controller.prototype.removeCompletedItems = function () {
+    var todoList = document.querySelector('#todo-list')
+      , self = this;
+    self.model.read({ completed: 1 }, function (data) {
+      console.log(data)
+      data.forEach(function (item) {
+        self.removeItem(item.id);
+      })
+    });
+  }
+
   Controller.prototype.toggleComplete = function (id, checkbox) {
    var todoList = document.querySelector('#todo-list')
       , done = checkbox.checked ? 1 : 0
       , self = this;
-    self.model.update(id, {complete: done}, function () {
+    self.model.update(id, {completed: done}, function () {
       if (done) {
         document.querySelector('[data-id="' + id + '"]').className = 'complete';
       }
