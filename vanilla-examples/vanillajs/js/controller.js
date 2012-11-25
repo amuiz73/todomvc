@@ -39,7 +39,6 @@
     var todoList = document.querySelector('#todo-list')
       , self = this;
     self.model.read({ completed: 1 }, function (data) {
-      console.log(data)
       data.forEach(function (item) {
         self.removeItem(item.id);
       })

@@ -37,7 +37,6 @@
       , found;
     for (var i = 0; i < data.length; i++) {
       for (var q in query) {
-        console.log(query[q], data[i][q])
         if (query[q] !== data[i][q]) {
           found = false;
           break;
