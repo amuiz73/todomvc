@@ -50,9 +50,28 @@
       , done = checkbox.checked ? 1 : 0
       , self = this;
     self.model.update(id, {completed: done}, function () {
+      var listItem = document.querySelector('[data-id="' + id + '"]');
       if (done) {
-        document.querySelector('[data-id="' + id + '"]').className = 'complete';
+        listItem.className = 'complete';
       }
+      // In case it was toggled from an event and not by clicking the checkbox...
+      listItem.querySelector('input').checked = done;
+    });
+  }
+
+  Controller.prototype.toggleAll = function (e) {
+    var self = this
+      , done = e.target.checked ? 1 : 0
+      , query = 0;
+
+    if (done == 0) {
+      query = 1;
+    }
+
+    self.model.find({ completed: query }, function (data) {
+      data.forEach(function (item) {
+        self.toggleComplete(item.id, e.target);
+      });
     });
   }
 

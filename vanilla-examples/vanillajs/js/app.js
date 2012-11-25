@@ -41,7 +41,8 @@
     }
   });
 
-  document.querySelector('#toggle-all').addEventListener('click', function () {
+  document.querySelector('#toggle-all').addEventListener('click', function (e) {
+    todo.controller.toggleAll(e);
   });
 
   document.querySelector('#clear-completed').addEventListener('click', function () {
