@@ -17,10 +17,9 @@
    * as Mustache or Handlebars, however, this is a vanilla JS example.
    */
   View.prototype.show = function (data) {
-    var self = this
-      , view = '';
+    var view = '';
     for (var i = 0; i < data.length; i++) {
-      var template = self.defaultTemplate
+      var template = this.defaultTemplate
         , complete = ''
         , checked  = '';
       if (data[i].completed == 1) {
