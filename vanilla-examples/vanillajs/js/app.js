@@ -2,7 +2,7 @@
   'use strict';
 
   function Todo (name) {
-    this.storage = new Database(name);
+    this.storage = new Store(name);
     this.model = new Model(this.storage);
     this.view = new View();
     this.controller = new Controller(this.model, this.view);

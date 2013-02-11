@@ -1,13 +1,13 @@
 (function( window ) {
   'use strict';
   /**
-   * Creates a DB connection and will create an empty collection if no
-   * collection already exists.
+   * Creates a new client side storage object and will create an empty collection if
+   * no collection already exists.
    * @param {string} name The name of our DB we want to use
    * @param {function} callback Our fake DB uses callbacks because in
    * real life you probably would be making AJAX calls
    */
-  function Database (name, callback) {
+  function Store (name, callback) {
     var data, dbName, callback = callback || function () {};
     dbName = this._dbName = name;
     if(!localStorage[dbName]) {
@@ -30,7 +30,7 @@
    *   // hello: world in their properties
    * });
    */
-  Database.prototype.find = function (query, callback) {
+  Store.prototype.find = function (query, callback) {
     var data = JSON.parse(localStorage[this._dbName]).todos
       , callback = callback || function () {}
       , items = []
@@ -56,7 +56,7 @@
    * Will retrieve all data from our collection
    * @param {function} callback The callback to fire upon retrieving data
    */
-  Database.prototype.findAll = function (callback) {
+  Store.prototype.findAll = function (callback) {
     callback = callback || function () {};
     callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
   }
@@ -68,7 +68,7 @@
    * @param {object} data The data to save back into the DB
    * @param {function} callback The callback to fire after saving
    */
-  Database.prototype.save = function (id, updateData, callback) {
+  Store.prototype.save = function (id, updateData, callback) {
     var data = JSON.parse(localStorage[this._dbName])
       , todos = data.todos;
     // If an ID was actually given, find the item and update each property
@@ -95,11 +95,11 @@
   }
 
   /**
-   * Will remove an item from the database based on its ID
+   * Will remove an item from the Store based on its ID
    * @param {number} id The ID of the item you want to remove
    * @param {function} callback The callback to fire after saving
    */
-  Database.prototype.remove = function (id, callback) {
+  Store.prototype.remove = function (id, callback) {
     var data = JSON.parse(localStorage[this._dbName])
       , todos = data.todos;
     for (var i = 0; i < todos.length; i++) {
@@ -116,11 +116,11 @@
    *  Will drop all storage and start fresh
    * @param {function} callback The callback to fire after dropping the data
    */
-  Database.prototype.drop = function (callback) {
+  Store.prototype.drop = function (callback) {
     localStorage[this._dbName] = JSON.stringify({todos: []});
     callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
   }
 
   // Export to window
-  window.Database = Database;
+  window.Store = Store;
 })( window );
