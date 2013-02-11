@@ -14,11 +14,11 @@
     todo.controller.load();
   });
 
-  document.querySelector('#new-todo').addEventListener('keypress', function (e) {
+  $$('#new-todo').addEventListener('keypress', function (e) {
     todo.controller.addItem(e);
   });
 
-  document.querySelector('#todo-list').addEventListener('click', function (e) {
+  $$('#todo-list').addEventListener('click', function (e) {
     var target = e.target
       , el = this;
 
@@ -41,11 +41,11 @@
     }
   });
 
-  document.querySelector('#toggle-all').addEventListener('click', function (e) {
+  $$('#toggle-all').addEventListener('click', function (e) {
     todo.controller.toggleAll(e);
   });
 
-  document.querySelector('#clear-completed').addEventListener('click', function () {
+  $$('#clear-completed').addEventListener('click', function () {
     todo.controller.removeCompletedItems()
   });
 })( window );

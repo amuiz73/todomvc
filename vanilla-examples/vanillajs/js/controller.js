@@ -7,7 +7,7 @@
   }
 
   Controller.prototype.load = function () {
-    var todoList = document.querySelector('#todo-list')
+    var todoList = $$('#todo-list')
       , self = this;
     self.model.read(function (data) {
       todoList.innerHTML = self.view.show(data);
@@ -15,8 +15,8 @@
   }
 
   Controller.prototype.addItem = function (e) {
-    var todoList = document.querySelector('#todo-list')
-      , input = document.querySelector('#new-todo')
+    var todoList = $$('#todo-list')
+      , input = $$('#new-todo')
       , title = title || ''
       , self = this;
     if (e.keyCode == 13) {
@@ -28,15 +28,15 @@
   }
 
   Controller.prototype.removeItem = function (id) {
-    var todoList = document.querySelector('#todo-list')
+    var todoList = $$('#todo-list')
       , self = this;
     self.model.remove(id, function () {
-      todoList.removeChild(document.querySelector('[data-id="' + id + '"]'));
+      todoList.removeChild($$('[data-id="' + id + '"]'));
     });
   }
 
   Controller.prototype.removeCompletedItems = function () {
-    var todoList = document.querySelector('#todo-list')
+    var todoList = $$('#todo-list')
       , self = this;
     self.model.read({ completed: 1 }, function (data) {
       data.forEach(function (item) {
@@ -46,11 +46,11 @@
   }
 
   Controller.prototype.toggleComplete = function (id, checkbox) {
-   var todoList = document.querySelector('#todo-list')
+   var todoList = $$('#todo-list')
       , completed = checkbox.checked ? 1 : 0
       , self = this;
     self.model.update(id, {completed: completed}, function () {
-      var listItem = document.querySelector('[data-id="' + id + '"]');
+      var listItem = $$('[data-id="' + id + '"]');
       if (completed) {
         listItem.className = 'complete';
       }
