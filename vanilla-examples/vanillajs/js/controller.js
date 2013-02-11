@@ -47,24 +47,24 @@
 
   Controller.prototype.toggleComplete = function (id, checkbox) {
    var todoList = document.querySelector('#todo-list')
-      , done = checkbox.checked ? 1 : 0
+      , completed = checkbox.checked ? 1 : 0
       , self = this;
-    self.model.update(id, {completed: done}, function () {
+    self.model.update(id, {completed: completed}, function () {
       var listItem = document.querySelector('[data-id="' + id + '"]');
-      if (done) {
+      if (completed) {
         listItem.className = 'complete';
       }
       // In case it was toggled from an event and not by clicking the checkbox...
-      listItem.querySelector('input').checked = done;
+      listItem.querySelector('input').checked = completed;
     });
   }
 
   Controller.prototype.toggleAll = function (e) {
     var self = this
-      , done = e.target.checked ? 1 : 0
+      , completed = e.target.checked ? 1 : 0
       , query = 0;
 
-    if (done == 0) {
+    if (completed == 0) {
       query = 1;
     }
 
