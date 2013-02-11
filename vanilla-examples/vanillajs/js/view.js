@@ -1,6 +1,11 @@
 (function( window ) {
   'use strict';
 
+  /**
+   * Sets up defaults for all the View methods such as a default template
+   *
+   * @constructor
+   */
   function View () {
     this.defaultTemplate = '\
         <li data-id="{{id}}" class="{{complete}}">\
@@ -13,8 +18,20 @@
   }
 
   /**
+   * Creates an <li> HTML string and returns it for placement in your app.
    * NOTE: In real life you should be using a templating engine such
    * as Mustache or Handlebars, however, this is a vanilla JS example.
+   *
+   * @param {object} data The object containing keys you want to find in the template
+   * to replace.
+   * @returns {string} HTML string of an <li> element
+   *
+   * @example
+   * view.show({
+   *  id: 1,
+   *  title: "Hello World",
+   *  completed: 0,
+   * });
    */
   View.prototype.show = function (data) {
     var view = '';
@@ -35,6 +52,9 @@
     return view;
   }
 
+  /**
+   *
+   */
   View.prototype.itemCounter = function (data) {
     for (var i = 0; i < data.length; i++) {
       
