@@ -53,12 +53,14 @@
   }
 
   /**
-   *
+   * Displays a counter of how many to dos are left to complete
+   * @param {object} data The object of active to dos.
+   * @returns {string} String containing the count
    */
   View.prototype.itemCounter = function (data) {
-    for (var i = 0; i < data.length; i++) {
-      
-    }
+    var itemLength = Object.keys(data).length;
+    var plural = itemLength == 1 ? '' : 's';
+    return '<strong>' + itemLength + '</strong> item' + plural + ' left';
   }
 
   // Export to window

@@ -22,6 +22,7 @@
     self.model.read(function (data) {
       todoList.innerHTML = self.view.show(data);
     });
+    self.updateCounter();
   }
 
   /**
@@ -41,6 +42,7 @@
         input.value = '';
       });
     }
+    self.updateCounter();
   }
 
   /**
@@ -55,6 +57,7 @@
     self.model.remove(id, function () {
       todoList.removeChild($$('[data-id="' + id + '"]'));
     });
+    self.updateCounter();
   }
 
   /**
@@ -68,6 +71,7 @@
         self.removeItem(item.id);
       })
     });
+    self.updateCounter();
   }
 
   /**
@@ -89,6 +93,7 @@
       // In case it was toggled from an event and not by clicking the checkbox...
       listItem.querySelector('input').checked = completed;
     });
+    self.updateCounter();
   }
 
   /**
@@ -111,7 +116,18 @@
         self.toggleComplete(item.id, e.target);
       });
     });
+    self.updateCounter();
   }
+
+  /**
+   * Updates the items left to do counter.
+   */
+  Controller.prototype.updateCounter = function () {
+    var self = this;
+    self.model.read({ completed: 0 }, function (data) {
+      $$('#todo-count').innerHTML = self.view.itemCounter(data);
+    });
+  };
 
   // Export to window
   window.Controller = Controller;
