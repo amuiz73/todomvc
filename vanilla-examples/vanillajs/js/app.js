@@ -15,11 +15,6 @@
 
   var todo = new Todo('todos-vanillajs');
 
-  // When the DOM is read fire the load event!
-  document.addEventListener('DOMContentLoaded', function () {
-    todo.controller.load();
-  });
-
   // When the enter key is pressed fire the addItem method.
   $$('#new-todo').addEventListener('keypress', function (e) {
     todo.controller.addItem(e);

@@ -11,19 +11,49 @@
   function Controller (model, view) {
     this.model = model;
     this.view = view;
+
+    this.$todoList = $$('#todo-list');
+
+    this.router = Router();
+    this.router.on('/', this.load.bind(this));
+    this.router.on('/active', this.showActive.bind(this));
+    this.router.on('/completed', this.showCompleted.bind(this));
+    this.router.init();
+
   }
 
   /**
    * An event to fire on load. Will get all items and display them in the todo-list
    */
   Controller.prototype.load = function () {
-    var todoList = $$('#todo-list')
-      , self = this;
+    var self = this;
     self.model.read(function (data) {
-      todoList.innerHTML = self.view.show(data);
+      self.$todoList.innerHTML = self.view.show(data);
     });
     self.updateCounter();
   }
+
+  /**
+   * Renders all active tasks
+   */
+  Controller.prototype.showActive = function () {
+    var self = this;
+    self.model.read({ completed: 0 }, function (data) {
+      self.$todoList.innerHTML = self.view.show(data);
+    });
+    self.updateCounter();
+  };
+
+  /**
+   * Renders all completed tasks
+   */
+  Controller.prototype.showCompleted = function () {
+    var self = this;
+    self.model.read({ completed: 1 }, function (data) {
+      self.$todoList.innerHTML = self.view.show(data);
+    });
+    self.updateCounter();
+  };
 
   /**
    * An event to fire whenever you want to add an item. Simply pass in the event
@@ -32,13 +62,12 @@
    * @param {object} e The event object
    */
   Controller.prototype.addItem = function (e) {
-    var todoList = $$('#todo-list')
-      , input = $$('#new-todo')
+    var input = $$('#new-todo')
       , title = title || ''
       , self = this;
     if (e.keyCode == 13) {
       self.model.create(e.srcElement.value, function (data) {
-        todoList.innerHTML = todoList.innerHTML + self.view.show(data);
+        self.$todoList.innerHTML = self.$todoList.innerHTML + self.view.show(data);
         input.value = '';
       });
     }
@@ -52,10 +81,9 @@
    * @param {number} id The ID of the item to remove from the DOM and storage
    */
   Controller.prototype.removeItem = function (id) {
-    var todoList = $$('#todo-list')
-      , self = this;
+    var self = this;
     self.model.remove(id, function () {
-      todoList.removeChild($$('[data-id="' + id + '"]'));
+      self.$todoList.removeChild($$('[data-id="' + id + '"]'));
     });
     self.updateCounter();
   }
@@ -64,8 +92,7 @@
    * Will remove all completed items from the DOM and storage.
    */
   Controller.prototype.removeCompletedItems = function () {
-    var todoList = $$('#todo-list')
-      , self = this;
+    var self = this;
     self.model.read({ completed: 1 }, function (data) {
       data.forEach(function (item) {
         self.removeItem(item.id);
@@ -82,8 +109,7 @@
    * @param {object} checkbox The checkbox to check the state of complete or not
    */
   Controller.prototype.toggleComplete = function (id, checkbox) {
-   var todoList = $$('#todo-list')
-      , completed = checkbox.checked ? 1 : 0
+    var completed = checkbox.checked ? 1 : 0
       , self = this;
     self.model.update(id, {completed: completed}, function () {
       var listItem = $$('[data-id="' + id + '"]');
