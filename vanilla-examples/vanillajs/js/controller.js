@@ -15,44 +15,49 @@
 		this.$todoList = $$('#todo-list');
 
 		this.router = Router();
+
 		this.router.on('/', this.load.bind(this));
 		this.router.on('/active', this.showActive.bind(this));
 		this.router.on('/completed', this.showCompleted.bind(this));
 		this.router.init();
 
+		// Couldn't figure out how to get flatiron to run some code on
+		// all pages. I tried '*', but then it overwrites ALL handlers
+		// for all the other pages and only runs this.
+		window.addEventListener('hashchange', function (e) {
+			this.updateCounter();
+			this._updateFilterState();
+		}.bind(this));
 	}
 
 	/**
 	 * An event to fire on load. Will get all items and display them in the todo-list
 	 */
 	Controller.prototype.load = function () {
-		var self = this;
-		self.model.read(function (data) {
-			self.$todoList.innerHTML = self.view.show(data);
-		});
-		self.updateCounter();
+		this.model.read(function (data) {
+			this.$todoList.innerHTML = this.view.show(data);
+		}.bind(this));
+		this._updateFilterState();
 	}
 
 	/**
 	 * Renders all active tasks
 	 */
 	Controller.prototype.showActive = function () {
-		var self = this;
-		self.model.read({ completed: 0 }, function (data) {
-			self.$todoList.innerHTML = self.view.show(data);
-		});
-		self.updateCounter();
+		this.model.read({ completed: 0 }, function (data) {
+			this.$todoList.innerHTML = this.view.show(data);
+		}.bind(this));
+		this._updateFilterState();
 	};
 
 	/**
 	 * Renders all completed tasks
 	 */
 	Controller.prototype.showCompleted = function () {
-		var self = this;
-		self.model.read({ completed: 1 }, function (data) {
-			self.$todoList.innerHTML = self.view.show(data);
-		});
-		self.updateCounter();
+		this.model.read({ completed: 1 }, function (data) {
+			this.$todoList.innerHTML = this.view.show(data);
+		}.bind(this));
+		this._updateFilterState();
 	};
 
 	/**
@@ -63,15 +68,16 @@
 	 */
 	Controller.prototype.addItem = function (e) {
 		var input = $$('#new-todo')
-		  , title = title || ''
-		  , self = this;
+		  , title = title || '';
 		if (e.keyCode == 13) {
-			self.model.create(e.srcElement.value, function (data) {
-				self.$todoList.innerHTML = self.$todoList.innerHTML + self.view.show(data);
+			this.model.create(e.srcElement.value, function (data) {
+				if (this._getCurrentPage() !== 'completed') {
+					this.$todoList.innerHTML = this.$todoList.innerHTML + this.view.show(data);
+				}
 				input.value = '';
-			});
+			}.bind(this));
 		}
-		self.updateCounter();
+		this.updateCounter();
 	}
 
 	/**
@@ -81,24 +87,22 @@
 	 * @param {number} id The ID of the item to remove from the DOM and storage
 	 */
 	Controller.prototype.removeItem = function (id) {
-		var self = this;
-		self.model.remove(id, function () {
-			self.$todoList.removeChild($$('[data-id="' + id + '"]'));
-		});
-		self.updateCounter();
+		this.model.remove(id, function () {
+			this.$todoList.removeChild($$('[data-id="' + id + '"]'));
+		}.bind(this));
+		this.updateCounter();
 	}
 
 	/**
 	 * Will remove all completed items from the DOM and storage.
 	 */
 	Controller.prototype.removeCompletedItems = function () {
-		var self = this;
-		self.model.read({ completed: 1 }, function (data) {
+		this.model.read({ completed: 1 }, function (data) {
 			data.forEach(function (item) {
-				self.removeItem(item.id);
-			})
-		});
-		self.updateCounter();
+				this.removeItem(item.id);
+			}.bind(this));
+		}.bind(this));
+		this.updateCounter();
 	}
 
 	/**
@@ -109,9 +113,8 @@
 	 * @param {object} checkbox The checkbox to check the state of complete or not
 	 */
 	Controller.prototype.toggleComplete = function (id, checkbox) {
-		var completed = checkbox.checked ? 1 : 0
-		  , self = this;
-		self.model.update(id, {completed: completed}, function () {
+		var completed = checkbox.checked ? 1 : 0;
+		this.model.update(id, {completed: completed}, function () {
 			var listItem = $$('[data-id="' + id + '"]');
 			if (completed) {
 				listItem.className = 'complete';
@@ -119,7 +122,7 @@
 			// In case it was toggled from an event and not by clicking the checkbox...
 			listItem.querySelector('input').checked = completed;
 		});
-		self.updateCounter();
+		this.updateCounter();
 	}
 
 	/**
@@ -129,31 +132,47 @@
 	 * @param {object} e The event object
 	 */
 	Controller.prototype.toggleAll = function (e) {
-		var self = this
-		  , completed = e.target.checked ? 1 : 0
+		var completed = e.target.checked ? 1 : 0
 		  , query = 0;
 
 		if (completed == 0) {
 			query = 1;
 		}
 
-		self.model.read({ completed: query }, function (data) {
+		this.model.read({ completed: query }, function (data) {
 			data.forEach(function (item) {
-				self.toggleComplete(item.id, e.target);
-			});
-		});
-		self.updateCounter();
+				this.toggleComplete(item.id, e.target);
+			}.bind(this));
+		}.bind(this));
+		this.updateCounter();
 	}
 
 	/**
 	 * Updates the items left to do counter.
 	 */
 	Controller.prototype.updateCounter = function () {
-		var self = this;
-		self.model.read({ completed: 0 }, function (data) {
-			$$('#todo-count').innerHTML = self.view.itemCounter(data);
-		});
+		this.model.read({ completed: 0 }, function (data) {
+			$$('#todo-count').innerHTML = this.view.itemCounter(data);
+		}.bind(this));
 	};
+
+	/**
+	 * Simply updates the filter nav's selected states
+	 */
+	 Controller.prototype._updateFilterState = function () {
+	 	var currentPage = this._getCurrentPage() || '';
+		$('#filters .selected').each(function (item) {
+			item.className = '';
+		});
+		$$('#filters [href="#/' + currentPage + '"]').className = 'selected';
+	 }
+
+	 /**
+	  * A getter for getting the current page
+	  */
+	 Controller.prototype._getCurrentPage = function () {
+	 	return document.location.hash.split('/')[1];
+	 }
 
 	// Export to window
 	window.Controller = Controller;

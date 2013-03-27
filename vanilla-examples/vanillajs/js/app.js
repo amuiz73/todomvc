@@ -58,4 +58,5 @@
 	$$('#clear-completed').addEventListener('click', function () {
 		todo.controller.removeCompletedItems();
 	});
+
 })( window );
