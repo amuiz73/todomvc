@@ -15,6 +15,20 @@
 
 	var todo = new Todo('todos-vanillajs');
 
+	/**
+	 * Finds the model ID of the clicked DOM element
+	 *
+	 * @param {object} target The starting point in the DOM for it to try to find
+	 * the ID of the model.
+	 */
+	function lookupId (target) {
+		var lookup = target
+		while (lookup.nodeName !== 'LI') {
+			lookup = lookup.parentNode;
+		}
+		return lookup.dataset['id'];
+	}
+
 	// When the enter key is pressed fire the addItem method.
 	$$('#new-todo').addEventListener('keypress', function (e) {
 		todo.controller.addItem(e);
@@ -26,29 +40,26 @@
 		var target = e.target
 		  , el = this;
 
-		/**
-		 * Finds the model ID of the clicked DOM element
-		 *
-		 * @param {object} target The starting point in the DOM for it to try to find
-		 * the ID of the model.
-		 */
-		function lookupId (target) {
-			var lookup = target
-			while (lookup.nodeName !== 'LI') {
-				lookup = lookup.parentNode;
-			}
-			return lookup.dataset['id'];
-		}
-
 		// If you click a destroy button
 		if (target.className.indexOf('destroy') > -1) {
 			todo.controller.removeItem(lookupId(target));
 		}
 
 		// If you click the checkmark
-		if(target.className.indexOf('toggle') > -1) {
+		if (target.className.indexOf('toggle') > -1) {
 			todo.controller.toggleComplete(lookupId(target), target);
 		}
+
+	});
+
+	$$('#todo-list').addEventListener('dblclick', function (e) {
+		var target = e.target
+		  , el = this;
+
+		if (target.nodeName == 'LABEL') {
+			todo.controller.editItem(lookupId(target), target);
+		}
+
 	});
 
 	$$('#toggle-all').addEventListener('click', function (e) {
