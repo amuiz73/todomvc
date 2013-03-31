@@ -28,6 +28,12 @@
 			this.updateCounter();
 			this._updateFilterState();
 		}.bind(this));
+
+		// Make sure on page load we start with a hash to trigger the
+		// flatiron and onhashchange routes
+		if (window.location.href.indexOf('#') == -1) {
+			window.location.hash = '#/';
+		}
 	}
 
 	/**
