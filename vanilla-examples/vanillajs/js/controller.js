@@ -13,6 +13,7 @@
 		this.view = view;
 
 		this.ENTER_KEY = 13
+		this.ESCAPE_KEY = 27;
 
 		this.$main = $$('#main');
 		this.$toggleAll = $$('#toggle-all');
@@ -22,17 +23,16 @@
 		this.$footer = $$('#footer');
 
 		this.router = Router();
-
-		this.router.on('/', this.load.bind(this));
-		this.router.on('/active', this.showActive.bind(this));
-		this.router.on('/completed', this.showCompleted.bind(this));
 		this.router.init();
+
+		window.addEventListener('load', function () {
+			this._updateFilterState();
+		}.bind(this));
 
 		// Couldn't figure out how to get flatiron to run some code on all pages. I
 		// tried '*', but then it overwrites ALL handlers for all the other pages
 		// and only runs this.
 		window.addEventListener('hashchange', function (e) {
-			this.updateCount();
 			this._updateFilterState();
 		}.bind(this));
 
@@ -47,13 +47,10 @@
 	 * An event to fire on load. Will get all items and display them in the
 	 * todo-list
 	 */
-	Controller.prototype.load = function () {
+	Controller.prototype.showAll = function () {
 		this.model.read(function (data) {
 			this.$todoList.innerHTML = this.view.show(data);
 		}.bind(this));
-
-		this.updateCount();
-		this._updateFilterState();
 	};
 
 	/**
@@ -63,8 +60,6 @@
 		this.model.read({ completed: 0 }, function (data) {
 			this.$todoList.innerHTML = this.view.show(data);
 		}.bind(this));
-
-		this._updateFilterState();
 	};
 
 	/**
@@ -74,8 +69,6 @@
 		this.model.read({ completed: 1 }, function (data) {
 			this.$todoList.innerHTML = this.view.show(data);
 		}.bind(this));
-
-		this._updateFilterState();
 	};
 
 	/**
@@ -101,7 +94,7 @@
 			}.bind(this));
 		}
 
-		this.updateCount();
+		this._filter();
 	};
 
 	/**
@@ -121,13 +114,24 @@
 		}
 
 		var onSaveHandler = function () {
-			this.model.update(id, {title: input.value});
+			var value = input.value.trim();
+			var discarding = input.dataset['discard'];
+
+			if (value.length && !discarding) {
+				this.model.update(id, { title: input.value });
+
+				// Instead of re-rendering the whole view just update
+				// this piece of it
+				label.innerHTML = value;
+			} else if (value.length === 0) {
+				// No value was entered in the input. We'll remove the todo item.
+				this.removeItem(id);
+			}
+
 			// Remove the input since we no longer need it
 			// Less DOM means faster rendering
 			li.removeChild(input);
-			// Instead of re-rendering the whole view just update
-			// this piece of it
-			label.innerHTML = input.value;
+
 			// Remove the editing class
 			li.className = li.className.replace('editing', '');
 		}.bind(this);
@@ -137,9 +141,10 @@
 
 		var input = document.createElement('input');
 		input.className = 'edit';
-		// Get the innerHTML of the label instead of requesting the
-		// data from the ORM. If this were a real DB this would save a
-		// lot of time and would avoid a spinner gif.
+
+		// Get the innerHTML of the label instead of requesting the data from the
+		// ORM. If this were a real DB this would save a lot of time and would avoid
+		// a spinner gif.
 		input.value = label.innerHTML;
 
 		li.appendChild(input);
@@ -148,8 +153,14 @@
 
 		input.addEventListener('keypress', function (e) {
 			if (e.keyCode == this.ENTER_KEY) {
-				// Remove the cursor from the input when you
-				// hit enter just like if it were a real form
+				// Remove the cursor from the input when you hit enter just like if it
+				// were a real form
+				input.blur();
+			}
+
+			if (e.keyCode == this.ESCAPE_KEY) {
+				// Discard the changes
+				input.dataset['discard'] = true;
 				input.blur();
 			}
 		}.bind(this));
@@ -169,7 +180,7 @@
 			this.$todoList.removeChild($$('[data-id="' + id + '"]'));
 		}.bind(this));
 
-		this.updateCount();
+		this._filter();
 	};
 
 	/**
@@ -182,7 +193,7 @@
 			}.bind(this));
 		}.bind(this));
 
-		this.updateCount();
+		this._filter();
 	};
 
 	/**
@@ -200,6 +211,10 @@
 		this.model.update(id, { completed: completed }, function () {
 			var listItem = $$('[data-id="' + id + '"]');
 
+			if (!listItem) {
+				return;
+			}
+
 			listItem.className = completed? 'completed' : '';
 
 			// In case it was toggled from an event and not by clicking the checkbox
@@ -207,7 +222,7 @@
 		});
 
 		if (!silent) {
-			this.updateCount();
+			this._filter();
 		}
 	};
 
@@ -231,21 +246,24 @@
 			}.bind(this));
 		}.bind(this));
 
-		this.updateCount();
+		this._filter();
 	};
 
 	/**
 	 * Updates the pieces of the page which change depending on the remaining
 	 * number of todos.
 	 */
-	Controller.prototype.updateCount = function () {
+	Controller.prototype._updateCount = function () {
 		var todos = this.model.getCount();
 
 		this.$todoItemCounter.innerHTML = this.view.itemCounter(todos.active);
+
 		this.$clearCompleted.innerHTML = this.view.clearCompletedButton(todos.completed);
+		this.$clearCompleted.style.display = todos.completed > 0 ? 'block' : 'none';
+
 		this.$toggleAll.checked = todos.completed === todos.total;
 
-		this.toggleFrame(todos);
+		this._toggleFrame(todos);
 	};
 
 	/**
@@ -254,8 +272,9 @@
 	 *
 	 * @param {object} todos Contains a count of all todos, and their statuses.
 	 */
-	Controller.prototype.toggleFrame = function (todos) {
-		var frameVisible = this.$main.style.display === 'block';
+	Controller.prototype._toggleFrame = function (todos) {
+		var frameDisplay = this.$main.style.display;
+		var frameVisible = frameDisplay === 'block' || frameDisplay === '';
 
 		if (todos.total === 0 && frameVisible) {
 			this.$main.style.display = 'none';
@@ -269,10 +288,31 @@
 	};
 
 	/**
+	 * Re-filters the todo items, based on the active route.
+	 */
+	Controller.prototype._filter = function () {
+		var activeRoute = this._activeRoute.charAt(0).toUpperCase() + this._activeRoute.substr(1);
+
+		this._updateCount();
+
+		this['show' + activeRoute]();
+	};
+
+	/**
 	 * Simply updates the filter nav's selected states
 	 */
 	Controller.prototype._updateFilterState = function () {
 		var currentPage = this._getCurrentPage() || '';
+
+		// Store a reference to the active route, allowing us to re-filter todo
+		// items as they are marked complete or incomplete.
+		this._activeRoute = currentPage;
+
+		if (currentPage === '') {
+			this._activeRoute = 'All';
+		}
+
+		this._filter();
 
 		// Remove all other selected states. We loop through all of them in case the
 		// UI gets in a funky state with two selected.

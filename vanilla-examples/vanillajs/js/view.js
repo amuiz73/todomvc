@@ -31,9 +31,9 @@
 	 * NOTE: In real life you should be using a templating engine such as Mustache
 	 * or Handlebars, however, this is a vanilla JS example.
 	 *
-	 * @param {object} data The object containing keys you want to find in the template
-	 * to replace.
-	 * @returns {string} HTML string of an <li> element
+	 * @param {object} data The object containing keys you want to find in the
+	 *                      template to replace.
+	 * @returns {string} HTML String of an <li> element
 	 *
 	 * @example
 	 * view.show({
@@ -43,9 +43,10 @@
 	 * });
 	 */
 	View.prototype.show = function (data) {
+		var i, l;
 		var view = '';
 
-		for (var i = 0; i < data.length; i++) {
+		for (i = 0, l = data.length; i < l; i++) {
 			var template = this.defaultTemplate;
 			var completed = '';
 			var checked = '';
