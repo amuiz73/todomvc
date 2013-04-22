@@ -1,4 +1,4 @@
-(function( window ) {
+(function (window) {
 	'use strict';
 
 	/**
@@ -7,7 +7,7 @@
 	 * @constructor
 	 * @param {object} storage A reference to the client side storage class
 	 */
-	function Model (storage) {
+	function Model(storage) {
 		this.storage = storage;
 	}
 
@@ -18,14 +18,16 @@
 	 * @param {function} [callback] The callback to fire after the model is created
 	 */
 	Model.prototype.create = function (title, callback) {
-		callback = callback || function () {};
 		title = title || '';
+		callback = callback || function () {};
+
 		var newItem = {
-			title: title.trim()
-		, completed: 0
-		}
+			title: title.trim(),
+			completed: 0
+		};
+
 		this.storage.save(newItem, callback);
-	}
+	};
 
 	/**
 	 * Finds and returns a model in storage. If no query is given it'll simply return
@@ -43,17 +45,16 @@
 	 */
 	Model.prototype.read = function (query, callback) {
 		callback = callback || function () {};
+
 		if (typeof query == 'function') {
 			callback = query;
 			return this.storage.findAll(callback);
-		}
-		else if (typeof query == 'string' || typeof query == 'number') {
+		} else if (typeof query == 'string' || typeof query == 'number') {
 			this.storage.find({id: query}, callback);
-		}
-		else {
+		} else {
 			this.storage.find(query, callback)
 		}
-	}
+	};
 
 	/**
 	 * Updates a model by giving it an ID, data to update, and a callback to fire when
@@ -65,7 +66,7 @@
 	 */
 	Model.prototype.update = function (id, data, callback) {
 		this.storage.save(id, data, callback);
-	}
+	};
 
 	/**
 	 * Removes a model from storage
@@ -75,7 +76,7 @@
 	 */
 	Model.prototype.remove = function (id, callback) {
 		this.storage.remove(id, callback);
-	}
+	};
 
 	/**
 	 * WARNING: Will remove ALL data from storage.
@@ -84,8 +85,8 @@
 	 */
 	Model.prototype.removeAll = function (callback) {
 		this.storage.drop(callback);
-	}
+	};
 
 	// Export to window
 	window.Model = Model;
-})( window );
+})(window);

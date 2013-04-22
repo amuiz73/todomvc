@@ -1,4 +1,4 @@
-(function( window ) {
+(function (window) {
 	'use strict';
 
 	/**
@@ -8,7 +8,7 @@
 	 * @param {object} model The model constructor
 	 * @param {object} view The view constructor
 	 */
-	function Controller (model, view) {
+	function Controller(model, view) {
 		this.model = model;
 		this.view = view;
 
@@ -46,8 +46,9 @@
 		this.model.read(function (data) {
 			this.$todoList.innerHTML = this.view.show(data);
 		}.bind(this));
+
 		this._updateFilterState();
-	}
+	};
 
 	/**
 	 * Renders all active tasks
@@ -56,6 +57,7 @@
 		this.model.read({ completed: 0 }, function (data) {
 			this.$todoList.innerHTML = this.view.show(data);
 		}.bind(this));
+
 		this._updateFilterState();
 	};
 
@@ -66,6 +68,7 @@
 		this.model.read({ completed: 1 }, function (data) {
 			this.$todoList.innerHTML = this.view.show(data);
 		}.bind(this));
+
 		this._updateFilterState();
 	};
 
@@ -77,8 +80,9 @@
 	 * @param {object} e The event object
 	 */
 	Controller.prototype.addItem = function (e) {
-		var input = $$('#new-todo')
-		  , title = title || '';
+		var input = $$('#new-todo');
+		var title = title || '';
+
 		if (e.keyCode == this.ENTER_KEY) {
 			this.model.create(e.target.value, function (data) {
 				// We want to make sure we don't add incomplete
@@ -91,8 +95,9 @@
 				input.value = '';
 			}.bind(this));
 		}
+
 		this.updateCounter();
-	}
+	};
 
 	/**
 	 * Hides the label text and creates an input to edit the title of the
@@ -134,6 +139,7 @@
 		li.appendChild(input);
 
 		input.addEventListener('blur', onSaveHandler);
+
 		input.addEventListener('keypress', function (e) {
 			if (e.keyCode == this.ENTER_KEY) {
 				// Remove the cursor from the input when you
@@ -143,7 +149,7 @@
 		}.bind(this));
 
 		input.focus();
-	 }
+	};
 
 	/**
 	 * By giving it an ID it'll find the DOM element matching that ID,
@@ -156,8 +162,9 @@
 		this.model.remove(id, function () {
 			this.$todoList.removeChild($$('[data-id="' + id + '"]'));
 		}.bind(this));
+
 		this.updateCounter();
-	}
+	};
 
 	/**
 	 * Will remove all completed items from the DOM and storage.
@@ -168,8 +175,9 @@
 				this.removeItem(item.id);
 			}.bind(this));
 		}.bind(this));
+
 		this.updateCounter();
-	}
+	};
 
 	/**
 	 * Give it an ID of a model and a checkbox and it will update the item
@@ -181,17 +189,19 @@
 	 */
 	Controller.prototype.toggleComplete = function (id, checkbox) {
 		var completed = checkbox.checked ? 1 : 0;
-		this.model.update(id, {completed: completed}, function () {
+
+		this.model.update(id, { completed: completed }, function () {
 			var listItem = $$('[data-id="' + id + '"]');
 			if (completed) {
-				listItem.className = 'complete';
+				listItem.className = 'completed';
 			}
 			// In case it was toggled from an event and not by
 			// clicking the checkbox...
 			listItem.querySelector('input').checked = completed;
 		});
+
 		this.updateCounter();
-	}
+	};
 
 	/**
 	 * Will toggle ALL checkboxe's on/off state and completeness of models.
@@ -213,7 +223,7 @@
 			}.bind(this));
 		}.bind(this));
 		this.updateCounter();
-	}
+	};
 
 	/**
 	 * Updates the items left to do counter.
@@ -229,22 +239,23 @@
 	 */
 	 Controller.prototype._updateFilterState = function () {
 	 	var currentPage = this._getCurrentPage() || '';
+
 	 	// Remove all other selected states. We loop through all of
 	 	// them in case the UI gets in a funky state with two selected.
 		$('#filters .selected').each(function (item) {
 			item.className = '';
 		});
+
 		$$('#filters [href="#/' + currentPage + '"]').className = 'selected';
-	 }
+	};
 
 	 /**
 	  * A getter for getting the current page
 	  */
-	 Controller.prototype._getCurrentPage = function () {
-	 	return document.location.hash.split('/')[1];
-	 }
-
+	Controller.prototype._getCurrentPage = function () {
+		return document.location.hash.split('/')[1];
+	};
 
 	// Export to window
 	window.Controller = Controller;
-})( window );
+})(window);

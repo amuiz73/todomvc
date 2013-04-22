@@ -1,4 +1,4 @@
-(function( window ) {
+(function (window) {
 	'use strict';
 
 	/**
@@ -6,12 +6,12 @@
 	 *
 	 * @param {string} name The name of your new to do list.
 	 */
-	function Todo (name) {
+	function Todo(name) {
 		this.storage = new Store(name);
 		this.model = new Model(this.storage);
 		this.view = new View();
 		this.controller = new Controller(this.model, this.view);
-	};
+	}
 
 	var todo = new Todo('todos-vanillajs');
 
@@ -21,11 +21,13 @@
 	 * @param {object} target The starting point in the DOM for it to try to find
 	 * the ID of the model.
 	 */
-	function lookupId (target) {
-		var lookup = target
+	function lookupId(target) {
+		var lookup = target;
+
 		while (lookup.nodeName !== 'LI') {
 			lookup = lookup.parentNode;
 		}
+
 		return lookup.dataset['id'];
 	}
 
@@ -37,8 +39,8 @@
 	// A delegation event. Will check what item was clicked whenever you click on any
 	// part of a list item.
 	$$('#todo-list').addEventListener('click', function (e) {
-		var target = e.target
-		  , el = this;
+		var target = e.target;
+		var el = this;
 
 		// If you click a destroy button
 		if (target.className.indexOf('destroy') > -1) {
@@ -53,13 +55,12 @@
 	});
 
 	$$('#todo-list').addEventListener('dblclick', function (e) {
-		var target = e.target
-		  , el = this;
+		var target = e.target;
+		var el = this;
 
 		if (target.nodeName == 'LABEL') {
 			todo.controller.editItem(lookupId(target), target);
 		}
-
 	});
 
 	$$('#toggle-all').addEventListener('click', function (e) {
@@ -69,5 +70,4 @@
 	$$('#clear-completed').addEventListener('click', function () {
 		todo.controller.removeCompletedItems();
 	});
-
-})( window );
+})(window);

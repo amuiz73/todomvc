@@ -1,4 +1,4 @@
-(function( window ) {
+(function (window) {
 	'use strict';
 
 	/**
@@ -6,15 +6,15 @@
 	 *
 	 * @constructor
 	 */
-	function View () {
-		this.defaultTemplate = '\
-			<li data-id="{{id}}" class="{{complete}}">\
-				<div class="view">\
-					<input class="toggle" type="checkbox" {{checked}}>\
-					<label>{{title}}</label>\
-					<button class="destroy"></button>\
-				</div>\
-			</li>'
+	function View() {
+		this.defaultTemplate
+		=	'<li data-id="{{id}}" class="{{complete}}">'
+		+		'<div class="view">'
+		+			'<input class="toggle" type="checkbox" {{checked}}>'
+		+			'<label>{{title}}</label>'
+		+			'<button class="destroy"></button>'
+		+		'</div>'
+		+	'</li>';
 	}
 
 	/**
@@ -36,21 +36,25 @@
 	View.prototype.show = function (data) {
 		var view = '';
 		for (var i = 0; i < data.length; i++) {
-			var template = this.defaultTemplate
-			  , complete = ''
-			  , checked	 = '';
+			var template = this.defaultTemplate;
+			var complete = '';
+			var checked = '';
+
 			if (data[i].completed == 1) {
 				complete = 'complete';
 				checked = 'checked';
 			}
+
 			template = template.replace('{{id}}', data[i].id);
 			template = template.replace('{{title}}', data[i].title);
 			template = template.replace('{{complete}}', complete);
 			template = template.replace('{{checked}}', checked);
+
 			view = view + template;
 		}
+
 		return view;
-	}
+	};
 
 	/**
 	 * Displays a counter of how many to dos are left to complete
@@ -60,9 +64,10 @@
 	View.prototype.itemCounter = function (data) {
 		var itemLength = Object.keys(data).length;
 		var plural = itemLength == 1 ? '' : 's';
+
 		return '<strong>' + itemLength + '</strong> item' + plural + ' left';
-	}
+	};
 
 	// Export to window
 	window.View = View;
-})( window );
+})(window);

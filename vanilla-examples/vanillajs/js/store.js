@@ -1,4 +1,4 @@
-(function( window ) {
+(function (window) {
 	'use strict';
 
 	/**
@@ -9,19 +9,23 @@
 	 * @param {function} callback Our fake DB uses callbacks because in
 	 * real life you probably would be making AJAX calls
 	 */
-	function Store (name, callback) {
-		var data
-		  , dbName
-		  , callback = callback || function () {};
+	function Store(name, callback) {
+		var data;
+		var dbName;
+		var callback = callback || function () {};
+
 		dbName = this._dbName = name;
+
 		if(!localStorage[dbName]) {
 			data = {
 				todos: []
-			}
+			};
+
 			localStorage[dbName] = JSON.stringify(data);
 		}
+
 		callback.call(this, JSON.parse(localStorage[dbName]));
-	};
+	}
 
 	/**
 	 * Finds items based on a query given as a JS object
@@ -37,26 +41,28 @@
 	 * });
 	 */
 	Store.prototype.find = function (query, callback) {
-		var data = JSON.parse(localStorage[this._dbName]).todos
-		  , callback = callback || function () {}
-		  , items = []
-		  , found;
+		var data = JSON.parse(localStorage[this._dbName]).todos;
+		var callback = callback || function () {};
+		var items = [];
+		var found;
+
 		for (var i = 0; i < data.length; i++) {
 			for (var q in query) {
 				if (query[q] !== data[i][q]) {
 					found = false;
 					break;
-				}
-				else {
+				} else {
 					found = true;
 				}
 			}
+
 			if (found) {
 				items.push(data[i]);
 			}
 		}
+
 		callback.call(this, items);
-	}
+	};
 
 	/**
 	 * Will retrieve all data from the collection
@@ -66,7 +72,7 @@
 	Store.prototype.findAll = function (callback) {
 		callback = callback || function () {};
 		callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
-	}
+	};
 
 	/**
 	 * Will save the given data to the DB. If no item exists it will create a
@@ -77,9 +83,10 @@
 	 * @param {function} callback The callback to fire after saving
 	 */
 	Store.prototype.save = function (id, updateData, callback) {
-		var data = JSON.parse(localStorage[this._dbName])
-		  , callback = callback || function () {}
-		  , todos = data.todos;
+		var data = JSON.parse(localStorage[this._dbName]);
+		var callback = callback || function () {};
+		var todos = data.todos;
+
 		// If an ID was actually given, find the item and update each property
 		if (typeof id !== 'object') {
 			for (var i = 0; i < todos.length; i++) {
@@ -89,19 +96,22 @@
 					}
 				}
 			}
+
 			localStorage[this._dbName] = JSON.stringify(data);
 			callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
-		}
-		else {
+		} else {
 			callback = updateData;
+
 			updateData = id;
+
 			// Generate an ID
 			updateData.id = new Date().getTime();
+
 			todos.push(updateData);
 			localStorage[this._dbName] = JSON.stringify(data);
 			callback.call(this, [updateData]);
 		}
-	}
+	};
 
 	/**
 	 * Will remove an item from the Store based on its ID
@@ -110,17 +120,19 @@
 	 * @param {function} callback The callback to fire after saving
 	 */
 	Store.prototype.remove = function (id, callback) {
-		var data = JSON.parse(localStorage[this._dbName])
-		  , todos = data.todos;
+		var data = JSON.parse(localStorage[this._dbName]);
+		var todos = data.todos;
+
 		for (var i = 0; i < todos.length; i++) {
 			if (todos[i].id == id) {
 			 todos.splice(i, 1);
 			 break;
 			}
 		}
+
 		localStorage[this._dbName] = JSON.stringify(data);
 		callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
-	}
+	};
 
 	/**
 	 *	Will drop all storage and start fresh
@@ -130,8 +142,8 @@
 	Store.prototype.drop = function (callback) {
 		localStorage[this._dbName] = JSON.stringify({todos: []});
 		callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
-	}
+	};
 
 	// Export to window
 	window.Store = Store;
-})( window );
+})(window);

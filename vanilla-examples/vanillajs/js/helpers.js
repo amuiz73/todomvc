@@ -1,10 +1,9 @@
-(function( window ) {
+(function (window) {
 	'use strict';
 
 	// Cache the querySelector/All for easier and faster reuse
 	window.$ = document.querySelectorAll.bind(document);
 	window.$$ = document.querySelector.bind(document);
-
 
 	// Allow for looping on Objects by chaining:
 	// $('.foo').each(function () {})
@@ -14,7 +13,7 @@
 				callback.call(this, this[x]);
 			}
 		}
-	}
+	};
 
-})( window );
+})(window);
 
