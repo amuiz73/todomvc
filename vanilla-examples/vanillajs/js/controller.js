@@ -14,7 +14,12 @@
 
 		this.ENTER_KEY = 13
 
+		this.$main = $$('#main');
+		this.$toggleAll = $$('#toggle-all');
 		this.$todoList = $$('#todo-list');
+		this.$todoItemCounter = $$('#todo-count');
+		this.$clearCompleted = $$('#clear-completed');
+		this.$footer = $$('#footer');
 
 		this.router = Router();
 
@@ -23,16 +28,16 @@
 		this.router.on('/completed', this.showCompleted.bind(this));
 		this.router.init();
 
-		// Couldn't figure out how to get flatiron to run some code on
-		// all pages. I tried '*', but then it overwrites ALL handlers
-		// for all the other pages and only runs this.
+		// Couldn't figure out how to get flatiron to run some code on all pages. I
+		// tried '*', but then it overwrites ALL handlers for all the other pages
+		// and only runs this.
 		window.addEventListener('hashchange', function (e) {
-			this.updateCounter();
+			this.updateCount();
 			this._updateFilterState();
 		}.bind(this));
 
-		// Make sure on page load we start with a hash to trigger the
-		// flatiron and onhashchange routes
+		// Make sure on page load we start with a hash to trigger the flatiron and
+		// onhashchange routes
 		if (window.location.href.indexOf('#') == -1) {
 			window.location.hash = '#/';
 		}
@@ -47,6 +52,7 @@
 			this.$todoList.innerHTML = this.view.show(data);
 		}.bind(this));
 
+		this.updateCount();
 		this._updateFilterState();
 	};
 
@@ -73,9 +79,8 @@
 	};
 
 	/**
-	 * An event to fire whenever you want to add an item. Simply pass in
-	 * the event object and it'll handle the DOM insertion and saving of
-	 * the new item.
+	 * An event to fire whenever you want to add an item. Simply pass in the event
+	 * object and it'll handle the DOM insertion and saving of the new item.
 	 *
 	 * @param {object} e The event object
 	 */
@@ -96,19 +101,20 @@
 			}.bind(this));
 		}
 
-		this.updateCounter();
+		this.updateCount();
 	};
 
 	/**
-	 * Hides the label text and creates an input to edit the title of the
-	 * item. When you hit enter or blur out of the input it saves it and
-	 * updates the UI with the new name.
+	 * Hides the label text and creates an input to edit the title of the item.
+	 * When you hit enter or blur out of the input it saves it and updates the UI
+	 * with the new name.
 	 *
 	 * @param {number} id The id of the item to edit
 	 * @param {object} label The label you want to edit the text of
 	 */
 	Controller.prototype.editItem = function (id, label) {
 		var li =  label;
+
 		// This finds the <label>'s parent <li>
 		while (li.nodeName !== 'LI') {
 			li = li.parentNode;
@@ -127,7 +133,7 @@
 		}.bind(this);
 
 		// Append the editing class
-	 	li.className = li.className + ' editing';
+		li.className = li.className + ' editing';
 
 		var input = document.createElement('input');
 		input.className = 'edit';
@@ -163,7 +169,7 @@
 			this.$todoList.removeChild($$('[data-id="' + id + '"]'));
 		}.bind(this));
 
-		this.updateCounter();
+		this.updateCount();
 	};
 
 	/**
@@ -176,7 +182,7 @@
 			}.bind(this));
 		}.bind(this));
 
-		this.updateCounter();
+		this.updateCount();
 	};
 
 	/**
@@ -186,32 +192,34 @@
 	 * @param {number} id The ID of the element to complete or uncomplete
 	 * @param {object} checkbox The checkbox to check the state of complete
 	 * or not
+	 * @param {boolean} silent Prevent the call to `updateCount`
 	 */
-	Controller.prototype.toggleComplete = function (id, checkbox) {
+	Controller.prototype.toggleComplete = function (id, checkbox, silent) {
 		var completed = checkbox.checked ? 1 : 0;
 
 		this.model.update(id, { completed: completed }, function () {
 			var listItem = $$('[data-id="' + id + '"]');
-			if (completed) {
-				listItem.className = 'completed';
-			}
-			// In case it was toggled from an event and not by
-			// clicking the checkbox...
+
+			listItem.className = completed? 'completed' : '';
+
+			// In case it was toggled from an event and not by clicking the checkbox
 			listItem.querySelector('input').checked = completed;
 		});
 
-		this.updateCounter();
+		if (!silent) {
+			this.updateCount();
+		}
 	};
 
 	/**
 	 * Will toggle ALL checkboxe's on/off state and completeness of models.
-	 * Just pass in the event objet.
+	 * Just pass in the event object.
 	 *
 	 * @param {object} e The event object
 	 */
 	Controller.prototype.toggleAll = function (e) {
-		var completed = e.target.checked ? 1 : 0
-		  , query = 0;
+		var completed = e.target.checked ? 1 : 0;
+		var query = 0;
 
 		if (completed == 0) {
 			query = 1;
@@ -219,29 +227,55 @@
 
 		this.model.read({ completed: query }, function (data) {
 			data.forEach(function (item) {
-				this.toggleComplete(item.id, e.target);
+				this.toggleComplete(item.id, e.target, true);
 			}.bind(this));
 		}.bind(this));
-		this.updateCounter();
+
+		this.updateCount();
 	};
 
 	/**
-	 * Updates the items left to do counter.
+	 * Updates the pieces of the page which change depending on the remaining
+	 * number of todos.
 	 */
-	Controller.prototype.updateCounter = function () {
-		this.model.read({ completed: 0 }, function (data) {
-			$$('#todo-count').innerHTML = this.view.itemCounter(data);
-		}.bind(this));
+	Controller.prototype.updateCount = function () {
+		var todos = this.model.getCount();
+
+		this.$todoItemCounter.innerHTML = this.view.itemCounter(todos.active);
+		this.$clearCompleted.innerHTML = this.view.clearCompletedButton(todos.completed);
+		this.$toggleAll.checked = todos.completed === todos.total;
+
+		this.toggleFrame(todos);
+	};
+
+	/**
+	 * The main body and footer elements should not be visible when there are no
+	 * todos left.
+	 *
+	 * @param {object} todos Contains a count of all todos, and their statuses.
+	 */
+	Controller.prototype.toggleFrame = function (todos) {
+		var frameVisible = this.$main.style.display === 'block';
+
+		if (todos.total === 0 && frameVisible) {
+			this.$main.style.display = 'none';
+			this.$footer.style.display = 'none';
+		}
+
+		if (todos.total > 0 && !frameVisible) {
+			this.$main.style.display = 'block';
+			this.$footer.style.display = 'block';
+		}
 	};
 
 	/**
 	 * Simply updates the filter nav's selected states
 	 */
-	 Controller.prototype._updateFilterState = function () {
-	 	var currentPage = this._getCurrentPage() || '';
+	Controller.prototype._updateFilterState = function () {
+		var currentPage = this._getCurrentPage() || '';
 
-	 	// Remove all other selected states. We loop through all of
-	 	// them in case the UI gets in a funky state with two selected.
+		// Remove all other selected states. We loop through all of them in case the
+		// UI gets in a funky state with two selected.
 		$('#filters .selected').each(function (item) {
 			item.className = '';
 		});
@@ -250,8 +284,8 @@
 	};
 
 	 /**
-	  * A getter for getting the current page
-	  */
+		* A getter for getting the current page
+		*/
 	Controller.prototype._getCurrentPage = function () {
 		return document.location.hash.split('/')[1];
 	};

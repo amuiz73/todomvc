@@ -30,9 +30,10 @@
 	};
 
 	/**
-	 * Finds and returns a model in storage. If no query is given it'll simply return
-	 * everything. If you pass in a string or number it'll look that up as the ID of
-	 * the model to find. Lastly, you can pass it an object to match against.
+	 * Finds and returns a model in storage. If no query is given it'll simply
+	 * return everything. If you pass in a string or number it'll look that up as
+	 * the ID of the model to find. Lastly, you can pass it an object to match
+	 * against.
 	 *
 	 * @param {string|number|object} [query] A query to match models against
 	 * @param {function} [callback] The callback to fire after the model is found
@@ -85,6 +86,31 @@
 	 */
 	Model.prototype.removeAll = function (callback) {
 		this.storage.drop(callback);
+	};
+
+	/**
+	 * Returns a count of all todos
+	 */
+	Model.prototype.getCount = function () {
+		var todos = {
+			active: 0,
+			completed: 0,
+			total: 0
+		};
+
+		this.storage.findAll(function (data) {
+			data.each(function (todo) {
+				if (todo.completed === 1) {
+					todos.completed++;
+				} else {
+					todos.active++;
+				}
+
+				todos.total++;
+			});
+		});
+
+		return todos;
 	};
 
 	// Export to window

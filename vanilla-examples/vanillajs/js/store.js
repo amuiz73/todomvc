@@ -2,8 +2,8 @@
 	'use strict';
 
 	/**
-	 * Creates a new client side storage object and will create an empty collection if
-	 * no collection already exists.
+	 * Creates a new client side storage object and will create an empty
+	 * collection if no collection already exists.
 	 *
 	 * @param {string} name The name of our DB we want to use
 	 * @param {function} callback Our fake DB uses callbacks because in
@@ -16,7 +16,7 @@
 
 		dbName = this._dbName = name;
 
-		if(!localStorage[dbName]) {
+		if (!localStorage[dbName]) {
 			data = {
 				todos: []
 			};
@@ -75,8 +75,8 @@
 	};
 
 	/**
-	 * Will save the given data to the DB. If no item exists it will create a
-	 * new item, otherwise it'll simply update an existing item's properties
+	 * Will save the given data to the DB. If no item exists it will create a new
+	 * item, otherwise it'll simply update an existing item's properties
 	 *
 	 * @param {number} id An optional param to enter an ID of an item to update
 	 * @param {object} data The data to save back into the DB
@@ -135,7 +135,7 @@
 	};
 
 	/**
-	 *	Will drop all storage and start fresh
+	 * Will drop all storage and start fresh
 	 *
 	 * @param {function} callback The callback to fire after dropping the data
 	 */

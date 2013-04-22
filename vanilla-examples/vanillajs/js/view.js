@@ -7,8 +7,16 @@
 	 * @constructor
 	 */
 	function View() {
+		// this.pageBody = $$('#main');
+		// this.pageFooter = $$('#footer');
+
+		// if (itemLength === 0) {
+		// 	this.pageBody.style.display = 'none';
+		// 	this.pageFooter.style.display = 'none';
+		// }
+
 		this.defaultTemplate
-		=	'<li data-id="{{id}}" class="{{complete}}">'
+		=	'<li data-id="{{id}}" class="{{completed}}">'
 		+		'<div class="view">'
 		+			'<input class="toggle" type="checkbox" {{checked}}>'
 		+			'<label>{{title}}</label>'
@@ -19,8 +27,9 @@
 
 	/**
 	 * Creates an <li> HTML string and returns it for placement in your app.
-	 * NOTE: In real life you should be using a templating engine such
-	 * as Mustache or Handlebars, however, this is a vanilla JS example.
+	 *
+	 * NOTE: In real life you should be using a templating engine such as Mustache
+	 * or Handlebars, however, this is a vanilla JS example.
 	 *
 	 * @param {object} data The object containing keys you want to find in the template
 	 * to replace.
@@ -35,19 +44,20 @@
 	 */
 	View.prototype.show = function (data) {
 		var view = '';
+
 		for (var i = 0; i < data.length; i++) {
 			var template = this.defaultTemplate;
-			var complete = '';
+			var completed = '';
 			var checked = '';
 
 			if (data[i].completed == 1) {
-				complete = 'complete';
+				completed = 'completed';
 				checked = 'checked';
 			}
 
 			template = template.replace('{{id}}', data[i].id);
 			template = template.replace('{{title}}', data[i].title);
-			template = template.replace('{{complete}}', complete);
+			template = template.replace('{{completed}}', completed);
 			template = template.replace('{{checked}}', checked);
 
 			view = view + template;
@@ -58,14 +68,28 @@
 
 	/**
 	 * Displays a counter of how many to dos are left to complete
-	 * @param {object} data The object of active to dos.
+	 *
+	 * @param {number} activeTodos The number of active todos.
 	 * @returns {string} String containing the count
 	 */
-	View.prototype.itemCounter = function (data) {
-		var itemLength = Object.keys(data).length;
-		var plural = itemLength == 1 ? '' : 's';
+	View.prototype.itemCounter = function (activeTodos) {
+		var plural = activeTodos == 1 ? '' : 's';
 
-		return '<strong>' + itemLength + '</strong> item' + plural + ' left';
+		return '<strong>' + activeTodos + '</strong> item' + plural + ' left';
+	};
+
+	/**
+	 * Updates the text within the "Clear completed" button
+	 *
+	 * @param  {[type]} completedTodos The number of completed todos.
+	 * @returns {string} String containing the count
+	 */
+	View.prototype.clearCompletedButton = function (completedTodos) {
+		if (completedTodos > 0) {
+			return 'Clear completed (' + completedTodos + ')';
+		} else {
+			return '';
+		}
 	};
 
 	// Export to window
