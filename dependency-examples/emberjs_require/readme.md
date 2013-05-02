@@ -10,4 +10,4 @@ in its current state, visit:
 [Ember.js + RequireJS Source](https://github.com/stephenplusplus/todomvc/tree/emberjs_require/dependency-examples/emberjs_require)
 [Ember.js + RequireJS Demo](http://stephenplusplus.github.io/todomvc-emberjs-requirejs/dependency-examples/emberjs_require)
 
-For more information, [read the discussion](https://github.com/addyosmani/todomvc/pull/528).
+For more information, [read the discussion](https://github.com/tastejs/todomvc/pull/528).

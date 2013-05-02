@@ -80,7 +80,7 @@
 				clearBtnStyle: ''
 			},
 			view: {
-				format: drawHtml('#todoapp'),
+				format: drawHtml('body > article'),
 				style: '.hidden { display: none }'
 			},
 			controller: {
