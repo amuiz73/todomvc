@@ -9,8 +9,9 @@
 		});
 	};
 
-	$.fn.persistantPopover = function () {
+	$.fn.persistantPopover = function (options) {
 		var popoverTimeout;
+		var disablePopover = options.minWidth > $(window).width();
 
 		function delay() {
 			popoverTimeout = setTimeout(function () {
@@ -18,28 +19,52 @@
 			}, 100);
 		}
 
-		return this.each(function () {
+		var links = this.each(function () {
 			var $this = $(this);
+			var learnKey = $this.data('learn-key');
+
+			if (disablePopover) {
+				if (learnKey) {
+					$this.attr('data-learn', learnKey);
+				}
+				return;
+			}
+
 			$this.popover({
 				trigger: 'manual',
-				placement: 'right',
+				placement: 'left',
 				animation: false,
-				title: this.firstChild.textContent + '<a href="' + $this.data('source') + '">Website</a>'
+				html: true,
+				title: this.firstChild.textContent + '<a href="' + $this.data('source') + '">Website</a>',
+				content: function () {
+					if ($this.data('learn-key')) {
+						return $this.data('description') + '<p><a href="#' + $this.data('learn-key') + '" data-learn="' + $this.data('learn-key') + '">Learn More...</a></p>';
+					} else {
+						return $this.data('description');
+					}
+				}
 			});
-		})
-		.mouseenter(function () {
+		});
+
+		if (disablePopover) {
+			return;
+		}
+
+		links.mouseenter(function () {
 			clearTimeout(popoverTimeout);
 			$('.popover').remove();
 			$(this).popover('show');
-		})
-		.mouseleave(function () {
-			delay();
+		});
+
+		links.mouseleave(function () {delay();
 			$('.popover').mouseenter(function () {
 				clearTimeout(popoverTimeout);
 			}).mouseleave(function () {
 				delay();
 			});
 		});
+
+		return links;
 	};
 
 	function redirect() {
@@ -145,11 +170,168 @@
 		});
 	};
 
+	var Learn = {};
+	Learn.saveJSON = function (json) {
+		this.frameworks = json;
+		this.haystack = Object.keys(json).join(' ');
+	};
+
+	Learn.parseTemplate = function () {
+		var framework = this.frameworks[this._activeFramework];
+
+		if (framework.hasOwnProperty('__template')) {
+			return this.$el.container.html(framework.__template.html());
+		}
+
+		var linksTemplate = this.$template.links;
+		var parser = this.parser;
+
+		var body = $(this.$template.header.replace(parser, function (match, key) {
+			return framework[key];
+		}));
+
+		body.find('.source-links').html($.map(framework.examples, function (example) {
+			var sourceHref = example.source_url || example.url;
+			return '<h5>' + example.name + '</h5><p><a href="' + example.url + '">Demo</a>, <a href="https://github.com/addyosmani/todomvc/tree/gh-pages/' + sourceHref + '">Source</a></p>';
+		}).join(''));
+
+		if (framework.link_groups) {
+			body.append($.map(framework.link_groups, function (linkGroup) {
+				var links = '<h4>' + linkGroup.heading + '</h4>';
+				links += '<ul>';
+				links += $.map(linkGroup.links, function (link) {
+					return '<li>' + linksTemplate.replace(parser, function (match, key) {
+						return link[key];
+					}) + '</li>';
+				}).join('');
+				links += '</ul>';
+				return links;
+			}).join(''));
+
+			body.append(this.$template.footer);
+		}
+
+		this.$el.container.html(body.html());
+
+		framework.__template = body;
+	};
+
+	Learn.loadFramework = function (framework, options) {
+		if (framework !== this._activeFramework && this.frameworks.hasOwnProperty(framework)) {
+			this._activeFramework = framework;
+			window.location.hash = framework;
+
+			this.$el.container
+				.stop()
+				.fadeOut($.proxy(this.parseTemplate, this))
+				.fadeIn();
+		}
+
+		if (options && options.animate) {
+			$(document.body).animate({
+				scrollTop: this.$el.container.offset().top - 10
+			}, 1000);
+		}
+	};
+
+	Learn.search = function (searchTerm) {
+		var pattern = searchTerm.split('').reduce(function (a, b) {
+			return a + '[^\\s]*' + b + '[^\\s]*';
+		}, '');
+
+		var match = this.haystack.match(new RegExp(pattern));
+
+		if (match) {
+			return $.trim(match[0]);
+		}
+	};
+
+	Learn.searchKeyup = function (e) {
+		var searchKey = $.trim(e.currentTarget.value);
+
+		if (searchKey === '') {
+			return;
+		}
+
+		var matchedKey = this.search(searchKey);
+
+		if (matchedKey) {
+			this.loadFramework(matchedKey);
+		}
+	};
+
+	Learn.linkClick = function (e) {
+		e.preventDefault();
+
+		this.$el.search.val('');
+
+		var mobile = $(window).width() < 768;
+
+		if (!mobile) {
+			$('.popover').delay(200).animate({
+				left: -60,
+				opacity: 0
+			}, 1000, function () {
+				$(this).remove().css({ left: 'auto', opacity: 1 });
+			});
+
+			this.$el.mask.stop().fadeIn(1000).delay(1000).fadeOut(1000);
+		}
+
+		this.loadFramework($(e.currentTarget).data(this.key), { animate: true });
+	};
+
+	Learn.loadFromHash = function () {
+		var hashKey = window.location.hash.substr(1);
+
+		if (hashKey) {
+			this.loadFramework(hashKey);
+		}
+	};
+
+	Learn.init = function (container, options) {
+		$.getJSON(options.json)
+			.then($.proxy(this.saveJSON, this))
+			.then($.proxy(this.loadFromHash, this));
+
+		this.parser = /\{\{([^}]*)\}\}/g;
+
+		this.key = options.key;
+
+		this.$el = {};
+		this.$el.mask = options.mask;
+		this.$el.container = options.container;
+		this.$el.search = options.search;
+
+		this.$template = {};
+		this.$template.header = options.container.clone().children('ul, footer').remove().end()[0].outerHTML;
+		this.$template.links = options.container.children('ul').clone().find('a')[0].outerHTML;
+		this.$template.footer = options.container.children('footer')[0].outerHTML;
+
+		this.$el.search.on('keyup', $.proxy(this.searchKeyup, this));
+
+		container.on('click', '[data-' + this.key + ']', $.proxy(this.linkClick, this));
+	};
+
+	$.fn.learn = function (options) {
+		Learn.init(this, options);
+	};
+
 	// Redirect if not on main site.
 	redirect();
 
 	// Apps popover
-	$('.applist a').persistantPopover();
+	$('.applist a').persistantPopover({
+		minWidth: 768
+	});
+
+	$(document.body).learn({
+		key: 'learn',
+		json: 'learn.json',
+		mask: $('.mask'),
+		container: $('.learn'),
+		search: $('.search')
+	});
 
 	$('.gittip-amount').gittip('tastejs');
 
