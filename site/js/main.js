@@ -145,6 +145,85 @@
 		});
 	};
 
+	var learnKeys;
+	var learn = $.getJSON('learn.json', function (json) {
+		learnKeys = Object.keys(json);
+
+		var activeLearn = $('.learn');
+		var activeFramework;
+
+		var template = $('.learn').clone();
+		var linkTemplate = template.children('ul').clone();
+		var footer = template.children('footer')[0].outerHTML;
+
+		template.children('ul').remove();
+		template.children('footer').remove();
+
+		var match = /\{\{([^}]*)\}\}/g;
+
+		learn = function (framework) {
+			if (framework === activeFramework || !json[framework]) {
+				return;
+			}
+
+			activeLearn.fadeOut(function () {
+				var header = template.html().replace(match, function (match, key) {
+					return json[framework][key];
+				});
+
+				var links = $.map(json[framework]['link_groups'], function (link_group) {
+					return '<h4>' + link_group.heading + '</h4><ul>' + $.map(link_group.links, function (link) {
+						return '<li>' + linkTemplate.find('a')[0].outerHTML.replace(match, function (match, key) {
+							return link[key];
+						}) + '</li>';
+					}).join('')
+				+ '</ul>' }).join('');
+
+				activeLearn = activeLearn.html(header + links + footer);
+			}).fadeIn();
+
+			activeFramework = framework;
+		}
+	});
+
+	var search = function (framework) {
+		var pattern = framework.split('').reduce(function (a,b) {
+			return a + '.*' + b;
+		});
+
+		var match = learnKeys.join(' ').match(new RegExp(pattern));
+
+		if (match) {
+			return learnKeys.join(' ').substr(match.index).match(/^\w+/)[0];
+		}
+	};
+
+	$.fn.learn = function () {
+		$('.learn').hide();
+
+		$('.search').on('keyup', function (e) {
+			var searchKey = $.trim(this.value);
+
+			if (!searchKey) {
+				return;
+			}
+
+			var matchedKey = search(searchKey);
+
+			if (matchedKey) {
+				learn(matchedKey);
+			}
+		});
+
+		$(this).on('click', function (e) {
+			if ($.type(learn, 'function')) {
+				e.preventDefault();
+
+				learn($(this).data('learn-key'), $(this));
+			}
+		});
+	};
+
 	// Redirect if not on main site.
 	redirect();
 
@@ -152,6 +231,8 @@
 	$('.applist a').persistantPopover();
 
 	$('.gittip-amount').gittip('tastejs');
+
+	$('[data-learn-key]').learn();
 
 	// Quotes
 	$('.quotes').quote([{
