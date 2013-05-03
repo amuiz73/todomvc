@@ -32,6 +32,11 @@
 						on <strong>Gittip</strong>
 					</a>
 				</nav>
+				<aside>
+					<a href="https://twitter.com/tastejs" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false"></a>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="tastejs" data-url="http://todomvc.com" data-text="TodoMVC - Helping you select an MV* framework - Todo apps for Backbone.js, Ember.js, AngularJS, and more"></a>
+					<div class="g-plusone" data-size="medium" data-annotation="none" data-href="http://todomvc.com"></div>
+				</aside>
 			</div>
 			<div class="span4">
 				<img class="logo-icon" src="site/img/logo-icon.png" width="330" height="330" alt="TodoMVC">
@@ -39,22 +44,54 @@
 		</header>
 		<div class="row">
 			<div class="span4">
-				<h2>Introduction</h2>
-				<p>Developers these days are spoiled with choice when it comes to <a href="http://coding.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/">selecting</a> an <strong>MV* framework</strong> for structuring and organizing their JavaScript web apps.</p>
-				<p>Backbone, Ember, AngularJS, Spine... the list of new and stable solutions continues to grow, but just how do you decide on which to use in a sea of so many options?</p>
-				<p>To help solve this problem, we created <a href="https://github.com/addyosmani/todomvc">TodoMVC</a> - a project which offers the same Todo application implemented using MV* concepts in most of the popular JavaScript MV* frameworks of today.</p>
-				<a href="https://twitter.com/tastejs" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false"></a>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-via="tastejs" data-url="http://todomvc.com" data-text="TodoMVC - Helping you select an MV* framework - Todo apps for Backbone.js, Ember.js, AngularJS, and more"></a>
-				<div class="g-plusone" data-size="medium" data-annotation="none" data-href="http://todomvc.com"></div>
+				<form>
+					<h2>Find a Framework</h2>
+					<input type="text" class="search">
+				</form>
+				<section class="learn">
+					<header>
+						<h3>{{name}}</h3>
+						<a href="{{source_path}}">Demo</a>, <a href="https://github.com/addyosmani/todomvc/tree/gh-pages/{{source_path}}">Source Code</a>
+					</header>
+					<hr>
+					<blockquote class="quote speech-bubble">
+						<p>
+							{{description}}
+						</p>
+						<footer>
+							<a href="http://{{homepage}}">{{name}} - {{homepage}}</a>
+						</footer>
+					</blockquote>
+					<hr>
+					<ul>
+						<li>
+							<a href="{{url}}">{{name}}</a>
+						</li>
+					</ul>
+					<footer>
+						<hr>
+						<em>
+							If you have other helpful links to share, or find any of the links above no longer work, please <a href="https://github.com/addyosmani/todomvc/issues">let us know</a>.
+						</em>
+					</footer>
+				</section>
 			</div>
 			<div class="span8">
+				<section>
+					<h2>Introduction</h2>
+					<hr>
+					<p>Developers these days are spoiled with choice when it comes to <a href="http://coding.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/">selecting</a> an <strong>MV* framework</strong> for structuring and organizing their JavaScript web apps.</p>
+					<p>Backbone, Ember, AngularJS, Spine... the list of new and stable solutions continues to grow, but just how do you decide on which to use in a sea of so many options?</p>
+					<p>To help solve this problem, we created <a href="https://github.com/addyosmani/todomvc">TodoMVC</a> - a project which offers the same Todo application implemented using MV* concepts in most of the popular JavaScript MV* frameworks of today.</p>
+				</section>
+				<hr>
 				<h2>JavaScript Apps</h2>
 				<ul class="applist">
 					<li class="routing">
-						<a href="architecture-examples/backbone/" data-source="http://documentcloud.github.com/backbone/" data-content="Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.">Backbone.js</a>
+						<a href="architecture-examples/backbone/" data-learn-key="backbonejs" data-source="http://documentcloud.github.com/backbone/" data-content="Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.">Backbone.js</a>
 					</li>
 					<li class="routing">
-						<a href="architecture-examples/angularjs/" data-source="http://angularjs.org" data-content="What HTML would have been had it been designed for web apps">AngularJS</a>
+						<a href="architecture-examples/angularjs/" data-learn-key="angularjs" data-source="http://angularjs.org" data-content="What HTML would have been had it been designed for web apps">AngularJS</a>
 					</li>
 					<li class="routing">
 						<a href="architecture-examples/emberjs/" data-source="http://emberjs.com" data-content="Ember is a JavaScript framework for creating ambitious web applications that eliminates boilerplate and provides a standard application architecture.">Ember.js</a>
