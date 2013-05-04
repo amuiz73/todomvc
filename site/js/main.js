@@ -187,8 +187,8 @@
 	});
 
 	var search = function (framework) {
-		var pattern = framework.split('').reduce(function (a,b) {
-			return a + '.*' + b;
+		var pattern = framework.split('').reduce(function (a, b) {
+			return a + '[^\s]*' + b;
 		});
 
 		var match = learnKeys.join(' ').match(new RegExp(pattern));
