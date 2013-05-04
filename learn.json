@@ -5,7 +5,7 @@
 		"homepage": "agilityjs.com",
 		"source_path": "architecture-examples/agilityjs",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Official Documentation",
 				"url": "http://agilityjs.com/docs/docs.html"
@@ -17,13 +17,13 @@
 				"url": "http://agilityjs.com/docs/gallery.html"
 			}]
 		}, {
-			"heading": "Articles and guides from the community",
+			"heading": "Articles and Guides",
 			"links": [{
 				"name": "Step by step from jQuery to Agility.js",
 				"url": "https://gist.github.com/pindia/3166678"
 			}]
 		}, {
-			"heading": "Get help from other Agility.js users",
+			"heading": "Community",
 			"links": [{
 				"name": "Google Groups mailing list",
 				"url": "http://groups.google.com/group/agilityjs"
@@ -45,7 +45,7 @@
 		"homepage": "angularjs.com",
 		"source_path": "architecture-examples/angularjs",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Tutorial",
 				"url": "http://docs.angularjs.org/tutorial"
@@ -69,7 +69,7 @@
 				"url": "http://www.youtube.com/angularjs"
 			}]
 		}, {
-			"heading": "Articles and guides from the community",
+			"heading": "Articles and Guides",
 			"links": [{
 				"name": "Code School AngularJS course",
 				"url": "http://www.codeschool.com/code_tv/angularjs-part-1"
@@ -84,7 +84,7 @@
 				"url": "http://stephenplusplus.github.io/meangular"
 			}]
 		}, {
-			"heading": "Get help from other AngularJS users",
+			"heading": "Community",
 			"links": [{
 				"name": "Walkthroughs and Tutorials on YouTube",
 				"url": "http://www.youtube.com/playlist?list=PL1w1q3fL4pmgqpzb-XhG7Clgi67d_OHXz"
@@ -109,7 +109,7 @@
 		"homepage": "backbonejs.org",
 		"source_path": "architecture-examples/backbonejs",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Annotated source code",
 				"url": "http://backbonejs.org/docs/backbone.html"
@@ -121,7 +121,7 @@
 				"url": "http://backbonejs.org/#faq"
 			}]
 		}, {
-			"heading": "Articles and guides from the community",
+			"heading": "Articles and Guides",
 			"links": [{
 				"name": "Developing Backbone.js Applications",
 				"url": "http://addyosmani.github.io/backbone-fundamentals"
@@ -130,7 +130,7 @@
 				"url": "https://github.com/documentcloud/backbone/wiki/Tutorials%2C-blog-posts-and-example-sites"
 			}]
 		}, {
-			"heading": "Get help from other Backbone.js users",
+			"heading": "Community",
 			"links": [{
 				"name": "Backbone.js on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/backbone.js"
@@ -149,7 +149,7 @@
 		"homepage": "canjs.com",
 		"source_path": "architecture-examples/canjs",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Documentation",
 				"url": "http://donejs.com/docs.html#!canjs"
@@ -167,13 +167,13 @@
 				"url": "http://www.youtube.com/watch?v=GdT4Oq6ZQ68"
 			}]
 		}, {
-			"heading": "Articles and guides from the community",
+			"heading": "Articles and Guides",
 			"links": [{
 				"name": "Diving into CanJS",
 				"url": "http://net.tutsplus.com/tutorials/javascript-ajax/diving-into-canjs"
 			}]
 		}, {
-			"heading": "Get help from other CanJS users",
+			"heading": "Community",
 			"links": [{
 				"name": "CanJS on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/canjs"
@@ -192,7 +192,7 @@
 		"homepage": "developers.google.com/closure",
 		"source_path": "architecture-examples/closure",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Documentation",
 				"url": "https://developers.google.com/closure/library/docs/overview"
@@ -207,7 +207,7 @@
 				"url": "https://developers.google.com/closure/faq"
 			}]
 		}, {
-			"heading": "Articles and guides from the community",
+			"heading": "Articles and Guides",
 			"links": [{
 				"name": "Examples, walkthroughs, and articles",
 				"url": "http://www.googleclosure.com"
@@ -216,7 +216,7 @@
 				"url": "http://www.codeproject.com/Articles/265364/First-Adventures-in-Google-Closure"
 			}]
 		}, {
-			"heading": "Get help from other Closure Tools users",
+			"heading": "Community",
 			"links": [{
 				"name": "Google Groups mailing list",
 				"url": "https://groups.google.com/group/closure-library-discuss"
@@ -235,7 +235,7 @@
 		"homepage": "dartlang.org",
 		"source_path": "architecture-examples/dart",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Documentation",
 				"url": "http://www.dartlang.org/docs/technical-overview"
@@ -256,13 +256,13 @@
 				"url": "http://www.dartlang.org/support/faq.html"
 			}]
 		}, {
-			"heading": "Articles and guides from the community",
+			"heading": "Articles and Guides",
 			"links": [{
 				"name": "Getting started with Google Dart",
 				"url": "http://www.techrepublic.com/blog/webmaster/getting-started-with-google-dart/931"
 			}]
 		}, {
-			"heading": "Get help from other Dart users",
+			"heading": "Community",
 			"links": [{
 				"name": "Dart on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/dart"
@@ -281,7 +281,7 @@
 		"homepage": "dojotoolkit.org",
 		"source_path": "architecture-examples/dojo",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Documentation",
 				"url": "http://dojotoolkit.org/documentation"
@@ -296,13 +296,13 @@
 				"url": "http://dojotoolkit.org/blog"
 			}]
 		}, {
-			"heading": "Articles and guides from the community",
+			"heading": "Articles and Guides",
 			"links": [{
 				"name": "Getting StartED with Dojo",
 				"url": "http://startdojo.com"
 			}]
 		}, {
-			"heading": "Get help from other Dojo users",
+			"heading": "Community",
 			"links": [{
 				"name": "Dojo on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/dojo"
@@ -321,7 +321,7 @@
 		"homepage": "emberjs.com",
 		"source_path": "architecture-examples/emberjs",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Guides",
 				"url": "http://emberjs.com/guides"
@@ -339,7 +339,7 @@
 				"url": "http://emberjs.com/blog"
 			}]
 		}, {
-			"heading": "Articles and guides from the community",
+			"heading": "Articles and Guides",
 			"links": [{
 				"name": "Getting Into Ember.js",
 				"url": "http://net.tutsplus.com/tutorials/javascript-ajax/getting-into-ember-js"
@@ -348,7 +348,7 @@
 				"url": "http://emberwatch.com"
 			}]
 		}, {
-			"heading": "Get help from other Ember.js users",
+			"heading": "Community",
 			"links": [{
 				"name": "Ember.js on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/ember.js"
@@ -367,7 +367,7 @@
 		"homepage": "developers.google.com/web-toolkit",
 		"source_path": "architecture-examples/gwt",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Documentation",
 				"url": "https://developers.google.com/web-toolkit/doc/latest/DevGuide"
@@ -388,7 +388,7 @@
 				"url": "https://developers.google.com/web-toolkit/doc/latest/FAQ"
 			}]
 		}, {
-			"heading": "Get help from other Google Web Toolkit users",
+			"heading": "Community",
 			"links": [{
 				"name": "Google Web Toolkit on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/gwt"
@@ -407,7 +407,7 @@
 		"homepage": "jquery.com",
 		"source_path": "architecture-examples/jquery",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "How jQuery Works",
 				"url": "http://learn.jquery.com/about-jquery/how-jquery-works"
@@ -425,7 +425,7 @@
 				"url": "http://blog.jquery.com"
 			}]
 		}, {
-			"heading": "Articles and guides from the community",
+			"heading": "Articles and Guides",
 			"links": [{
 				"name": "Try jQuery",
 				"url": "http://try.jquery.com"
@@ -434,7 +434,7 @@
 				"url": "http://paulirish.com/2010/10-things-i-learned-from-the-jquery-source"
 			}]
 		}, {
-			"heading": "Get help from other jQuery users",
+			"heading": "Community",
 			"links": [{
 				"name": "jQuery on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/jquery"
@@ -456,7 +456,7 @@
 		"homepage": "kmalakoff.github.io/knockback",
 		"source_path": "architecture-examples/knockback",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Getting Started with Knockback.js",
 				"url": "http://kmalakoff.github.io/knockback/getting_started_introduction.html"
@@ -481,7 +481,7 @@
 		"homepage": "knockoutjs.com",
 		"source_path": "architecture-examples/knockoutjs",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Documentation",
 				"url": "http://knockoutjs.com/documentation/introduction.html"
@@ -493,7 +493,7 @@
 				"url": "http://knockoutjs.com/examples"
 			}]
 		}, {
-			"heading": "Articles and guides from the community",
+			"heading": "Articles and Guides",
 			"links": [{
 				"name": "Getting Started with Knockout.js",
 				"url": "http://www.adobe.com/devnet/html5/articles/getting-started-with-knockoutjs.html"
@@ -505,7 +505,7 @@
 				"url": "http://www.sitepoint.com/beginners-guide-to-knockoutjs-part-1"
 			}]
 		}, {
-			"heading": "Get help from other Knockout.js users",
+			"heading": "Community",
 			"links": [{
 				"name": "Knockout.js on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/knockout"
@@ -527,7 +527,7 @@
 		"homepage": "peter.michaux.ca/maria",
 		"source_path": "architecture-examples/maria",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Quick Start Tutorial",
 				"url": "http://peter.michaux.ca/maria/quick-start-tutorial-for-the-impatient.html"
@@ -546,7 +546,7 @@
 		"homepage": "spinejs.com",
 		"source_path": "architecture-examples/spine",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Documentation",
 				"url": "http://spinejs.com/docs/"
@@ -558,13 +558,13 @@
 				"url": "http://spinejs.com/api/index"
 			}]
 		}, {
-			"heading": "Articles and guides from the community",
+			"heading": "Articles and Guides",
 			"links": [{
 				"name": "Building JavaScript Web Apps With MVC & Spine.js",
 				"url": "http://addyosmani.com/blog/building-apps-spinejs"
 			}]
 		}, {
-			"heading": "Get help from other Spine.js users",
+			"heading": "Community",
 			"links": [{
 				"name": "Spine on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/spine.js"
@@ -583,7 +583,7 @@
 		"homepage": "yuilibrary.com",
 		"source_path": "architecture-examples/yui",
 		"link_groups": [{
-			"heading": "Official resources you may find helpful",
+			"heading": "Official Resources",
 			"links": [{
 				"name": "Documentation",
 				"url": "http://yuilibrary.com/yui/docs"
@@ -601,7 +601,7 @@
 				"url": "http://yuiblog.com"
 			}]
 		}, {
-			"heading": "Get help from other YUI users",
+			"heading": "Community",
 			"links": [{
 				"name": "YUI on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/yui"

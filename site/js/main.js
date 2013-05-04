@@ -161,7 +161,7 @@
 
 		var match = /\{\{([^}]*)\}\}/g;
 
-		learn = function (framework) {
+		learn = function (framework, mobile) {
 			if (framework === activeFramework || !json[framework]) {
 				return;
 			}
@@ -182,7 +182,18 @@
 				activeLearn = activeLearn.html(header + links + footer);
 			}).fadeIn();
 
+			if (mobile) {
+				$(document.body).scrollTop(activeLearn.offset().top - 10);
+			}
+
 			activeFramework = framework;
+			window.location.hash = framework;
+		}
+	}).then(function () {
+		var hashKey = window.location.hash.substr(1);
+
+		if (hashKey) {
+			learn(hashKey);
 		}
 	});
 
@@ -198,10 +209,24 @@
 		}
 	};
 
-	$.fn.learn = function () {
-		$('.learn').hide();
+	$.fn.learn = function (options) {
+		options.container.hide();
 
-		$('.search').on('keyup', function (e) {
+		$(this).on('click', function (e) {
+			if ($.type(learn) === 'function') {
+				e.preventDefault();
+
+				var mobile = $(window).width() < 768;
+
+				if (!mobile) {
+					options.mask.fadeIn(1000).delay(1000).fadeOut();
+				}
+
+				learn($(this).data('learn-key'), mobile);
+			}
+		});
+
+		options.search.on('keyup', function (e) {
 			var searchKey = $.trim(this.value);
 
 			if (!searchKey) {
@@ -214,14 +239,6 @@
 				learn(matchedKey);
 			}
 		});
-
-		$(this).on('click', function (e) {
-			if ($.type(learn, 'function')) {
-				e.preventDefault();
-
-				learn($(this).data('learn-key'));
-			}
-		});
 	};
 
 	// Redirect if not on main site.
@@ -232,7 +249,11 @@
 
 	$('.gittip-amount').gittip('tastejs');
 
-	$('[data-learn-key]').learn();
+	$('[data-learn-key]').learn({
+		mask: $('.mask'),
+		container: $('.learn'),
+		search: $('.search')
+	});
 
 	// Quotes
 	$('.quotes').quote([{

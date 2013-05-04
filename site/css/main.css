@@ -53,8 +53,10 @@ p {
 	font-weight: 300;
 }
 
-input {
-	width: 95%;
+input[type="text"] {
+	box-sizing: border-box;
+  width: 100%;
+  padding: 14px 6px;
 }
 
 hr {
@@ -112,6 +114,16 @@ header nav a:not(:last-child) {
 	font-size: 21px;
 	font-style: italic;
 	margin-top: 40px;
+}
+
+.mask {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(55, 55, 55, .15);
 }
 
 .container {
@@ -314,7 +326,7 @@ p .label {
 
 .learn .speech-bubble:after {
 	left: auto;
-	right: 70px;
+	right: 30px;
 }
 
 .speech-bubble:after {
@@ -378,6 +390,8 @@ a.zocial {
 }
 
 .learn {
+	position: relative;
+	z-index: 2;
 	background-color: rgba(255, 255, 255, .6);
 	border-radius: 5px;
 	padding: 10px;
@@ -405,10 +419,6 @@ a.zocial {
 		margin-top: 20px;
 	}
 
-	input {
-		width: 97%;
-	}
-
 	.row,
 	.credit {
 		margin-left: 10px;
@@ -423,6 +433,7 @@ a.zocial {
 	.logo-icon {
 		display: none;
 	}
+
 
 	.container {
 		margin: auto;
