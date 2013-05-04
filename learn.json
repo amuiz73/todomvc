@@ -3,7 +3,10 @@
 		"name": "Agility.js",
 		"description": "Agility.js is an MVC library for Javascript that lets you write maintainable and reusable browser code without the verbose or infrastructural overhead found in other MVC libraries. The goal is to enable developers to write web apps at least as quickly as with jQuery, while simplifying long-term maintainability through MVC objects.",
 		"homepage": "agilityjs.com",
-		"source_path": "architecture-examples/agilityjs",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/agilityjs"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -43,7 +46,10 @@
 		"name": "AngularJS",
 		"description": "HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.",
 		"homepage": "angularjs.com",
-		"source_path": "architecture-examples/angularjs",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/angularjs"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -107,7 +113,13 @@
 		"name": "Backbone.js",
 		"description": "Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.",
 		"homepage": "backbonejs.org",
-		"source_path": "architecture-examples/backbonejs",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/backbonejs"
+		}, {
+			"name": "Dependency Example",
+			"url": "dependency-examples/backbone_require"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -147,7 +159,10 @@
 		"name": "CanJS",
 		"description": "CanJS is a MIT-licensed, client-side, JavaScript framework that makes building rich web applications easy.",
 		"homepage": "canjs.com",
-		"source_path": "architecture-examples/canjs",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/canjs"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -190,7 +205,10 @@
 		"name": "Closure Tools",
 		"description": "The Closure Tools project is an effort by Google engineers to open source the tools used in many of Google's sites and web applications for use by the wider Web development community.",
 		"homepage": "developers.google.com/closure",
-		"source_path": "architecture-examples/closure",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/closure"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -233,7 +251,10 @@
 		"name": "Dart",
 		"description": "Dart is a class-based, object-oriented language with lexical scoping, closures, and optional static typing. Dart helps you build structured modern web apps and is easy to learn for a wide range of developers.",
 		"homepage": "dartlang.org",
-		"source_path": "architecture-examples/dart",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/dart"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -279,7 +300,10 @@
 		"name": "Dojo",
 		"description": "Dojo saves you time and scales with your development process, using web standards as its platform. It’s the toolkit experienced developers turn to for building high quality desktop and mobile web applications.",
 		"homepage": "dojotoolkit.org",
-		"source_path": "architecture-examples/dojo",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/dojo"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -319,7 +343,13 @@
 		"name": "Ember.js",
 		"description": "A framework for creating ambitious web applications.",
 		"homepage": "emberjs.com",
-		"source_path": "architecture-examples/emberjs",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/emberjs"
+		}, {
+			"name": "Dependency Example",
+			"url": "dependency-examples/emberjs_require"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -361,11 +391,39 @@
 			}]
 		}]
 	},
+	"flight": {
+		"name": "Flight",
+		"description": "Flight is a lightweight, component-based JavaScript framework that maps behavior to DOM nodes.",
+		"homepage": "twitter.github.io/flight",
+		"source_path": [{
+			"name": "Dependency Example",
+			"url": "dependency-examples/flight"
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "GitHub",
+				"url": "https://github.com/twitter/flight"
+			}, {
+				"name": "Demo Application",
+				"url": "http://twitter.github.com/flight/demo"
+			}, {
+				"name": "Installation",
+				"url": "https://github.com/twitter/flight/blob/master/README.md#installation"
+			}, {
+				"name": "Flight on Twitter",
+				"url": "http://twitter.com/flight"
+			}]
+		}]
+	},
 	"gwt": {
 		"name": "Google Web Toolkit",
 		"description": "Google Web Toolkit (GWT) is a development toolkit for building and optimizing complex browser-based applications. GWT is used by many products at Google, including Google AdWords and Orkut. It's open source, completely free, and used by thousands of developers around the world.",
 		"homepage": "developers.google.com/web-toolkit",
-		"source_path": "architecture-examples/gwt",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/gwt"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -405,7 +463,10 @@
 		"name": "jQuery",
 		"description": "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.",
 		"homepage": "jquery.com",
-		"source_path": "architecture-examples/jquery",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/jquery"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -454,7 +515,10 @@
 		"name": "Knockback.js",
 		"description": "Both Knockout.js and Backbone.js have their strengths and weaknesses, but together they are amazing! With Knockback.js, you can use the strong ORM provided by Backbone and create dynamic views using Knockout bindings.",
 		"homepage": "kmalakoff.github.io/knockback",
-		"source_path": "architecture-examples/knockback",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/knockback"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -479,7 +543,10 @@
 		"name": "Knockout.js",
 		"description": "Knockout.js helps you simplify dynamic JavaScript UIs using the Model-View-ViewModel (MVVM) pattern.",
 		"homepage": "knockoutjs.com",
-		"source_path": "architecture-examples/knockoutjs",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/knockoutjs"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -525,7 +592,10 @@
 		"name": "Maria",
 		"description": "The MVC framework for JavaScript applications. The real MVC. The Smalltalk MVC. The Gang of Four MVC.",
 		"homepage": "peter.michaux.ca/maria",
-		"source_path": "architecture-examples/maria",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/maria"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -544,7 +614,10 @@
 		"name": "Spine.js",
 		"description": "Build Awesome JavaScript MVC Applications.",
 		"homepage": "spinejs.com",
-		"source_path": "architecture-examples/spine",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/spine"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
@@ -581,7 +654,10 @@
 		"name": "YUI",
 		"description": "YUI is a free, open source JavaScript and CSS library for building richly interactive web applications.",
 		"homepage": "yuilibrary.com",
-		"source_path": "architecture-examples/yui",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "architecture-examples/yui"
+		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{

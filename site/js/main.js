@@ -167,19 +167,29 @@
 			}
 
 			activeLearn.fadeOut(function () {
-				var header = template.html().replace(match, function (match, key) {
+				var body = $(template[0].outerHTML.replace(match, function (match, key) {
 					return json[framework][key];
-				});
+				}));
 
-				var links = $.map(json[framework]['link_groups'], function (link_group) {
-					return '<h4>' + link_group.heading + '</h4><ul>' + $.map(link_group.links, function (link) {
+				body.find('.source-links').html($.map(json[framework]['source_path'], function (source_path) {
+					var demoLink = ': <a href="' + source_path.url + '">Demo</a> ';
+					var sourceLink = '<a href="https://github.com/addyosmani/todomvc/tree/gh-pages/' + source_path.url +'">Source</a>';
+					return '<h5>' + source_path.name + demoLink + sourceLink + '</h5>';
+				}).join(''));
+
+				body.append($.map(json[framework]['link_groups'], function (link_group) {
+					var links = '<h4>' + link_group.heading + '</h4>';
+					links += '<ul>';
+					links += $.map(link_group.links, function (link) {
 						return '<li>' + linkTemplate.find('a')[0].outerHTML.replace(match, function (match, key) {
 							return link[key];
 						}) + '</li>';
-					}).join('')
-				+ '</ul>' }).join('');
+					}).join('');
+					links += '</ul>';
+					return links;
+				}).join(''));
 
-				activeLearn = activeLearn.html(header + links + footer);
+				activeLearn = activeLearn.html(body.html());
 			}).fadeIn();
 
 			if (mobile) {
@@ -221,7 +231,7 @@
 				var mobile = $(window).width() < 768;
 
 				if (!mobile) {
-					options.mask.fadeIn(1000).delay(1000).fadeOut();
+					options.mask.stop().fadeIn(1000).delay(1000).fadeOut();
 				}
 
 				learn($(this).data('learn-key'), mobile);
