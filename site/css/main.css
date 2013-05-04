@@ -397,6 +397,19 @@ a.zocial {
 	padding: 10px;
 }
 
+.learn h5 {
+	margin-bottom: 0;
+}
+
+.learn p {
+	margin-top: 0;
+	font-size: 15px;
+}
+
+.learn a {
+	font-size: 90%;
+	font-weight: normal;
+}
 
 @media (max-width: 480px) {
 	body .applist {
