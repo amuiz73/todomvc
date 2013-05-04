@@ -1,13 +1,13 @@
 # Knockout.js TodoMVC Example
 
-> knockout.js helps you simplify dynamic JavaScript UIs using the Model-View-ViewModel (MVVM) pattern.
+> Knockout.js helps you simplify dynamic JavaScript UIs using the Model-View-ViewModel (MVVM) pattern.
 
 > _[Knockout.js - knockoutjs.com](http://knockoutjs.com)_
 
 
 ## Learning Knockout.js
 
-The [Knockout.js website]() is a great resource for getting started.
+The [Knockout.js website](http://knockoutjs.com) is a great resource for getting started.
 
 Here are some links you may find helpful:
 

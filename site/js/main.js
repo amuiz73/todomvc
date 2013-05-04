@@ -188,7 +188,7 @@
 
 	var search = function (framework) {
 		var pattern = framework.split('').reduce(function (a, b) {
-			return a + '[^\s]*' + b;
+			return a + '[^\\s]*' + b;
 		});
 
 		var match = learnKeys.join(' ').match(new RegExp(pattern));
@@ -219,7 +219,7 @@
 			if ($.type(learn, 'function')) {
 				e.preventDefault();
 
-				learn($(this).data('learn-key'), $(this));
+				learn($(this).data('learn-key'));
 			}
 		});
 	};
