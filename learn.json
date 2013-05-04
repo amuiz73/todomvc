@@ -142,5 +142,476 @@
 				"url": "http://twitter.com/documentcloud"
 			}]
 		}]
+	},
+	"canjs": {
+		"name": "CanJS",
+		"description": "CanJS is a MIT-licensed, client-side, JavaScript framework that makes building rich web applications easy.",
+		"homepage": "canjs.com",
+		"source_path": "architecture-examples/canjs",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "Documentation",
+				"url": "http://donejs.com/docs.html#!canjs"
+			}, {
+				"name": "Why CanJS",
+				"url": "http://canjs.com/#why_canjs"
+			}, {
+				"name": "Applications built with CanJS",
+				"url": "http://canjs.com/#examples"
+			}, {
+				"name": "Blog",
+				"url": "http://bitovi.com/blog/tag/canjs"
+			}, {
+				"name": "Getting started video",
+				"url": "http://www.youtube.com/watch?v=GdT4Oq6ZQ68"
+			}]
+		}, {
+			"heading": "Articles and guides from the community",
+			"links": [{
+				"name": "Diving into CanJS",
+				"url": "http://net.tutsplus.com/tutorials/javascript-ajax/diving-into-canjs"
+			}]
+		}, {
+			"heading": "Get help from other CanJS users",
+			"links": [{
+				"name": "CanJS on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/canjs"
+			}, {
+				"name": "CanJS Forums",
+				"url": "http://forum.javascriptmvc.com/#Forum/canjs"
+			}, {
+				"name": "CanJS on Twitter",
+				"url": "http://twitter.com/canjs"
+			}]
+		}]
+	},
+	"closure": {
+		"name": "Closure Tools",
+		"description": "The Closure Tools project is an effort by Google engineers to open source the tools used in many of Google's sites and web applications for use by the wider Web development community.",
+		"homepage": "developers.google.com/closure",
+		"source_path": "architecture-examples/closure",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "Documentation",
+				"url": "https://developers.google.com/closure/library/docs/overview"
+			}, {
+				"name": "API Reference",
+				"url": "http://docs.closure-library.googlecode.com/git/index.html"
+			}, {
+				"name": "Blog",
+				"url": "http://closuretools.blogspot.com"
+			}, {
+				"name": "FAQ",
+				"url": "https://developers.google.com/closure/faq"
+			}]
+		}, {
+			"heading": "Articles and guides from the community",
+			"links": [{
+				"name": "Examples, walkthroughs, and articles",
+				"url": "http://www.googleclosure.com"
+			}, {
+				"name": "First Adventure in Google Closure",
+				"url": "http://www.codeproject.com/Articles/265364/First-Adventures-in-Google-Closure"
+			}]
+		}, {
+			"heading": "Get help from other Closure Tools users",
+			"links": [{
+				"name": "Google Groups mailing list",
+				"url": "https://groups.google.com/group/closure-library-discuss"
+			}, {
+				"name": "Closure Tools on Twitter",
+				"url": "http://twitter.com/closuretools"
+			}, {
+				"name": "Closure Tools on Google +",
+				"url": "https://plus.google.com/communities/113969319608324762672"
+			}]
+		}]
+	},
+	"dart": {
+		"name": "Dart",
+		"description": "Dart is a class-based, object-oriented language with lexical scoping, closures, and optional static typing. Dart helps you build structured modern web apps and is easy to learn for a wide range of developers.",
+		"homepage": "dartlang.org",
+		"source_path": "architecture-examples/dart",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "Documentation",
+				"url": "http://www.dartlang.org/docs/technical-overview"
+			}, {
+				"name": "API Reference",
+				"url": "http://api.dartlang.org/docs/releases/latest"
+			}, {
+				"name": "A Tour of the Dart Language",
+				"url": "http://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html"
+			}, {
+				"name": "Articles",
+				"url": "http://www.dartlang.org/articles"
+			}, {
+				"name": "Tutorials",
+				"url": "http://www.dartlang.org/docs/tutorials"
+			}, {
+				"name": "FAQ",
+				"url": "http://www.dartlang.org/support/faq.html"
+			}]
+		}, {
+			"heading": "Articles and guides from the community",
+			"links": [{
+				"name": "Getting started with Google Dart",
+				"url": "http://www.techrepublic.com/blog/webmaster/getting-started-with-google-dart/931"
+			}]
+		}, {
+			"heading": "Get help from other Dart users",
+			"links": [{
+				"name": "Dart on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/dart"
+			}, {
+				"name": "Dart on Twitter",
+				"url": "http://twitter.com/dart_lang"
+			}, {
+				"name": "Dart on Google +",
+				"url": "https://plus.google.com/+dartlang/posts"
+			}]
+		}]
+	},
+	"dojo": {
+		"name": "Dojo",
+		"description": "Dojo saves you time and scales with your development process, using web standards as its platform. It’s the toolkit experienced developers turn to for building high quality desktop and mobile web applications.",
+		"homepage": "dojotoolkit.org",
+		"source_path": "architecture-examples/dojo",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "Documentation",
+				"url": "http://dojotoolkit.org/documentation"
+			}, {
+				"name": "Getting started guide",
+				"url": "https://dojotoolkit.org/reference-guide/1.8/quickstart"
+			}, {
+				"name": "API Reference",
+				"url": "http://dojotoolkit.org/api"
+			}, {
+				"name": "Blog",
+				"url": "http://dojotoolkit.org/blog"
+			}]
+		}, {
+			"heading": "Articles and guides from the community",
+			"links": [{
+				"name": "Getting StartED with Dojo",
+				"url": "http://startdojo.com"
+			}]
+		}, {
+			"heading": "Get help from other Dojo users",
+			"links": [{
+				"name": "Dojo on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/dojo"
+			}, {
+				"name": "Mailing list",
+				"url": "http://dojotoolkit.org/community"
+			}, {
+				"name": "Dojo on Twitter",
+				"url": "http://twitter.com/dojo"
+			}]
+		}]
+	},
+	"emberjs": {
+		"name": "Ember.js",
+		"description": "A framework for creating ambitious web applications.",
+		"homepage": "emberjs.com",
+		"source_path": "architecture-examples/emberjs",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "Guides",
+				"url": "http://emberjs.com/guides"
+			}, {
+				"name": "API Reference",
+				"url": "http://emberjs.com/api"
+			}, {
+				"name": "Screencast - Building an App with Ember.js",
+				"url": "https://www.youtube.com/watch?v=Ga99hMi7wfY"
+			}, {
+				"name": "Applications built with Ember.js",
+				"url": "http://emberjs.com/ember-users"
+			}, {
+				"name": "Blog",
+				"url": "http://emberjs.com/blog"
+			}]
+		}, {
+			"heading": "Articles and guides from the community",
+			"links": [{
+				"name": "Getting Into Ember.js",
+				"url": "http://net.tutsplus.com/tutorials/javascript-ajax/getting-into-ember-js"
+			}, {
+				"name": "EmberWatch",
+				"url": "http://emberwatch.com"
+			}]
+		}, {
+			"heading": "Get help from other Ember.js users",
+			"links": [{
+				"name": "Ember.js on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/ember.js"
+			}, {
+				"name": "Ember.js on Twitter",
+				"url": "http://twitter.com/emberjs"
+			}, {
+				"name": "Ember.js on Google +",
+				"url": "https://plus.google.com/communities/106387049790387471205"
+			}]
+		}]
+	},
+	"gwt": {
+		"name": "Google Web Toolkit",
+		"description": "Google Web Toolkit (GWT) is a development toolkit for building and optimizing complex browser-based applications. GWT is used by many products at Google, including Google AdWords and Orkut. It's open source, completely free, and used by thousands of developers around the world.",
+		"homepage": "developers.google.com/web-toolkit",
+		"source_path": "architecture-examples/gwt",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "Documentation",
+				"url": "https://developers.google.com/web-toolkit/doc/latest/DevGuide"
+			}, {
+				"name": "Getting Started with the GWT SDK",
+				"url": "https://developers.google.com/web-toolkit/gettingstarted"
+			}, {
+				"name": "Articles",
+				"url": "https://developers.google.com/web-toolkit/articles"
+			}, {
+				"name": "Case Studies",
+				"url": "https://developers.google.com/web-toolkit/casestudies"
+			}, {
+				"name": "Blog",
+				"url": "http://googlewebtoolkit.blogspot.com"
+			}, {
+				"name": "FAQ",
+				"url": "https://developers.google.com/web-toolkit/doc/latest/FAQ"
+			}]
+		}, {
+			"heading": "Get help from other Google Web Toolkit users",
+			"links": [{
+				"name": "Google Web Toolkit on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/gwt"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": "http://groups.google.com/group/Google-Web-Toolkit"
+			}, {
+				"name": "Google Web Toolkit on Twitter",
+				"url": "http://twitter.com/googledevtools"
+			}]
+		}]
+	},
+	"jquery": {
+		"name": "jQuery",
+		"description": "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.",
+		"homepage": "jquery.com",
+		"source_path": "architecture-examples/jquery",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "How jQuery Works",
+				"url": "http://learn.jquery.com/about-jquery/how-jquery-works"
+			}, {
+				"name": "API Reference",
+				"url": "http://api.jquery.com"
+			}, {
+				"name": "Plugins",
+				"url": "http://plugins.jquery.com"
+			}, {
+				"name": "Brower Support",
+				"url": "http://jquery.com/browser-support"
+			}, {
+				"name": "Blog",
+				"url": "http://blog.jquery.com"
+			}]
+		}, {
+			"heading": "Articles and guides from the community",
+			"links": [{
+				"name": "Try jQuery",
+				"url": "http://try.jquery.com"
+			}, {
+				"name": "10 Things I Learned From the jQuery Source",
+				"url": "http://paulirish.com/2010/10-things-i-learned-from-the-jquery-source"
+			}]
+		}, {
+			"heading": "Get help from other jQuery users",
+			"links": [{
+				"name": "jQuery on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/jquery"
+			}, {
+				"name": "Forums",
+				"url": "http://forum.jquery.com"
+			}, {
+				"name": "jQuery on Twitter",
+				"url": "http://twitter.com/jquery"
+			}, {
+				"name": "jQuery on Google +",
+				"url": "https://plus.google.com/102828491884671003608/posts"
+			}]
+		}]
+	},
+	"knockback": {
+		"name": "Knockback.js",
+		"description": "Both Knockout.js and Backbone.js have their strengths and weaknesses, but together they are amazing! With Knockback.js, you can use the strong ORM provided by Backbone and create dynamic views using Knockout bindings.",
+		"homepage": "kmalakoff.github.io/knockback",
+		"source_path": "architecture-examples/knockback",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "Getting Started with Knockback.js",
+				"url": "http://kmalakoff.github.io/knockback/getting_started_introduction.html"
+			}, {
+				"name": "Tutorials",
+				"url": "http://kmalakoff.github.io/knockback/tutorials_introduction.html"
+			}, {
+				"name": "API Reference",
+				"url": "http://kmalakoff.github.io/knockback/doc/index.html"
+			}, {
+				"name": "Knockback.js Reference App",
+				"url": "http://kmalakoff.github.io/knockback/app_knockback_reference.html"
+			}, {
+				"name": "Knockback.js on Twitter",
+				"url": "http://twitter.com/knockbackjs"
+			}]
+		}]
+	},
+	"knockoutjs": {
+		"name": "Knockout.js",
+		"description": "Knockout.js helps you simplify dynamic JavaScript UIs using the Model-View-ViewModel (MVVM) pattern.",
+		"homepage": "knockoutjs.com",
+		"source_path": "architecture-examples/knockoutjs",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "Documentation",
+				"url": "http://knockoutjs.com/documentation/introduction.html"
+			}, {
+				"name": "Tutorials",
+				"url": "http://learn.knockoutjs.com"
+			}, {
+				"name": "Live examples",
+				"url": "http://knockoutjs.com/examples"
+			}]
+		}, {
+			"heading": "Articles and guides from the community",
+			"links": [{
+				"name": "Getting Started with Knockout.js",
+				"url": "http://www.adobe.com/devnet/html5/articles/getting-started-with-knockoutjs.html"
+			}, {
+				"name": "Into the Ring with Knockout.js",
+				"url": "http://net.tutsplus.com/tutorials/javascript-ajax/into-the-ring-with-knockout-js"
+			}, {
+				"name": "Beginners Guide to Knockout.js",
+				"url": "http://www.sitepoint.com/beginners-guide-to-knockoutjs-part-1"
+			}]
+		}, {
+			"heading": "Get help from other Knockout.js users",
+			"links": [{
+				"name": "Knockout.js on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/knockout"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": "http://groups.google.com/group/knockoutjs"
+			}, {
+				"name": "Knockout.js on Twitter",
+				"url": "http://twitter.com/knockoutjs"
+			}, {
+				"name": "Knockout.js on Google +",
+				"url": "https://plus.google.com/communities/106789046312204355684/stream/c5bfcfdf-3690-44a6-b015-35aad4f4e42e"
+			}]
+		}]
+	},
+	"maria": {
+		"name": "Maria",
+		"description": "The MVC framework for JavaScript applications. The real MVC. The Smalltalk MVC. The Gang of Four MVC.",
+		"homepage": "peter.michaux.ca/maria",
+		"source_path": "architecture-examples/maria",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "Quick Start Tutorial",
+				"url": "http://peter.michaux.ca/maria/quick-start-tutorial-for-the-impatient.html"
+			}, {
+				"name": "API Reference",
+				"url": "http://peter.michaux.ca/maria/api/maria.html"
+			}, {
+				"name": "GitHub",
+				"url": "https://github.com/petermichaux/maria"
+			}]
+		}]
+	},
+	"spine": {
+		"name": "Spine.js",
+		"description": "Build Awesome JavaScript MVC Applications.",
+		"homepage": "spinejs.com",
+		"source_path": "architecture-examples/spine",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "Documentation",
+				"url": "http://spinejs.com/docs/"
+			}, {
+				"name": "Step by Step Tutorials",
+				"url": "http://spinejs.com/docs/example"
+			}, {
+				"name": "API Reference",
+				"url": "http://spinejs.com/api/index"
+			}]
+		}, {
+			"heading": "Articles and guides from the community",
+			"links": [{
+				"name": "Building JavaScript Web Apps With MVC & Spine.js",
+				"url": "http://addyosmani.com/blog/building-apps-spinejs"
+			}]
+		}, {
+			"heading": "Get help from other Spine.js users",
+			"links": [{
+				"name": "Spine on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/spine.js"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": "https://groups.google.com/forum/#!forum/spinejs"
+			}, {
+				"name": "Spine's author, Alex MacCaw, on Twitter",
+				"url": "http://twitter.com/maccman"
+			}]
+		}]
+	},
+	"yui": {
+		"name": "YUI",
+		"description": "YUI is a free, open source JavaScript and CSS library for building richly interactive web applications.",
+		"homepage": "yuilibrary.com",
+		"source_path": "architecture-examples/yui",
+		"link_groups": [{
+			"heading": "Official resources you may find helpful",
+			"links": [{
+				"name": "Documentation",
+				"url": "http://yuilibrary.com/yui/docs"
+			}, {
+				"name": "Quick Start",
+				"url": "http://yuilibrary.com/yui/quick-start"
+			}, {
+				"name": "Tutorials",
+				"url": "http://yuilibrary.com/yui/docs/tutorials"
+			}, {
+				"name": "Examples",
+				"url": "http://yuilibrary.com/yui/docs/examples"
+			}, {
+				"name": "Blog",
+				"url": "http://yuiblog.com"
+			}]
+		}, {
+			"heading": "Get help from other YUI users",
+			"links": [{
+				"name": "YUI on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/yui"
+			}, {
+				"name": "Forms",
+				"url": "http://yuilibrary.com/forum"
+			}, {
+				"name": "YUI on Twitter",
+				"url": "http://twitter.com/yuilibrary"
+			}]
+		}]
 	}
 }
