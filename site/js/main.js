@@ -228,7 +228,7 @@
 	redirect();
 
 	// Apps popover
-	$('.applist a').persistantPopover();
+	// $('.applist a').persistantPopover();
 
 	$('.gittip-amount').gittip('tastejs');
 

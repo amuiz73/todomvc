@@ -90,7 +90,7 @@
 				"url": "https://github.com/documentcloud/backbone/wiki/Tutorials%2C-blog-posts-and-example-sites"
 			}]
 		}, {
-			"heading": "Get help from other AngularJS users",
+			"heading": "Get help from other Backbone.js users",
 			"links": [{
 				"name": "Backbone.js on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/backbone.js"
