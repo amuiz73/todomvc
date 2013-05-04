@@ -49,6 +49,15 @@
 		"source_path": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/angularjs"
+		}, {
+			"name": "Dependency Example",
+			"url": "labs/dependency-examples/angularjs_require"
+		}, {
+			"name": "AngularJS Optimized",
+			"url": "architecture-examples/angularjs-perf"
+		}, {
+			"name": "TypeScript + AngularJS",
+			"url": "labs/architecture-examples/typescript-angular"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
@@ -119,6 +128,12 @@
 		}, {
 			"name": "Dependency Example",
 			"url": "dependency-examples/backbone_require"
+		}, {
+			"name": "Enyo + Backbone.js",
+			"url": "labs/dependency-examples/enyo_backbone"
+		}, {
+			"name": "TypeScript + Backbone.js",
+			"url": "labs/architecture-examples/typescript-backbone"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
@@ -162,6 +177,9 @@
 		"source_path": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/canjs"
+		}, {
+			"name": "Dependency Example",
+			"url": "labs/dependency-examples/canjs_require"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
@@ -546,6 +564,9 @@
 		"source_path": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/knockoutjs"
+		}, {
+			"name": "Dependency Example",
+			"url": "labs/dependency-examples/knockoutjs_require"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",

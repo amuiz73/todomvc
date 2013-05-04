@@ -172,9 +172,9 @@
 				}));
 
 				body.find('.source-links').html($.map(json[framework]['source_path'], function (source_path) {
-					var demoLink = ': <a href="' + source_path.url + '">Demo</a> ';
-					var sourceLink = '<a href="https://github.com/addyosmani/todomvc/tree/gh-pages/' + source_path.url +'">Source</a>';
-					return '<h5>' + source_path.name + demoLink + sourceLink + '</h5>';
+					var demoLink = '<a href="' + source_path.url + '">Demo</a>, ';
+					var sourceLink = ' <a href="https://github.com/addyosmani/todomvc/tree/gh-pages/' + source_path.url +'">Source</a>';
+					return '<h5>' + source_path.name + '</h5><p>' + demoLink + sourceLink + '</p>';
 				}).join(''));
 
 				body.append($.map(json[framework]['link_groups'], function (link_group) {
@@ -231,7 +231,7 @@
 				var mobile = $(window).width() < 768;
 
 				if (!mobile) {
-					options.mask.stop().fadeIn(1000).delay(1000).fadeOut();
+					options.mask.stop().fadeIn(1000).delay(1000).fadeOut(1000);
 				}
 
 				learn($(this).data('learn-key'), mobile);
