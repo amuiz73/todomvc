@@ -145,113 +145,132 @@
 		});
 	};
 
-	var learnKeys;
-	var learn = $.getJSON('learn.json', function (json) {
-		learnKeys = Object.keys(json);
+	var Learn = {};
+	Learn.saveJson = function (json) {
+		this.frameworks = json;
+		this.haystack = Object.keys(json).join(' ');
+	};
 
-		var activeLearn = $('.learn');
-		var activeFramework;
+	Learn.parseTemplate = function () {
+		var framework = this.frameworks[this.activeFramework];
+		var linksTemplate = this.$template.links;
+		var parser = this.parser;
 
-		var template = $('.learn').clone();
-		var linkTemplate = template.children('ul').clone();
-		var footer = template.children('footer')[0].outerHTML;
+		var body = $(this.$template.header.replace(parser, function (match, key) {
+			return framework[key];
+		}));
 
-		template.children('ul, footer').remove();
+		body.find('.source-links').html($.map(framework.source_path, function (sourcePath) {
+			var demoLink = '<a href="' + sourcePath.url + '">Demo</a>, ';
+			var sourceLink = ' <a href="https://github.com/addyosmani/todomvc/tree/gh-pages/' + sourcePath.url + '">Source</a>';
+			return '<h5>' + sourcePath.name + '</h5><p>' + demoLink + sourceLink + '</p>';
+		}).join(''));
 
-		var match = /\{\{([^}]*)\}\}/g;
+		body.append($.map(framework.link_groups, function (linkGroup) {
+			var links = '<h4>' + linkGroup.heading + '</h4>';
+			links += '<ul>';
+			links += $.map(linkGroup.links, function (link) {
+				return '<li>' + linksTemplate.replace(parser, function (match, key) {
+					return link[key];
+				}) + '</li>';
+			}).join('');
+			links += '</ul>';
+			return links;
+		}).join(''));
 
-		learn = function (framework, mobile) {
-			if (framework === activeFramework || !json[framework]) {
-				return;
-			}
+		body.append(this.$template.footer);
 
-			activeLearn.fadeOut(function () {
-				var body = $(template[0].outerHTML.replace(match, function (match, key) {
-					return json[framework][key];
-				}));
+		this.$el.container.html(body.html());
+	};
 
-				body.find('.source-links').html($.map(json[framework]['source_path'], function (source_path) {
-					var demoLink = '<a href="' + source_path.url + '">Demo</a>, ';
-					var sourceLink = ' <a href="https://github.com/addyosmani/todomvc/tree/gh-pages/' + source_path.url +'">Source</a>';
-					return '<h5>' + source_path.name + '</h5><p>' + demoLink + sourceLink + '</p>';
-				}).join(''));
-
-				body.append($.map(json[framework]['link_groups'], function (link_group) {
-					var links = '<h4>' + link_group.heading + '</h4>';
-					links += '<ul>';
-					links += $.map(link_group.links, function (link) {
-						return '<li>' + linkTemplate.find('a')[0].outerHTML.replace(match, function (match, key) {
-							return link[key];
-						}) + '</li>';
-					}).join('');
-					links += '</ul>';
-					return links;
-				}).join(''));
-
-				body.append(footer);
-
-				activeLearn = activeLearn.html(body.html());
-			}).fadeIn();
-
-			if (mobile) {
-				$(document.body).scrollTop(activeLearn.offset().top - 10);
-			}
-
-			activeFramework = framework;
-			window.location.hash = framework;
+	Learn.loadFramework = function (framework, mobile) {
+		if (framework === this.activeFramework || !this.frameworks[framework]) {
+			return;
 		}
-	}).then(function () {
-		var hashKey = window.location.hash.substr(1);
 
-		if (hashKey) {
-			learn(hashKey);
-		}
-	});
+		this.activeFramework = framework;
+		window.location.hash = framework;
 
-	var search = function (framework) {
-		var pattern = framework.split('').reduce(function (a, b) {
-			return a + '[^\\s]*' + b;
-		});
+		this.$el.container.fadeOut($.proxy(this.parseTemplate, this)).fadeIn();
 
-		var match = learnKeys.join(' ').match(new RegExp(pattern));
-
-		if (match) {
-			return learnKeys[learnKeys.join(' ').substr(0, match.index).split(' ').length - 1];
+		if (mobile) {
+			$(document.body).scrollTop(this.$el.container.offset().top - 10);
 		}
 	};
 
+	Learn.search = function (framework) {
+		var pattern = framework.split('').reduce(function (a, b) {
+			return a + '[^\\s]*' + b + '[^\\s]*';
+		}, '');
+
+		var match = this.haystack.match(new RegExp(pattern));
+
+		if (match) {
+			return $.trim(match[0]);
+		}
+	};
+
+	Learn.searchKeyup = function (e) {
+		var searchKey = $.trim(e.currentTarget.value);
+
+		if (searchKey === '') {
+			return;
+		}
+
+		var matchedKey = this.search(searchKey);
+
+		if (matchedKey) {
+			this.loadFramework(matchedKey);
+		}
+	};
+
+	Learn.linkClick = function (e) {
+		e.preventDefault();
+
+		this.$el.search.val('');
+
+		var mobile = $(window).width() < 768;
+
+		if (!mobile) {
+			this.$el.mask.stop().fadeIn(1000).delay(1000).fadeOut(1000);
+		}
+
+		this.loadFramework($(e.currentTarget).data('learn-key'), mobile);
+	};
+
+	Learn.loadFromHash = function () {
+		var hashKey = window.location.hash.substr(1);
+
+		if (hashKey) {
+			this.loadFramework(hashKey);
+		}
+	};
+
+	Learn.init = function (links, options) {
+		this.parser = /\{\{([^}]*)\}\}/g;
+
+		this.$el = {};
+		this.$el.links = links;
+		this.$el.mask = options.mask;
+		this.$el.container = options.container;
+		this.$el.search = options.search;
+
+		this.$template = {};
+		this.$template.header = options.container.clone().children('ul, footer').remove().end()[0].outerHTML;
+		this.$template.links = options.container.children('ul').clone().find('a')[0].outerHTML;
+		this.$template.footer = options.container.children('footer')[0].outerHTML;
+
+		this.$el.search.on('keyup', $.proxy(this.searchKeyup, this));
+
+		this.$el.links.on('click', $.proxy(this.linkClick, this));
+
+		$.getJSON(options.json)
+			.then($.proxy(this.saveJson, this))
+			.then($.proxy(this.loadFromHash, this));
+	};
+
 	$.fn.learn = function (options) {
-		options.container.hide();
-
-		$(this).on('click', function (e) {
-			if ($.type(learn) === 'function') {
-				e.preventDefault();
-
-				options.search.val('');
-
-				var mobile = $(window).width() < 768;
-
-				if (!mobile) {
-					options.mask.stop().fadeIn(1000).delay(1000).fadeOut(1000);
-				}
-
-				learn($(this).data('learn-key'), mobile);
-			}
-		});
-
-		options.search.on('keyup', function (e) {
-			var searchKey = $.trim(this.value);
-
-			if (searchKey == '') {
-				return;
-			}
-
-			var matchedKey = search(searchKey);
-
-			if (matchedKey) {
-				learn(matchedKey);
-			}
-		});
+		Learn.init(this, options);
 	};
 
 	// Redirect if not on main site.
@@ -263,6 +282,7 @@
 	$('.gittip-amount').gittip('tastejs');
 
 	$('[data-learn-key]').learn({
+		json: 'learn.json',
 		mask: $('.mask'),
 		container: $('.learn'),
 		search: $('.search')
