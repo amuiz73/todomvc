@@ -194,7 +194,7 @@
 		var match = learnKeys.join(' ').match(new RegExp(pattern));
 
 		if (match) {
-			return learnKeys.join(' ').substr(match.index).match(/^\w+/)[0];
+			return learnKeys[learnKeys.join(' ').substr(0, match.index).split(' ').length - 1];
 		}
 	};
 
