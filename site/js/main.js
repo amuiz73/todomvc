@@ -216,6 +216,8 @@
 			if ($.type(learn) === 'function') {
 				e.preventDefault();
 
+				options.search.val('');
+
 				var mobile = $(window).width() < 768;
 
 				if (!mobile) {
@@ -229,7 +231,7 @@
 		options.search.on('keyup', function (e) {
 			var searchKey = $.trim(this.value);
 
-			if (!searchKey) {
+			if (searchKey == '') {
 				return;
 			}
 
