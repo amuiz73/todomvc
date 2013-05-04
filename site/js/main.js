@@ -156,8 +156,7 @@
 		var linkTemplate = template.children('ul').clone();
 		var footer = template.children('footer')[0].outerHTML;
 
-		template.children('ul').remove();
-		template.children('footer').remove();
+		template.children('ul, footer').remove();
 
 		var match = /\{\{([^}]*)\}\}/g;
 
@@ -188,6 +187,8 @@
 					links += '</ul>';
 					return links;
 				}).join(''));
+
+				body.append(footer);
 
 				activeLearn = activeLearn.html(body.html());
 			}).fadeIn();
