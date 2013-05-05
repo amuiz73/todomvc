@@ -9,8 +9,9 @@
 		});
 	};
 
-	$.fn.persistantPopover = function () {
+	$.fn.persistantPopover = function (options) {
 		var popoverTimeout;
+		var disablePopover = options.minWidth > $(window).width();
 
 		function delay() {
 			popoverTimeout = setTimeout(function () {
@@ -18,28 +19,52 @@
 			}, 100);
 		}
 
-		return this.each(function () {
+		var links = this.each(function () {
 			var $this = $(this);
+			var learnKey = $this.data('learn-key');
+
+			if (disablePopover) {
+				if (learnKey) {
+					$this.attr('data-learn', learnKey);
+				}
+				return;
+			}
+
 			$this.popover({
 				trigger: 'manual',
-				placement: 'right',
+				placement: 'left',
 				animation: false,
-				title: this.firstChild.textContent + '<a href="' + $this.data('source') + '">Website</a>'
+				html: true,
+				title: this.firstChild.textContent + '<a href="' + $this.data('source') + '">Website</a>',
+				content: function () {
+					if ($this.data('learn-key')) {
+						return $this.data('description') + '<p><a href="#' + $this.data('learn-key') + '" data-learn="' + $this.data('learn-key') + '">Learn More...</a></p>';
+					} else {
+						return $this.data('description');
+					}
+				}
 			});
-		})
-		.mouseenter(function () {
+		});
+
+		if (disablePopover) {
+			return;
+		}
+
+		links.mouseenter(function () {
 			clearTimeout(popoverTimeout);
 			$('.popover').remove();
 			$(this).popover('show');
-		})
-		.mouseleave(function () {
-			delay();
+		});
+
+		links.mouseleave(function () {delay();
 			$('.popover').mouseenter(function () {
 				clearTimeout(popoverTimeout);
 			}).mouseleave(function () {
 				delay();
 			});
 		});
+
+		return links;
 	};
 
 	function redirect() {
@@ -146,7 +171,7 @@
 	};
 
 	var Learn = {};
-	Learn.saveJson = function (json) {
+	Learn.saveJSON = function (json) {
 		this.frameworks = json;
 		this.haystack = Object.keys(json).join(' ');
 	};
@@ -183,7 +208,7 @@
 		this.$el.container.html(body.html());
 	};
 
-	Learn.loadFramework = function (framework, mobile) {
+	Learn.loadFramework = function (framework, options) {
 		if (framework === this.activeFramework || !this.frameworks[framework]) {
 			return;
 		}
@@ -193,13 +218,15 @@
 
 		this.$el.container.fadeOut($.proxy(this.parseTemplate, this)).fadeIn();
 
-		if (mobile) {
-			$(document.body).scrollTop(this.$el.container.offset().top - 10);
+		if (options && options.animate) {
+			$(document.body).animate({
+				scrollTop: this.$el.container.offset().top - 10
+			}, 1000);
 		}
 	};
 
-	Learn.search = function (framework) {
-		var pattern = framework.split('').reduce(function (a, b) {
+	Learn.search = function (searchTerm) {
+		var pattern = searchTerm.split('').reduce(function (a, b) {
 			return a + '[^\\s]*' + b + '[^\\s]*';
 		}, '');
 
@@ -232,10 +259,15 @@
 		var mobile = $(window).width() < 768;
 
 		if (!mobile) {
+			$('.popover').delay(200).animate({
+				left: -60,
+				opacity: 0
+			}, 1000);
+
 			this.$el.mask.stop().fadeIn(1000).delay(1000).fadeOut(1000);
 		}
 
-		this.loadFramework($(e.currentTarget).data('learn-key'), mobile);
+		this.loadFramework($(e.currentTarget).data(this.key), { animate: true });
 	};
 
 	Learn.loadFromHash = function () {
@@ -246,11 +278,16 @@
 		}
 	};
 
-	Learn.init = function (links, options) {
+	Learn.init = function (container, options) {
+		$.getJSON(options.json)
+			.then($.proxy(this.saveJSON, this))
+			.then($.proxy(this.loadFromHash, this));
+
 		this.parser = /\{\{([^}]*)\}\}/g;
 
+		this.key = options.key;
+
 		this.$el = {};
-		this.$el.links = links;
 		this.$el.mask = options.mask;
 		this.$el.container = options.container;
 		this.$el.search = options.search;
@@ -262,11 +299,7 @@
 
 		this.$el.search.on('keyup', $.proxy(this.searchKeyup, this));
 
-		this.$el.links.on('click', $.proxy(this.linkClick, this));
-
-		$.getJSON(options.json)
-			.then($.proxy(this.saveJson, this))
-			.then($.proxy(this.loadFromHash, this));
+		container.on('click', '[data-' + this.key + ']', $.proxy(this.linkClick, this));
 	};
 
 	$.fn.learn = function (options) {
@@ -277,16 +310,19 @@
 	redirect();
 
 	// Apps popover
-	// $('.applist a').persistantPopover();
+	$('.applist a').persistantPopover({
+		minWidth: 768
+	});
 
-	$('.gittip-amount').gittip('tastejs');
-
-	$('[data-learn-key]').learn({
+	$(document.body).learn({
+		key: 'learn',
 		json: 'learn.json',
 		mask: $('.mask'),
 		container: $('.learn'),
 		search: $('.search')
 	});
+
+	$('.gittip-amount').gittip('tastejs');
 
 	// Quotes
 	$('.quotes').quote([{
