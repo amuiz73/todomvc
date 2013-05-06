@@ -265,6 +265,37 @@
 			}]
 		}]
 	},
+	"cujo": {
+		"name": "cujo.js",
+		"description": "cujo is an architectural toolkit for next generation JavaScript applications. It encourages highly modular development, declarative application assembly, and embraces the asynchronous nature of JavaScript and its fusion of object-oriented and functional programming styles.",
+		"homepage": "cujojs.com",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/cujo"
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "cujo.js on GitHub",
+				"url": "https://github.com/cujojs"
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "An introductory presentation",
+				"url": "http://www.youtube.com/watch?v=TqX-CqYYwEc"
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": "Google Groups mailing list",
+				"url": "https://groups.google.com/forum/#!forum/cujojs"
+			}, {
+				"name": "cujo.js on Twitter",
+				"url": "http://twitter.com/cujojs"
+			}]
+		}]
+	},
 	"dart": {
 		"name": "Dart",
 		"description": "Dart is a class-based, object-oriented language with lexical scoping, closures, and optional static typing. Dart helps you build structured modern web apps and is easy to learn for a wide range of developers.",
@@ -311,6 +342,31 @@
 			}, {
 				"name": "Dart on Google +",
 				"url": "https://plus.google.com/+dartlang/posts"
+			}]
+		}]
+	},
+	"dermis": {
+		"name": "Dermis",
+		"description": "Dermis is a lightweight MVVM framework with built-in data binding (via rivets).",
+		"homepage": "wearefractal.com/dermis",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/dermis"
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "Documentation",
+				"url": "http://wearefractal.com/dermis"
+			}, {
+				"name": "Dermis on GitHub",
+				"url": "https://github.com/wearefractal/dermis"
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "Dermis in Easy Steps",
+				"url": "http://contra.io/2013/03/28/dermis-in-easy-steps"
 			}]
 		}]
 	},
