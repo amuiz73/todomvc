@@ -119,34 +119,45 @@
 		}]
 	},
 	"ariatemplates": {
-		"name": "",
-		"description": "",
-		"homepage": "",
+		"name": "Aria Templates",
+		"description": "Aria Templates (aka AT) is an application framework written in JavaScript for building rich and large-scaled enterprise web applications.",
+		"homepage": "ariatemplates.com",
 		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/ariatemplates"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Documentation",
+				"url": "http://ariatemplates.com/usermanual"
+			}, {
+				"name": "API Reference",
+				"url": "http://ariatemplates.com/aria/guide/apps/apidocs"
+			}, {
+				"name": "Guides",
+				"url": "http://ariatemplates.com/guides"
+			}, {
+				"name": "Blog",
+				"url": "http://ariatemplates.com/blog"
+			}, {
+				"name": "FAQ",
+				"url": "http://ariatemplates.com/faq"
+			}, {
+				"name": "Aria Templates on GitHub",
+				"url": "https://github.com/ariatemplates"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "Aria Templates on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/ariatemplates"
 			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
+				"name": "Forums",
+				"url": "http://ariatemplates.com/forum"
 			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Aria Templates on Twitter",
+				"url": "http://twitter.com/ariatemplates"
 			}]
 		}]
 	},
@@ -442,34 +453,39 @@
 		}]
 	},
 	"deftjs": {
-		"name": "",
-		"description": "",
-		"homepage": "",
+		"name": "DeftJS",
+		"description": "DeftJS enhances Ext JS and Sencha Touch’s APIs with additional building blocks that enable large development teams to rapidly build enterprise scale applications, leveraging best practices and proven patterns discovered by top RIA developers at some of the best consulting firms in the industry.",
+		"homepage": "deftjs.org",
 		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/extjs_deftjs"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Documentation",
+				"url": "https://github.com/deftjs/DeftJS/wiki"
+			}, {
+				"name": "DeftJS on GitHub",
+				"url": "https://github.com/deftjs/DeftJS"
 			}]
 		}, {
 			"heading": "Articles and Guides",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "http://www.briankotek.com/blog/index.cfm/2012/5/8/Exploring-ExtJS-with-DeftJS",
+				"url": "Exploring ExtJS with DeftJS"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "DeftJS on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/deftjs"
 			}, {
 				"name": "Mailing list on Google Groups",
-				"url": ""
+				"url": "https://groups.google.com/forum/?fromgroups#!forum/deftjs"
 			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "DeftJS on Twitter",
+				"url": "http://twitter.com/deftjs"
 			}]
 		}]
 	},
@@ -673,34 +689,48 @@
 		}]
 	},
 	"enyo": {
-		"name": "",
-		"description": "",
-		"homepage": "",
+		"name": "Enyo",
+		"description": "Use the same framework to develop apps for the web and for all major platforms, desktop and mobile.",
+		"homepage": "enyojs.com",
 		"source_path": [{
+			"name": "Dependency Example",
+			"url": "labs/dependency-examples/enyo_backbone"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Documentation",
+				"url": "http://enyojs.com/docs"
+			}, {
+				"name": "About",
+				"url": "http://enyojs.com/about"
+			}, {
+				"name": "Applications built with Enyo",
+				"url": "http://enyojs.com/showcase"
+			}, {
+				"name": "Blog",
+				"url": "http://blog.enyojs.com"
+			}, {
+				"name": "FAQ",
+				"url": "http://enyojs.com/about/faq"
+			}, {
+				"name": "Enyo on GitHub",
+				"url": "https://github.com/enyojs"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "Enyo on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/enyo"
+			}, {
+				"name": "Forums",
+				"url": "http://forums.enyojs.com"
 			}, {
 				"name": "Mailing list on Google Groups",
-				"url": ""
+				"url": "https://groups.google.com/forum/#!forum/enyo-development"
 			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Enyo on Twitter",
+				"url": "http://twitter.com/enyojs"
 			}]
 		}]
 	},
