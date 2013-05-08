@@ -118,6 +118,38 @@
 			}]
 		}]
 	},
+	"ariatemplates": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
 	"backbonejs": {
 		"name": "Backbone.js",
 		"description": "Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.",
@@ -170,6 +202,38 @@
 			}]
 		}]
 	},
+	"batman": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
 	"canjs": {
 		"name": "CanJS",
 		"description": "CanJS is a MIT-licensed, client-side, JavaScript framework that makes building rich web applications easy.",
@@ -216,6 +280,38 @@
 			}, {
 				"name": "CanJS on Twitter",
 				"url": "http://twitter.com/canjs"
+			}]
+		}]
+	},
+	"chaplin": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
 			}]
 		}]
 	},
@@ -345,6 +441,70 @@
 			}]
 		}]
 	},
+	"deftjs": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"derby": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
 	"dermis": {
 		"name": "Dermis",
 		"description": "Dermis is a lightweight MVVM framework with built-in data binding (via rivets).",
@@ -367,6 +527,38 @@
 			"links": [{
 				"name": "Dermis in Easy Steps",
 				"url": "http://contra.io/2013/03/28/dermis-in-easy-steps"
+			}]
+		}]
+	},
+	"dijon": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
 			}]
 		}]
 	},
@@ -410,6 +602,38 @@
 			}, {
 				"name": "Dojo on Twitter",
 				"url": "http://twitter.com/dojo"
+			}]
+		}]
+	},
+	"duel": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
 			}]
 		}]
 	},
@@ -465,6 +689,106 @@
 			}]
 		}]
 	},
+	"enyo": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"epitome": {
+		"name": "Epitome",
+		"description": "Epitome is a new extensible and modular open-source MVC* framework, built out of MooTools Classes and Events.",
+		"homepage": "http://dimitarchristoff.github.io/Epitome",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/epitome"
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "API Reference",
+				"url": "http://dimitarchristoff.github.io/Epitome"
+			}, {
+				"name": "Examples",
+				"url": "http://dimitarchristoff.github.io/Epitome/#examples"
+			}, {
+				"name": "Download & Building",
+				"url": "http://dimitarchristoff.github.io/Epitome/#download-building"
+			}, {
+				"name": "Epitome on GitHub",
+				"url": "https://github.com/DimitarChristoff/Epitome"
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": "Epitome on Twitter",
+				"url": "http://twitter.com/D_mitar"
+			}]
+		}]
+	},
+	"extjs": {
+		"name": "Ext JS",
+		"description": "Sencha Ext JS is the industry's most powerful desktop application development platform with unparalleled cross-browser compatibility, advanced MVC architecture, plugin-free charting, and modern UI widgets.",
+		"homepage": "sencha.com/products/extjs",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/extjs"
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "Documentation",
+				"url": "http://docs.sencha.com/extjs/4.2.0/"
+			}, {
+				"name": "API Reference",
+				"url": "http://docs.sencha.com/extjs/4.1.3"
+			}, {
+				"name": "Tutorials, Screencasts, Guides, FAQs",
+				"url": "http://www.sencha.com/learn/extjs"
+			}, {
+				"name": "Applications built with Ext JS",
+				"url": "http://docs.sencha.com/extjs/4.2.0/extjs-build/examples"
+			}, {
+				"name": "Sencha Blog",
+				"url": "http://www.sencha.com/blog"
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": "Ext JS on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/extjs"
+			}, {
+				"name": "Ext JS on Twitter",
+				"url": "http://twitter.com/extjs"
+			}]
+		}]
+	},
 	"flight": {
 		"name": "Flight",
 		"description": "Flight is a lightweight, component-based JavaScript framework that maps behavior to DOM nodes.",
@@ -487,6 +811,38 @@
 			}, {
 				"name": "Flight on Twitter",
 				"url": "http://twitter.com/flight"
+			}]
+		}]
+	},
+	"funnyfacejs": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
 			}]
 		}]
 	},
@@ -530,6 +886,38 @@
 			}, {
 				"name": "Google Web Toolkit on Twitter",
 				"url": "http://twitter.com/googledevtools"
+			}]
+		}]
+	},
+	"javascript": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
 			}]
 		}]
 	},
@@ -582,6 +970,38 @@
 			}, {
 				"name": "jQuery on Google +",
 				"url": "https://plus.google.com/102828491884671003608/posts"
+			}]
+		}]
+	},
+	"kendo": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
 			}]
 		}]
 	},
@@ -687,6 +1107,399 @@
 			}]
 		}]
 	},
+	"marionettejs": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"meteor": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"montage": {
+		"name": "Montage",
+		"description": "The Montage framework lets you develop rich HTML5 applications optimized for today and tomorrow’s range of connected devices. You can build rich client-side UI’s, sharing packages and modules with your NodeJS server. Montage opens a new world of opportunity for web developers.",
+		"homepage": "montagejs.org",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/montage"
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "Quick Start",
+				"url": "http://montagejs.org/docs/Quick-Start"
+			}, {
+				"name": "Documentation",
+				"url": "http://montagejs.org/docs"
+			}, {
+				"name": "API Reference",
+				"url": "http://montagejs.org/apis"
+			}, {
+				"name": "Applications built with Montage",
+				"url": "http://montagejs.org/apps"
+			}, {
+				"name": "Montage on GitHub",
+				"url": "https://github.com/montagejs/montage"
+			}, {
+				"name": "Minit - Montage Initializer",
+				"url": "https://github.com/montagejs/minit"
+			}, {
+				"name": "MOP - Montage Optimizer",
+				"url": "https://github.com/montagejs/mop"
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "YouTube: Getting Started",
+				"url": "http://www.youtube.com/watch?v=JfT1ML200JI"
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": "IRC",
+				"url": "http://webchat.freenode.net/?channels=montage"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": "https://groups.google.com/forum/?fromgroups#!forum/montagejs"
+			}, {
+				"name": "Montage on Twitter",
+				"url": "http://twitter.com/montage_js"
+			}, {
+				"name": "Montage on Google +",
+				"url": "https://plus.google.com/116915300739108010954"
+			}]
+		}]
+	},
+	"olives": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"plastronjs": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"puremvc": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"rappidjs": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"sammyjs": {
+		"name": "Sammy.js",
+		"description": "A small web framework with class.",
+		"homepage": "sammyjs.org",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/sammyjs"
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "Introduction",
+				"url": "http://sammyjs.org/intro"
+			}, {
+				"name": "Documentation",
+				"url": "http://sammyjs.org/docs"
+			}, {
+				"name": "Wiki",
+				"url": "http://sammyjs.org/wiki"
+			}, {
+				"name": "FAQ",
+				"url": "http://sammyjs.org/faq"
+			}, {
+				"name": "Sammy.js on GitHub",
+				"url": "http://github.com/quirkey/sammy"
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "Sammy.js For RESTful Evented JavaScript",
+				"url": "http://churchm.ag/sammy-js-for-restful-evented-javascript"
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": "Mailing list on Google Groups",
+				"url": "http://groups.google.com/group/sammyjs"
+			}, {
+				"name": "Sammy.js on Twitter",
+				"url": "http://twitter.com/sammy_js"
+			}]
+		}]
+	},
+	"serenadejs": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"socketstream": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"somajs": {
+		"framework": {
+			"name": "soma.js",
+			"description": "soma.js is a framework created to build scalable and maintainable javascript applications.",
+			"homepage": "http://somajs.github.io/somajs",
+			"source_path": [{
+				"name": "Architecture Example",
+				"url": "labs/architecture-examples/somajs"
+			}],
+			"link_groups": [{
+				"heading": "Official Resources",
+				"links": [{
+					"name": "Slides: Introduction",
+					"url": "http://somajs.github.io/somajs/#/1"
+				}, {
+					"name": "Quick Start",
+					"url": "http://somajs.github.io/somajs/site/#quick-start"
+				}, {
+					"name": "Demos",
+					"url": "http://somajs.github.io/somajs/site/#demos"
+				}, {
+					"name": "Blog",
+					"url": "http://www.soundstep.com/blog"
+				}, {
+					"name": "soma.js on GitHub",
+					"url": "https://github.com/somajs/somajs"
+				}]
+			}, {
+				"heading": "Community",
+				"links": [{
+					"name": "Mailing list on Google Groups",
+					"url": "https://groups.google.com/forum/#!forum/somajs"
+				}, {
+					"name": "soma.js on Twitter",
+					"url": "http://twitter.com/soundstep"
+				}]
+			}]
+		}
+		},
 	"spine": {
 		"name": "Spine.js",
 		"description": "Build Awesome JavaScript MVC Applications.",
@@ -727,6 +1540,124 @@
 			}]
 		}]
 	},
+	"stapes": {
+		"name": "Stapes.js",
+		"description": "A (really) tiny Javascript MVC microframework.",
+		"homepage": "",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/stapes"
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "Introduction",
+				"url": "http://hay.github.io/stapes/#m-intro"
+			}, {
+				"name": "Documentation & API Reference",
+				"url": "http://hay.github.io/stapes"
+			}, {
+				"name": "Stapes.js on GitHub",
+				"url": "http://github.com/hay/stapes"
+			}]
+		}]
+	},
+	"thorax": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"troopjs": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
+	"typescript": {
+		"name": "",
+		"description": "",
+		"homepage": "",
+		"source_path": [{
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Articles and Guides",
+			"links": [{
+				"name": "",
+				"url": ""
+			}]
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": " on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/"
+			}, {
+				"name": "Mailing list on Google Groups",
+				"url": ""
+			}, {
+				"name": " on Twitter",
+				"url": "http://twitter.com/"
+			}]
+		}]
+	},
 	"yui": {
 		"name": "YUI",
 		"description": "YUI is a free, open source JavaScript and CSS library for building richly interactive web applications.",
@@ -759,7 +1690,7 @@
 				"name": "YUI on StackOverflow",
 				"url": "http://stackoverflow.com/questions/tagged/yui"
 			}, {
-				"name": "Forms",
+				"name": "Forums",
 				"url": "http://yuilibrary.com/forum"
 			}, {
 				"name": "YUI on Twitter",

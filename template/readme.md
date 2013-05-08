@@ -16,6 +16,7 @@ Here are some links you may find helpful:
 * [Applications built with Framework Name]()
 * [Blog]()
 * [FAQ]()
+* [Framework Name on GitHub]()
 
 Articles and guides from the community:
 
@@ -25,7 +26,7 @@ Articles and guides from the community:
 Get help from other Framework Name users:
 
 * [Framework Name on StackOverflow](http://stackoverflow.com/questions/tagged/____)
-* [Mailing list]()
+* [Mailing list on Google Groups]()
 * [Framework Name on Twitter](http://twitter.com/____)
 * [Framework Name on Google +]()
 
