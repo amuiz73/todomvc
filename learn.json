@@ -1202,7 +1202,8 @@
 		"homepage": "meteor.com",
 		"examples": [{
 			"name": "Real-time Example",
-			"url": "http://todomvcapp.meteor.com"
+			"url": "http://todomvcapp.meteor.com",
+			"source_url": "labs/architecture-examples/meteor"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
@@ -1510,7 +1511,8 @@
 		"homepage": "socketstream.org",
 		"examples": [{
 			"name": "Real-time Example",
-			"url": "https://github.com/addyosmani/todomvc/blob/gh-pages/labs/architecture-examples/socketstream/README.md"
+			"url": "labs/architecture-examples/socketstream/README.md",
+			"source_url": "labs/architecture-examples/socketstream"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
