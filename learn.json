@@ -1245,8 +1245,6 @@
 			}]
 		}, {
 			"heading": "Articles and Guides",
-			// Search blogs on google to help dig up articles.
-			//   https://www.google.com/search?q=PlastronJS&tbm=blg
 			"links": [{
 				"name": "The Future of PlastronJS",
 				"url": "http://modernjavascript.blogspot.com/2012/11/the-future-of-plastronjs.html"
