@@ -1439,44 +1439,42 @@
 		}]
 	},
 	"somajs": {
-		"framework": {
-			"name": "soma.js",
-			"description": "soma.js is a framework created to build scalable and maintainable javascript applications.",
-			"homepage": "http://somajs.github.io/somajs",
-			"source_path": [{
-				"name": "Architecture Example",
-				"url": "labs/architecture-examples/somajs"
-			}],
-			"link_groups": [{
-				"heading": "Official Resources",
-				"links": [{
-					"name": "Slides: Introduction",
-					"url": "http://somajs.github.io/somajs/#/1"
-				}, {
-					"name": "Quick Start",
-					"url": "http://somajs.github.io/somajs/site/#quick-start"
-				}, {
-					"name": "Demos",
-					"url": "http://somajs.github.io/somajs/site/#demos"
-				}, {
-					"name": "Blog",
-					"url": "http://www.soundstep.com/blog"
-				}, {
-					"name": "soma.js on GitHub",
-					"url": "https://github.com/somajs/somajs"
-				}]
+		"name": "soma.js",
+		"description": "soma.js is a framework created to build scalable and maintainable javascript applications.",
+		"homepage": "http://somajs.github.io/somajs",
+		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/somajs"
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "Slides: Introduction",
+				"url": "http://somajs.github.io/somajs/#/1"
 			}, {
-				"heading": "Community",
-				"links": [{
-					"name": "Mailing list on Google Groups",
-					"url": "https://groups.google.com/forum/#!forum/somajs"
-				}, {
-					"name": "soma.js on Twitter",
-					"url": "http://twitter.com/soundstep"
-				}]
+				"name": "Quick Start",
+				"url": "http://somajs.github.io/somajs/site/#quick-start"
+			}, {
+				"name": "Demos",
+				"url": "http://somajs.github.io/somajs/site/#demos"
+			}, {
+				"name": "Blog",
+				"url": "http://www.soundstep.com/blog"
+			}, {
+				"name": "soma.js on GitHub",
+				"url": "https://github.com/somajs/somajs"
 			}]
-		}
-		},
+		}, {
+			"heading": "Community",
+			"links": [{
+				"name": "Mailing list on Google Groups",
+				"url": "https://groups.google.com/forum/#!forum/somajs"
+			}, {
+				"name": "soma.js on Twitter",
+				"url": "http://twitter.com/soundstep"
+			}]
+		}]
+	},
 	"spine": {
 		"name": "Spine.js",
 		"description": "Build Awesome JavaScript MVC Applications.",
