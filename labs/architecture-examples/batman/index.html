@@ -7,62 +7,184 @@
 	<link rel="stylesheet" href="bower_components/todomvc-common/base.css">
 </head>
 <body>
-	<div data-yield="main"></div>
-	<div data-defineview="todos/all">
-		<section id="todoapp">
-			<header id="header">
-				<h1>todos</h1>
-				<form data-formfor-todo="newTodo" data-event-submit="createTodo">
-					<input id="new-todo" type="text" placeholder="What needs to be completed?" autofocus data-bind="todo.title">
-				</form>
-			</header>
-			<section id="main" class="hidden" data-removeclass-hidden="Todo.all.length">
-				<input id="toggle-all" type="checkbox" data-event-change="toggleAll" data-source="Todo.completed.length | equals Todo.all.length">
-				<label for="toggle-all">Mark all as complete</label>
-				<ul id="todo-list">
-					<li data-foreach-todo="currentTodos"
-							data-addclass-completed="todo.completed"
-							data-addclass-editing="todo.editing" >
-						<div class="view" data-hideif="todo.editing">
-							<input class="toggle" type="checkbox" data-bind="todo.completed" data-event-change="todoDoneChanged">
-							<label data-bind="todo.title" data-event-doubleclick="toggleEditing"></label>
-							<button class="destroy" data-event-click="destroyTodo"></button>
-						</div>
-						<input class="edit" type="text"
-							data-bind="todo.title"
-							data-bind-id="'todo-input-' | append todo.id"
-							data-event-blur="toggleEditing"
-							data-event-keypress="disableEditingUponSubmit">
-					</li>
-				</ul>
-			</section>
-			<footer id="footer" class="hidden" data-removeclass-hidden="Todo.all.length">
-				<span id="todo-count">
-					<strong data-bind="Todo.active.length"></strong>
-					<span data-bind="'item' | pluralize Todo.active.length, false"></span> left
+	<style>
+		@import '../../../site/css/bootstrap.css';
+		@import '../../../site/css/main.css';
+		body {
+			width: 900px;
+			margin: 0 auto;
+			font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+		input[type="checkbox"] {
+			cursor: default;
+		}
+		input[type="text"] {
+			height: auto;
+		}
+		a {
+			font-weight: normal;
+			text-decoration: underline
+		}
+		body > aside,
+		body > aside * {
+			box-sizing: border-box;
+		}
+		body > aside {
+			position: absolute;
+			top: 0;
+			width: 300px;
+			padding: 10px;
+			transition-property: left;
+			transition-duration: 500ms;
+		}
+		body > aside input {
+			width: 100%;
+		}
+		body > article {
+			position: relative;
+			width: 550px;
+			left: 325px;
+		}
+		#todoapp h1 {
+			line-height: normal;
+			top: -105px;
+		}
+		#todoapp form {
+			margin: 0;
+		}
+		#todo-list label,
+		#todo-list li {
+			font-size: 24px;
+			margin-bottom: 0;
+		}
+		#info p {
+			font-size: 12px;
+		}
+		.learn a {
+			font-size: 100%;
+		}
+
+		@media (max-width: 900px) {
+			body {
+				width: 550px;
+			}
+			body > aside {
+				left: -300px;
+			}
+			body > article {
+				left: 0;
+			}
+		}
+	</style>
+	<aside>
+		<section class="learn" style="display: block;">
+			<header>
+				<h3>cujo.js</h3>
+				<span class="source-links">
+					<h5>Architecture Example</h5>
+					<p>
+						<a href="labs/architecture-examples/cujo">Demo</a>,
+						<a href="https://github.com/addyosmani/todomvc/tree/gh-pages/labs/architecture-examples/cujo">Source</a>
+					</p>
 				</span>
-				<ul id="filters">
-					<li>
-						<a data-addclass-selected="currentRoute.action | equals 'all'" data-route="'/'">All</a>
-					</li>
-					<li>
-						<a data-addclass-selected="currentRoute.action | equals 'active'" data-route="'/active'">Active</a>
-					</li>
-					<li>
-						<a data-addclass-selected="currentRoute.action | equals 'completed'" data-route="'/completed'">Completed</a>
-					</li>
-				</ul>
-				<button id="clear-completed" data-event-click="clearCompleted" data-showif="Todo.completed.length">
-					Clear completed (<span data-bind="Todo.completed.length"></span>)
-				</button>
+			</header>
+			<hr>
+			<blockquote class="quote speech-bubble">
+				<p>
+					cujo is an architectural toolkit for next generation JavaScript applications. It encourages highly modular development, declarative application assembly, and embraces the asynchronous nature of JavaScript and its fusion of object-oriented and functional programming styles.
+				</p>
+				<footer>
+					<a href="http://cujojs.com">cujo.js</a>
+				</footer>
+			</blockquote>
+			<hr>
+			<h4>Official Resources</h4>
+			<ul>
+				<li>
+					<a href="https://github.com/cujojs">cujo.js on GitHub</a>
+				</li>
+			</ul>
+			<h4>Articles and Guides</h4>
+			<ul>
+				<li>
+					<a href="http://www.youtube.com/watch?v=TqX-CqYYwEc">An introductory presentation</a>
+				</li>
+			</ul>
+			<h4>Community</h4>
+			<ul>
+				<li>
+					<a href="https://groups.google.com/forum/#!forum/cujojs">Google Groups mailing list</a>
+				</li>
+				<li>
+					<a href="http://twitter.com/cujojs">cujo.js on Twitter</a>
+				</li>
+			</ul>
+			<footer>
+				<hr>
+				<em>
+					If you have other helpful links to share, or find any of the links above no longer work, please <a href="https://github.com/addyosmani/todomvc/issues">let us know</a>.
+				</em>
 			</footer>
 		</section>
-		<footer id="info">
-			<p>Double-click to edit a todo</p>
-			<p>Created by <a href="http://batmanjs.org">Harry Brundage</a></p>
-			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-		</footer>
-	</div>
+	</aside>
+	<article>
+		<div data-yield="main"></div>
+		<div data-defineview="todos/all">
+			<section id="todoapp">
+				<header id="header">
+					<h1>todos</h1>
+					<form data-formfor-todo="newTodo" data-event-submit="createTodo">
+						<input id="new-todo" type="text" placeholder="What needs to be completed?" autofocus data-bind="todo.title">
+					</form>
+				</header>
+				<section id="main" class="hidden" data-removeclass-hidden="Todo.all.length">
+					<input id="toggle-all" type="checkbox" data-event-change="toggleAll" data-source="Todo.completed.length | equals Todo.all.length">
+					<label for="toggle-all">Mark all as complete</label>
+					<ul id="todo-list">
+						<li data-foreach-todo="currentTodos"
+								data-addclass-completed="todo.completed"
+								data-addclass-editing="todo.editing" >
+							<div class="view" data-hideif="todo.editing">
+								<input class="toggle" type="checkbox" data-bind="todo.completed" data-event-change="todoDoneChanged">
+								<label data-bind="todo.title" data-event-doubleclick="toggleEditing"></label>
+								<button class="destroy" data-event-click="destroyTodo"></button>
+							</div>
+							<input class="edit" type="text"
+								data-bind="todo.title"
+								data-bind-id="'todo-input-' | append todo.id"
+								data-event-blur="toggleEditing"
+								data-event-keypress="disableEditingUponSubmit">
+						</li>
+					</ul>
+				</section>
+				<footer id="footer" class="hidden" data-removeclass-hidden="Todo.all.length">
+					<span id="todo-count">
+						<strong data-bind="Todo.active.length"></strong>
+						<span data-bind="'item' | pluralize Todo.active.length, false"></span> left
+					</span>
+					<ul id="filters">
+						<li>
+							<a data-addclass-selected="currentRoute.action | equals 'all'" data-route="'/'">All</a>
+						</li>
+						<li>
+							<a data-addclass-selected="currentRoute.action | equals 'active'" data-route="'/active'">Active</a>
+						</li>
+						<li>
+							<a data-addclass-selected="currentRoute.action | equals 'completed'" data-route="'/completed'">Completed</a>
+						</li>
+					</ul>
+					<button id="clear-completed" data-event-click="clearCompleted" data-showif="Todo.completed.length">
+						Clear completed (<span data-bind="Todo.completed.length"></span>)
+					</button>
+				</footer>
+			</section>
+			<footer id="info">
+				<p>Double-click to edit a todo</p>
+				<p>Created by <a href="http://batmanjs.org">Harry Brundage</a></p>
+				<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+			</footer>
+		</div>
+	</article>
 	<script src="bower_components/todomvc-common/base.js"></script>
 	<script src="bower_components/batman/lib/dist/batman.js"></script>
 	<script src="app.js"></script>
