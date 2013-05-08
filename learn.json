@@ -531,34 +531,27 @@
 		}]
 	},
 	"dijon": {
-		"name": "",
-		"description": "",
-		"homepage": "",
+		"name": "Dijon",
+		"description": "An IOC/DI framework in Javascript, inspired by Robotlegs and Swiftsuspenders.",
+		"homepage": "github.com/creynders/dijon-framework",
 		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/dijon"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Documentation",
+				"url": "http://creynders.github.com/dijon-framework/docs"
+			}, {
+				"name": "Dijon on GitHub",
+				"url": "https://github.com/creynders/dijon-framework"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
-			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
-			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Dijon on Twitter",
+				"url": "http://twitter.com/camillereynders"
 			}]
 		}]
 	},
@@ -606,34 +599,24 @@
 		}]
 	},
 	"duel": {
-		"name": "",
-		"description": "",
-		"homepage": "",
+		"name": "duel",
+		"description": "DUEL is a dual-side templating engine using HTML for layout and 100% pure JavaScript as the binding language. The same views may be executed both directly in the browser (client-side template) and on the server (server-side template).",
+		"homepage": "bitbucket.org/mckamey/duel/wiki/Home",
 		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/duel/www"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Community",
-			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "Syntax",
+				"url": "https://bitbucket.org/mckamey/duel/wiki/Syntax"
 			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
+				"name": "Examples",
+				"url": "https://bitbucket.org/mckamey/duel/wiki/Examples"
 			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "duel on BitBucket",
+				"url": "https://bitbucket.org/mckamey/duel/src"
 			}]
 		}]
 	},
@@ -815,34 +798,21 @@
 		}]
 	},
 	"funnyfacejs": {
-		"name": "",
-		"description": "",
-		"homepage": "",
+		"name": "Funnyface.js",
+		"description": "O_o: HTML binding for teh lulz.",
+		"homepage": "weepy.github.io/o_O",
 		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/o_O"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Community",
-			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "Examples",
+				"url": "http://weepy.github.io/o_O/examples/guide/index.html"
 			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
-			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Funnyface.js on GitHub",
+				"url": "https://github.com/weepy/o_O"
 			}]
 		}]
 	},
@@ -974,34 +944,45 @@
 		}]
 	},
 	"kendo": {
-		"name": "",
-		"description": "",
-		"homepage": "",
+		"name": "Kendo UI",
+		"description": "Comprehensive HTML5/JavaScript framework for modern web and mobile app development.",
+		"homepage": "kendoui.com",
 		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/kendo"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Documentation",
+				"url": "http://docs.kendoui.com"
+			}, {
+				"name": "API Reference",
+				"url": "http://docs.kendoui.com/api/dataviz/chart"
+			}, {
+				"name": "What is Kendo UI",
+				"url": "http://docs.kendoui.com/getting-started/introduction"
+			}, {
+				"name": "Applications built with Kendo UI",
+				"url": "http://demos.kendoui.com"
+			}, {
+				"name": "Blog",
+				"url": "http://www.kendoui.com/blogs.aspx"
+			}, {
+				"name": "FAQ",
+				"url": "http://www.kendoui.com/faq/faq.aspx"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "Kendo UI on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/kendo-ui"
 			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
+				"name": "Kendo UI on Twitter",
+				"url": "http://twitter.com/kendoui"
 			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Kendo UI on Google +",
+				"url": "https://plus.google.com/117798269023828336983/posts"
 			}]
 		}]
 	},
@@ -1227,130 +1208,128 @@
 		}]
 	},
 	"olives": {
-		"name": "",
-		"description": "",
-		"homepage": "",
+		"name": "Olives.js",
+		"description": "A JS Framework for creating realtime and scalable applications. Based on Emily.js and socket.io.",
+		"homepage": "flams.github.io/olives",
 		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/olives"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Community",
-			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "Documentation",
+				"url": "http://flams.github.io/olives/docs/latest"
 			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
+				"name": "Applications built with Olives.js",
+				"url": "http://flams.github.io/olives/#liveexamples"
 			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Olives.js on GitHub",
+				"url": "https://github.com/flams/olives"
 			}]
 		}]
 	},
 	"plastronjs": {
-		"name": "",
-		"description": "",
-		"homepage": "",
+		"name": "PlastronJS",
+		"description": "PlastronJS is an MVC library which uses the Google Closure library for use with the Closure Compiler.",
+		"homepage": "rhysbrettbowen.github.io/PlastronJS",
 		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/plastronjs"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "PlastronJS on GitHub",
+				"url": "https://github.com/rhysbrettbowen/PlastronJS"
 			}]
 		}, {
 			"heading": "Articles and Guides",
+			// Search blogs on google to help dig up articles.
+			//   https://www.google.com/search?q=PlastronJS&tbm=blg
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Community",
-			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "The Future of PlastronJS",
+				"url": "http://modernjavascript.blogspot.com/2012/11/the-future-of-plastronjs.html"
 			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
-			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Krisztian Toth's JavaScript Games, XRegExp, PlastronJS",
+				"url": "http://dailyjs.com/2012/04/06/toth-xregexp-plastron"
 			}]
 		}]
 	},
 	"puremvc": {
-		"name": "",
-		"description": "",
-		"homepage": "",
+		"name": "PureMVC",
+		"description": "PureMVC is a lightweight framework for creating applications based upon the classic Model, View and Controller concept.",
+		"homepage": "puremvc.org",
 		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/puremvc"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Documentation",
+				"url": "http://puremvc.org/content/view/98/189"
+			}, {
+				"name": "Applications built with PureMVC",
+				"url": "http://puremvc.org/content/blogsection/9/176"
+			}, {
+				"name": "FAQ",
+				"url": "http://puremvc.org/content/section/3/188"
+			}, {
+				"name": "PureMVC on GitHub",
+				"url": "https://github.com/puremvc"
 			}]
 		}, {
 			"heading": "Articles and Guides",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "PureMVC Performance Test",
+				"url": "http://blog.kaegi.net/puremvc-performance-test-compared-to-using-no-framework"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "PureMVC on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/puremvc"
 			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
+				"name": "PureMVC on Twitter",
+				"url": "http://twitter.com/puremvc"
 			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "PureMVC on Google +",
+				"url": "https://plus.google.com/+puremvc/posts"
 			}]
 		}]
 	},
 	"rappidjs": {
-		"name": "",
-		"description": "",
-		"homepage": "",
+		"name": "rAppid.js",
+		"description": "The declarative Rich Internet Application Javascript MVC Framework.",
+		"homepage": "rappidjs.com",
 		"source_path": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/rappidjs"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
+				"name": "API Reference",
+				"url": "http://www.rappidjs.com/#/api"
+			}, {
+				"name": "Wiki",
+				"url": "http://www.rappidjs.com/#/wiki"
+			}, {
+				"name": "UI Components",
+				"url": "http://www.rappidjs.com/#/ui"
+			}, {
+				"name": "Blog",
+				"url": "http://blog.rappidjs.com"
+			}, {
+				"name": "rAppid.js on GitHub",
+				"url": "https://github.com/rappid/rAppid.js"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
-			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
-			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "rAppid.js on Twitter",
+				"url": "http://twitter.com/rappidjs"
 			}]
 		}]
 	},
