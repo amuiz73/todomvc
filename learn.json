@@ -3,7 +3,7 @@
 		"name": "Agility.js",
 		"description": "Agility.js is an MVC library for Javascript that lets you write maintainable and reusable browser code without the verbose or infrastructural overhead found in other MVC libraries. The goal is to enable developers to write web apps at least as quickly as with jQuery, while simplifying long-term maintainability through MVC objects.",
 		"homepage": "agilityjs.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/agilityjs"
 		}],
@@ -46,7 +46,7 @@
 		"name": "AngularJS",
 		"description": "HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.",
 		"homepage": "angularjs.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/angularjs"
 		}, {
@@ -122,7 +122,7 @@
 		"name": "Aria Templates",
 		"description": "Aria Templates (aka AT) is an application framework written in JavaScript for building rich and large-scaled enterprise web applications.",
 		"homepage": "ariatemplates.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/ariatemplates"
 		}],
@@ -165,7 +165,7 @@
 		"name": "Backbone.js",
 		"description": "Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.",
 		"homepage": "backbonejs.org",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/backbonejs"
 		}, {
@@ -214,34 +214,51 @@
 		}]
 	},
 	"batman": {
-		"name": "",
-		"description": "",
-		"homepage": "",
-		"source_path": [{
+		"name": "Batman.js",
+		"description": "A client-side framework for Rails developers. Batman.js is a framework for building rich web applications with CoffeeScript.",
+		"homepage": "batmanjs.org",
+		"examples": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/batman"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Documentation",
+				"url": "http://batmanjs.org/docs/batman.html"
+			}, {
+				"name": "Get Started",
+				"url": "http://batmanjs.org/download.html"
+			}, {
+				"name": "Applications built with Batman.js",
+				"url": "http://batmanjs.org/examples.html"
+			}, {
+				"name": "Blog",
+				"url": "http://batmanjs.org/2012/04/02/batman-packs-a-punch.html"
+			}, {
+				"name": "Batman.js on GitHub",
+				"url": "https://github.com/shopify/batman"
 			}]
 		}, {
 			"heading": "Articles and Guides",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Simple address book app with Batman.js",
+				"url": "http://kubyshkin.ru/posts/simple-address-book-app-with-batman-js.html"
+			}, {
+				"name": "Batman.js vs Knockout.js",
+				"url": "http://blog.erlware.org/2011/08/28/batman-js-vs-knockout-js"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "Batman.js on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/batman.js"
 			}, {
 				"name": "Mailing list on Google Groups",
-				"url": ""
+				"url": "https://groups.google.com/forum/?fromgroups#!forum/batmanjs"
 			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Batman.js on Twitter",
+				"url": "http://twitter.com/batmanjs"
 			}]
 		}]
 	},
@@ -249,7 +266,7 @@
 		"name": "CanJS",
 		"description": "CanJS is a MIT-licensed, client-side, JavaScript framework that makes building rich web applications easy.",
 		"homepage": "canjs.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/canjs"
 		}, {
@@ -295,34 +312,51 @@
 		}]
 	},
 	"chaplin": {
-		"name": "",
-		"description": "",
-		"homepage": "",
-		"source_path": [{
+		"name": "Chaplin",
+		"description": "Chaplin is an architecture for JavaScript applications using the Backbone.js library. Chaplin addresses Backbone’s limitations by providing a lightweight and flexible structure that features well-proven design patterns and best practices.",
+		"homepage": "chaplinjs.org",
+		"examples": [{
+			"name": "Dependency Example",
+			"url": "labs/dependency-examples/chaplin-brunch/public"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Getting Started",
+				"url": "https://github.com/chaplinjs/chaplin/blob/master/docs/getting_started.md"
+			}, {
+				"name": "Documentation",
+				"url": "https://github.com/chaplinjs/chaplin/tree/master/docs"
+			}, {
+				"name": "API Reference",
+				"url": "https://github.com/chaplinjs/chaplin/tree/master/docs#api-docs"
+			}, {
+				"name": "Annotated Source Code",
+				"url": "http://chaplinjs.org/annotated/chaplin.html"
+			}, {
+				"name": "Applications built with Chaplin",
+				"url": "https://github.com/chaplinjs/chaplin/wiki/Projects-and-companies-using-Chaplin"
+			}, {
+				"name": "Cookbook",
+				"url": "https://github.com/chaplinjs/chaplin/wiki/Cookbook"
+			}, {
+				"name": "Chaplin on GitHub",
+				"url": "https://github.com/chaplinjs"
 			}]
 		}, {
 			"heading": "Articles and Guides",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "JavaScript MVC frameworks: A Comparison of Marionette and Chaplin",
+				"url": "http://9elements.com/io/index.php/comparison-of-marionette-and-chaplin"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "Chaplin on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/chaplinjs"
 			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
-			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Chaplin on Twitter",
+				"url": "http://twitter.com/chaplinjs"
 			}]
 		}]
 	},
@@ -330,7 +364,7 @@
 		"name": "Closure Tools",
 		"description": "The Closure Tools project is an effort by Google engineers to open source the tools used in many of Google's sites and web applications for use by the wider Web development community.",
 		"homepage": "developers.google.com/closure",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/closure"
 		}],
@@ -376,7 +410,7 @@
 		"name": "cujo.js",
 		"description": "cujo is an architectural toolkit for next generation JavaScript applications. It encourages highly modular development, declarative application assembly, and embraces the asynchronous nature of JavaScript and its fusion of object-oriented and functional programming styles.",
 		"homepage": "cujojs.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/cujo"
 		}],
@@ -407,7 +441,7 @@
 		"name": "Dart",
 		"description": "Dart is a class-based, object-oriented language with lexical scoping, closures, and optional static typing. Dart helps you build structured modern web apps and is easy to learn for a wide range of developers.",
 		"homepage": "dartlang.org",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/dart"
 		}],
@@ -456,7 +490,7 @@
 		"name": "DeftJS",
 		"description": "DeftJS enhances Ext JS and Sencha Touch’s APIs with additional building blocks that enable large development teams to rapidly build enterprise scale applications, leveraging best practices and proven patterns discovered by top RIA developers at some of the best consulting firms in the industry.",
 		"homepage": "deftjs.org",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/extjs_deftjs"
 		}],
@@ -490,34 +524,55 @@
 		}]
 	},
 	"derby": {
-		"name": "",
-		"description": "",
-		"homepage": "",
-		"source_path": [{
+		"name": "Derby",
+		"description": "MVC framework making it easy to write realtime, collaborative applications that run in both Node.js and browsers.",
+		"homepage": "derbyjs.com",
+		"examples": [{
+			"name": "Real-time Example",
+			"url": "http://todomvc.derbyjs.com",
+			"source_url": "labs/architecture-examples/derby"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Introduction",
+				"url": "http://derbyjs.com/#introduction"
+			}, {
+				"name": "Getting Started",
+				"url": "http://derbyjs.com/#getting_started"
+			}, {
+				"name": "Applications built with Derby",
+				"url": "https://github.com/codeparty/derby/wiki/Community-Projects#website-showcase"
+			}, {
+				"name": "Blog",
+				"url": "http://blog.derbyjs.com"
+			}, {
+				"name": "FAQ",
+				"url": "https://github.com/codeparty/derby/wiki/Frequently-Asked-Questions"
+			}, {
+				"name": "Derby on GitHub",
+				"url": "https://github.com/codeparty/derby"
 			}]
 		}, {
 			"heading": "Articles and Guides",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Learning DerbyJS",
+				"url": "http://nickofnicks.com/2013/04/24/nodejs/derbyjs/learning-derbyjs/"
+			}, {
+				"name": "Screencast - 6 Things I'm Loving about DerbyJS",
+				"url": "http://micknelson.wordpress.com/2012/07/27/6-things-im-loving-about-derbyjs"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "Derby on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/derbyjs"
 			}, {
 				"name": "Mailing list on Google Groups",
-				"url": ""
+				"url": "https://groups.google.com/forum/?fromgroups#!forum/derbyjs"
 			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Derby on Twitter",
+				"url": "http://twitter.com/derbyjs"
 			}]
 		}]
 	},
@@ -525,7 +580,7 @@
 		"name": "Dermis",
 		"description": "Dermis is a lightweight MVVM framework with built-in data binding (via rivets).",
 		"homepage": "wearefractal.com/dermis",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/dermis"
 		}],
@@ -550,7 +605,7 @@
 		"name": "Dijon",
 		"description": "An IOC/DI framework in Javascript, inspired by Robotlegs and Swiftsuspenders.",
 		"homepage": "github.com/creynders/dijon-framework",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/dijon"
 		}],
@@ -575,7 +630,7 @@
 		"name": "Dojo",
 		"description": "Dojo saves you time and scales with your development process, using web standards as its platform. It’s the toolkit experienced developers turn to for building high quality desktop and mobile web applications.",
 		"homepage": "dojotoolkit.org",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/dojo"
 		}],
@@ -618,7 +673,7 @@
 		"name": "duel",
 		"description": "DUEL is a dual-side templating engine using HTML for layout and 100% pure JavaScript as the binding language. The same views may be executed both directly in the browser (client-side template) and on the server (server-side template).",
 		"homepage": "bitbucket.org/mckamey/duel/wiki/Home",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/duel/www"
 		}],
@@ -640,7 +695,7 @@
 		"name": "Ember.js",
 		"description": "A framework for creating ambitious web applications.",
 		"homepage": "emberjs.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/emberjs"
 		}, {
@@ -692,7 +747,7 @@
 		"name": "Enyo",
 		"description": "Use the same framework to develop apps for the web and for all major platforms, desktop and mobile.",
 		"homepage": "enyojs.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Dependency Example",
 			"url": "labs/dependency-examples/enyo_backbone"
 		}],
@@ -738,7 +793,7 @@
 		"name": "Epitome",
 		"description": "Epitome is a new extensible and modular open-source MVC* framework, built out of MooTools Classes and Events.",
 		"homepage": "http://dimitarchristoff.github.io/Epitome",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/epitome"
 		}],
@@ -769,7 +824,7 @@
 		"name": "Ext JS",
 		"description": "Sencha Ext JS is the industry's most powerful desktop application development platform with unparalleled cross-browser compatibility, advanced MVC architecture, plugin-free charting, and modern UI widgets.",
 		"homepage": "sencha.com/products/extjs",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/extjs"
 		}],
@@ -806,7 +861,7 @@
 		"name": "Flight",
 		"description": "Flight is a lightweight, component-based JavaScript framework that maps behavior to DOM nodes.",
 		"homepage": "twitter.github.io/flight",
-		"source_path": [{
+		"examples": [{
 			"name": "Dependency Example",
 			"url": "dependency-examples/flight"
 		}],
@@ -831,7 +886,7 @@
 		"name": "Funnyface.js",
 		"description": "O_o: HTML binding for teh lulz.",
 		"homepage": "weepy.github.io/o_O",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/o_O"
 		}],
@@ -850,7 +905,7 @@
 		"name": "Google Web Toolkit",
 		"description": "Google Web Toolkit (GWT) is a development toolkit for building and optimizing complex browser-based applications. GWT is used by many products at Google, including Google AdWords and Orkut. It's open source, completely free, and used by thousands of developers around the world.",
 		"homepage": "developers.google.com/web-toolkit",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/gwt"
 		}],
@@ -890,42 +945,19 @@
 		}]
 	},
 	"javascript": {
-		"name": "",
-		"description": "",
-		"homepage": "",
-		"source_path": [{
-		}],
-		"link_groups": [{
-			"heading": "Official Resources",
-			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Community",
-			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
-			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
-			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
-			}]
+		"name": "JavaScript",
+		"description": "JavaScript® (often shortened to JS) is a lightweight, interpreted, object-oriented language with first-class functions, most known as the scripting language for Web pages, but used in many non-browser environments as well such as node.js or Apache CouchDB.",
+		"homepage": "developer.mozilla.org/en-US/docs/JavaScript",
+		"examples": [{
+			"name": "Vanilla JavaScript Example",
+			"url": "vanilla-examples/vanillajs"
 		}]
 	},
 	"jquery": {
 		"name": "jQuery",
 		"description": "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.",
 		"homepage": "jquery.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/jquery"
 		}],
@@ -977,7 +1009,7 @@
 		"name": "Kendo UI",
 		"description": "Comprehensive HTML5/JavaScript framework for modern web and mobile app development.",
 		"homepage": "kendoui.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/kendo"
 		}],
@@ -1020,7 +1052,7 @@
 		"name": "Knockback.js",
 		"description": "Both Knockout.js and Backbone.js have their strengths and weaknesses, but together they are amazing! With Knockback.js, you can use the strong ORM provided by Backbone and create dynamic views using Knockout bindings.",
 		"homepage": "kmalakoff.github.io/knockback",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/knockback"
 		}],
@@ -1048,7 +1080,7 @@
 		"name": "Knockout.js",
 		"description": "Knockout.js helps you simplify dynamic JavaScript UIs using the Model-View-ViewModel (MVVM) pattern.",
 		"homepage": "knockoutjs.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/knockoutjs"
 		}, {
@@ -1100,7 +1132,7 @@
 		"name": "Maria",
 		"description": "The MVC framework for JavaScript applications. The real MVC. The Smalltalk MVC. The Gang of Four MVC.",
 		"homepage": "peter.michaux.ca/maria",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/maria"
 		}],
@@ -1119,66 +1151,106 @@
 		}]
 	},
 	"marionettejs": {
-		"name": "",
-		"description": "",
-		"homepage": "",
-		"source_path": [{
+		"name": "Backbone.Marionette",
+		"description": "Backbone.Marionette is a composite application library for Backbone.js that aims to simplify the construction of large scale JavaScript applications.",
+		"homepage": "marionettejs.com",
+		"examples": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/backbone_marionette"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "API Reference",
+				"url": "https://github.com/marionettejs/backbone.marionette/tree/master/docs"
+			}, {
+				"name": "Applications built with Backbone.Marionette",
+				"url": "https://github.com/marionettejs/backbone.marionette/wiki/Projects-and-websites-using-marionette"
+			}, {
+				"name": "Introduction to Composite JavaScript Apps",
+				"url": "https://github.com/marionettejs/backbone.marionette/wiki/Introduction-to-composite-javascript-apps"
+			}, {
+				"name": "FAQ",
+				"url": "https://github.com/marionettejs/backbone.marionette/wiki#frequently-asked-questions"
+			}, {
+				"name": "Backbone.Marionette on GitHub",
+				"url": "https://github.com/marionettejs/backbone.marionette"
 			}]
 		}, {
 			"heading": "Articles and Guides",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "A Thorough Introduction to Backbone.Marionette",
+				"url": "http://coding.smashingmagazine.com/2013/02/11/introduction-backbone-marionette"
+			}, {
+				"name": "Backbone Marionette: Better Backbone Apps",
+				"url": "http://www.joezimjs.com/javascript/backbone-marionette-better-backbone-apps"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "Backbone.Marionette on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/backbone.marionette"
 			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
-			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Backbone.Marionette on Twitter",
+				"url": "http://twitter.com/marionettejs"
 			}]
 		}]
 	},
 	"meteor": {
-		"name": "",
-		"description": "",
-		"homepage": "",
-		"source_path": [{
+		"name": "Meteor",
+		"description": "Meteor is an open-source platform for building top-quality web apps in a fraction of the time, whether you're an expert developer or just getting started.",
+		"homepage": "meteor.com",
+		"examples": [{
+			"name": "Real-time Example",
+			"url": "http://todomvcapp.meteor.com"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Documentation",
+				"url": "http://docs.meteor.com"
+			}, {
+				"name": "Applications built with Meteor",
+				"url": "http://madewith.meteor.com"
+			}, {
+				"name": "Examples",
+				"url": "http://meteor.com/examples"
+			}, {
+				"name": "Blog",
+				"url": "http://meteor.com/blog"
+			}, {
+				"name": "FAQ",
+				"url": "http://meteor.com/faq"
+			}, {
+				"name": "Meteor on GitHub",
+				"url": "https://github.com/meteor"
+			}, {
+				"name": "Meteor on YouTube",
+				"url": "http://www.youtube.com/user/MeteorVideos"
 			}]
 		}, {
 			"heading": "Articles and Guides",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Learn Meteor Fundamentals and Best Practices",
+				"url": "http://andrewscala.com/meteor"
+			}, {
+				"name": "Introduction to Realtime Web with Meteor and Node.js",
+				"url": "http://www.andrewmunsell.com/blog/introduction-to-realtime-web-meteor-and-nodejs"
+			}, {
+				"name": "Confessions of a Meteor Newb",
+				"url": "http://blog.jerodsanto.net/2012/04/confessions-of-a-meteor-newb"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "Meteor on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/meteor"
 			}, {
 				"name": "Mailing list on Google Groups",
-				"url": ""
+				"url": "https://groups.google.com/forum/?fromgroups#!forum/meteor-core"
 			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Meteor on Twitter",
+				"url": "http://twitter.com/meteorjs"
 			}]
 		}]
 	},
@@ -1186,7 +1258,7 @@
 		"name": "Montage",
 		"description": "The Montage framework lets you develop rich HTML5 applications optimized for today and tomorrow’s range of connected devices. You can build rich client-side UI’s, sharing packages and modules with your NodeJS server. Montage opens a new world of opportunity for web developers.",
 		"homepage": "montagejs.org",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/montage"
 		}],
@@ -1217,7 +1289,7 @@
 		}, {
 			"heading": "Articles and Guides",
 			"links": [{
-				"name": "YouTube: Getting Started",
+				"name": "YouTube - Getting Started",
 				"url": "http://www.youtube.com/watch?v=JfT1ML200JI"
 			}]
 		}, {
@@ -1241,7 +1313,7 @@
 		"name": "Olives.js",
 		"description": "A JS Framework for creating realtime and scalable applications. Based on Emily.js and socket.io.",
 		"homepage": "flams.github.io/olives",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/olives"
 		}],
@@ -1263,7 +1335,7 @@
 		"name": "PlastronJS",
 		"description": "PlastronJS is an MVC library which uses the Google Closure library for use with the Closure Compiler.",
 		"homepage": "rhysbrettbowen.github.io/PlastronJS",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/plastronjs"
 		}],
@@ -1288,7 +1360,7 @@
 		"name": "PureMVC",
 		"description": "PureMVC is a lightweight framework for creating applications based upon the classic Model, View and Controller concept.",
 		"homepage": "puremvc.org",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/puremvc"
 		}],
@@ -1331,7 +1403,7 @@
 		"name": "rAppid.js",
 		"description": "The declarative Rich Internet Application Javascript MVC Framework.",
 		"homepage": "rappidjs.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/rappidjs"
 		}],
@@ -1365,7 +1437,7 @@
 		"name": "Sammy.js",
 		"description": "A small web framework with class.",
 		"homepage": "sammyjs.org",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/sammyjs"
 		}],
@@ -1405,66 +1477,64 @@
 		}]
 	},
 	"serenadejs": {
-		"name": "",
-		"description": "",
-		"homepage": "",
-		"source_path": [{
+		"name": "Serenade.js",
+		"description": "Serenade.js is a client side framework built on the MVC pattern. It makes it simple to create rich client side applications by freeing you from having to keep the DOM up to date with your data through powerful data bindings.",
+		"homepage": "serenadejs.org",
+		"examples": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/serenadejs"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Introduction",
+				"url": "http://serenadejs.org/introduction.html"
+			}, {
+				"name": "Applications built with Serenade.js",
+				"url": "http://serenade.herokuapp.com"
+			}, {
+				"name": "Serenade.js on GitHub",
+				"url": "https://github.com/elabs/serenade.js"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
-			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
-			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Serenade.js on Twitter",
+				"url": "http://twitter.com/serenadejs"
 			}]
 		}]
 	},
 	"socketstream": {
-		"name": "",
-		"description": "",
-		"homepage": "",
-		"source_path": [{
+		"name": "SocketStream",
+		"description": "SocketStream 0.3 is a fast, modular Node.js web framework dedicated to building realtime single-page apps.",
+		"homepage": "socketstream.org",
+		"examples": [{
+			"name": "Real-time Example",
+			"url": "https://github.com/addyosmani/todomvc/blob/gh-pages/labs/architecture-examples/socketstream/README.md"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Tour",
+				"url": "http://www.socketstream.org/tour"
+			}, {
+				"name": "SocketStream on GitHub",
+				"url": "https://github.com/socketstream"
 			}]
 		}, {
 			"heading": "Articles and Guides",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Video - Owen Barnes introduces SocketStream",
+				"url": "http://www.infoq.com/presentations/SocketStream"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "SocketStream on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/socketstream"
 			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
-			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "SocketStream on Twitter",
+				"url": "http://twitter.com/socketstream"
 			}]
 		}]
 	},
@@ -1472,7 +1542,7 @@
 		"name": "soma.js",
 		"description": "soma.js is a framework created to build scalable and maintainable javascript applications.",
 		"homepage": "http://somajs.github.io/somajs",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/somajs"
 		}],
@@ -1509,7 +1579,7 @@
 		"name": "Spine.js",
 		"description": "Build Awesome JavaScript MVC Applications.",
 		"homepage": "spinejs.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/spine"
 		}],
@@ -1549,7 +1619,7 @@
 		"name": "Stapes.js",
 		"description": "A (really) tiny Javascript MVC microframework.",
 		"homepage": "",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/stapes"
 		}],
@@ -1568,98 +1638,110 @@
 		}]
 	},
 	"thorax": {
-		"name": "",
-		"description": "",
-		"homepage": "",
-		"source_path": [{
+		"name": "Thorax",
+		"description": "An opinionated, battle-tested Backbone + Handlebars framework to build large scale web applications.",
+		"homepage": "thoraxjs.org",
+		"examples": [{
+			"name": "Architecture Example",
+			"url": "labs/architecture-examples/thorax"
+		}, {
+			"name": "Thorax + Lumbar",
+			"url": "labs/dependency-examples/thorax_lumbar/public"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Getting Started",
+				"url": "http://thoraxjs.org/start.html"
+			}, {
+				"name": "API Reference",
+				"url": "http://thoraxjs.org/api.html"
+			}, {
+				"name": "Screencast - Introduction to Thorax",
+				"url": "http://vimeo.com/60230630"
+			}, {
+				"name": "Seed Project",
+				"url": "https://github.com/walmartlabs/thorax-seed"
+			}, {
+				"name": "Thorax on GitHub",
+				"url": "https://github.com/walmartlabs/thorax"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
-			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
-			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "Thorax on Twitter",
+				"url": "http://twitter.com/walmartlabs"
 			}]
 		}]
 	},
 	"troopjs": {
-		"name": "",
-		"description": "",
-		"homepage": "",
-		"source_path": [{
+		"name": "TroopJS",
+		"description": "The simple js framework that does as little as possible, then stays out of the way.",
+		"homepage": "troopjs.com",
+		"examples": [{
+			"name": "Dependency Example",
+			"url": "labs/dependency-examples/troopjs"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Articles and Guides",
-			"links": [{
-				"name": "",
-				"url": ""
-			}]
-		}, {
-			"heading": "Community",
-			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
-			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
-			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "TroopJS on GitHub",
+				"url": "https://github.com/troopjs"
 			}]
 		}]
 	},
 	"typescript": {
-		"name": "",
-		"description": "",
-		"homepage": "",
-		"source_path": [{
+		"name": "TypeScript",
+		"description": "TypeScript is a language for application-scale JavaScript development. TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. Any browser. Any host. Any OS. Open Source.",
+		"homepage": "typescriptlang.org",
+		"examples": [{
+			"name": "TypeScript + AngularJS",
+			"url": "labs/architecture-examples/typescript-angular"
+		}, {
+			"name": "TypeScript + Backbone.js",
+			"url": "labs/architecture-examples/typescript-backbone"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Tutorial",
+				"url": "http://www.typescriptlang.org/Tutorial"
+			}, {
+				"name": "Code Playground",
+				"url": "http://www.typescriptlang.org/Playground"
+			}, {
+				"name": "Documentation",
+				"url": "http://typescript.codeplex.com/documentation"
+			}, {
+				"name": "Applications built with TypeScript",
+				"url": "http://www.typescriptlang.org/Samples"
+			}, {
+				"name": "Blog",
+				"url": "http://blogs.msdn.com/b/typescript"
+			}, {
+				"name": "Source Code",
+				"url": "http://typescript.codeplex.com/sourcecontrol/latest#README.txt"
 			}]
 		}, {
 			"heading": "Articles and Guides",
 			"links": [{
-				"name": "",
-				"url": ""
+				"name": "Thoughts on TypeScript",
+				"url": "http://www.nczonline.net/blog/2012/10/04/thoughts-on-typescript"
+			}, {
+				"name": "ScreenCast - Why I Like TypeScript",
+				"url": "http://www.leebrimelow.com/why-i-like-typescripts"
 			}]
 		}, {
 			"heading": "Community",
 			"links": [{
-				"name": " on StackOverflow",
-				"url": "http://stackoverflow.com/questions/tagged/"
+				"name": "TypeScript on StackOverflow",
+				"url": "http://stackoverflow.com/questions/tagged/typescript"
 			}, {
-				"name": "Mailing list on Google Groups",
-				"url": ""
+				"name": "Forums",
+				"url": "http://typescript.codeplex.com/discussions"
 			}, {
-				"name": " on Twitter",
-				"url": "http://twitter.com/"
+				"name": "TypeScript on Twitter",
+				"url": "http://twitter.com/typescriptlang"
 			}]
 		}]
 	},
@@ -1667,7 +1749,7 @@
 		"name": "YUI",
 		"description": "YUI is a free, open source JavaScript and CSS library for building richly interactive web applications.",
 		"homepage": "yuilibrary.com",
-		"source_path": [{
+		"examples": [{
 			"name": "Architecture Example",
 			"url": "architecture-examples/yui"
 		}],

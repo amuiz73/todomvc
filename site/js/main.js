@@ -190,25 +190,26 @@
 			return framework[key];
 		}));
 
-		body.find('.source-links').html($.map(framework.source_path, function (sourcePath) {
-			var demoLink = '<a href="' + sourcePath.url + '">Demo</a>, ';
-			var sourceLink = ' <a href="https://github.com/addyosmani/todomvc/tree/gh-pages/' + sourcePath.url + '">Source</a>';
-			return '<h5>' + sourcePath.name + '</h5><p>' + demoLink + sourceLink + '</p>';
+		body.find('.source-links').html($.map(framework.examples, function (example) {
+			var sourceHref = example.source_url || example.url;
+			return '<h5>' + example.name + '</h5><p><a href="' + example.url + '">Demo</a>, <a href="https://github.com/addyosmani/todomvc/tree/gh-pages/' + sourceHref + '">Source</a></p>';
 		}).join(''));
 
-		body.append($.map(framework.link_groups, function (linkGroup) {
-			var links = '<h4>' + linkGroup.heading + '</h4>';
-			links += '<ul>';
-			links += $.map(linkGroup.links, function (link) {
-				return '<li>' + linksTemplate.replace(parser, function (match, key) {
-					return link[key];
-				}) + '</li>';
-			}).join('');
-			links += '</ul>';
-			return links;
-		}).join(''));
+		if (framework.link_groups) {
+			body.append($.map(framework.link_groups, function (linkGroup) {
+				var links = '<h4>' + linkGroup.heading + '</h4>';
+				links += '<ul>';
+				links += $.map(linkGroup.links, function (link) {
+					return '<li>' + linksTemplate.replace(parser, function (match, key) {
+						return link[key];
+					}) + '</li>';
+				}).join('');
+				links += '</ul>';
+				return links;
+			}).join(''));
 
-		body.append(this.$template.footer);
+			body.append(this.$template.footer);
+		}
 
 		this.$el.container.html(body.html());
 
