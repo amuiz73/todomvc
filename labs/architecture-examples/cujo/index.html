@@ -12,7 +12,129 @@
 	<script src="app/run.js"></script>
 </head>
 <body>
-	<section id="todoapp"></section>
-	<script src="../../../assets/base.js"></script>
+	<style>
+		@import '../../../site/css/bootstrap.css';
+		@import '../../../site/css/main.css';
+		body {
+			width: 900px;
+			margin: 0 auto;
+			font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+		input[type="checkbox"] {
+			cursor: default;
+		}
+		input[type="text"] {
+			height: auto;
+		}
+		a {
+			font-weight: normal;
+			text-decoration: underline
+		}
+		body > aside,
+		body > aside * {
+			box-sizing: border-box;
+		}
+		body > aside {
+			position: absolute;
+			top: 0;
+			width: 300px;
+			padding: 10px;
+			transition-property: left;
+			transition-duration: 500ms;
+		}
+		body > aside input {
+			width: 100%;
+		}
+		body > article {
+			position: relative;
+			width: 550px;
+			left: 325px;
+		}
+		#todoapp h1 {
+			line-height: normal;
+			top: -105px;
+		}
+		#todoapp form {
+			margin: 0;
+		}
+		#todo-list label,
+		#todo-list li {
+			font-size: 24px;
+			margin-bottom: 0;
+		}
+		#info p {
+			font-size: 12px;
+		}
+		.learn a {
+			font-size: 100%;
+		}
+
+		@media (max-width: 900px) {
+			body {
+				width: 550px;
+			}
+			body > aside {
+				left: -300px;
+			}
+			body > article {
+				left: 0;
+			}
+		}
+	</style>
+	<aside>
+		<section class="learn" style="display: block;">
+			<header>
+				<h3>cujo.js</h3>
+				<span class="source-links">
+					<h5>Architecture Example</h5>
+					<p>
+						<a href="labs/architecture-examples/cujo">Demo</a>,
+						<a href="https://github.com/addyosmani/todomvc/tree/gh-pages/labs/architecture-examples/cujo">Source</a>
+					</p>
+				</span>
+			</header>
+			<hr>
+			<blockquote class="quote speech-bubble">
+				<p>
+					cujo is an architectural toolkit for next generation JavaScript applications. It encourages highly modular development, declarative application assembly, and embraces the asynchronous nature of JavaScript and its fusion of object-oriented and functional programming styles.
+				</p>
+				<footer>
+					<a href="http://cujojs.com">cujo.js</a>
+				</footer>
+			</blockquote>
+			<hr>
+			<h4>Official Resources</h4>
+			<ul>
+				<li>
+					<a href="https://github.com/cujojs">cujo.js on GitHub</a>
+				</li>
+			</ul>
+			<h4>Articles and Guides</h4>
+			<ul>
+				<li>
+					<a href="http://www.youtube.com/watch?v=TqX-CqYYwEc">An introductory presentation</a>
+				</li>
+			</ul>
+			<h4>Community</h4>
+			<ul>
+				<li>
+					<a href="https://groups.google.com/forum/#!forum/cujojs">Google Groups mailing list</a>
+				</li>
+				<li>
+					<a href="http://twitter.com/cujojs">cujo.js on Twitter</a>
+				</li>
+			</ul>
+			<footer>
+				<hr>
+				<em>
+					If you have other helpful links to share, or find any of the links above no longer work, please <a href="https://github.com/addyosmani/todomvc/issues">let us know</a>.
+				</em>
+			</footer>
+		</section>
+	</aside>
+	<article>
+		<section id="todoapp"></section>
+		<script src="../../../assets/base.js"></script>
+	</article>
 </body>
 </html>
