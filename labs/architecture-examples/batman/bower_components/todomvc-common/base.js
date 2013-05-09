@@ -39,17 +39,17 @@
 	};
 
 	Learn.prepareTemplate = function () {
-		var block = document.createElement();
+		var block = document.createElement('section');
 
-		var template = document.createElement();
+		var template = block.cloneNode(block);
 		template.innerHTML = this.json.templates.todomvc;
 
-		var header = template.cloneNode(block);
-		header.querySelector('ul').remove();
-		header.querySelectorAll('footer')[1].remove();
+		var header = template.cloneNode(block).querySelector('.learn');
+		header.removeChild(header.querySelector('ul'));
+		header.removeChild(header.querySelectorAll('footer')[1]);
 
 		this.$template = {};
-		this.$template.header = header.innerHTML;
+		this.$template.header = header.outerHTML;
 		this.$template.links = template.cloneNode(block).querySelector('ul a').outerHTML;
 		this.$template.footer = template.cloneNode(block).querySelectorAll('footer')[1].outerHTML;
 	};
@@ -87,7 +87,7 @@
 			section.querySelector('.learn').innerHTML += this.$template.footer;
 		}
 
-		document.body.classList.add('learn-bar');
+		document.body.className += ' learn-bar';
 		this.$el.container.innerHTML = section.innerHTML;
 	};
 
@@ -112,13 +112,11 @@
 
 		this.$el = {};
 		this.$el.container = document.querySelector('body > aside');
-		this.frameworkName = this.$el.container && this.$el.container.dataset.framework;
+		this.frameworkName = this.$el.container && this.$el.container.getAttribute('data-framework');
 
-		if (!this.frameworkName) {
-			return;
+		if (this.frameworkName) {
+			this.getJSON('../../../learn.json');
 		}
-
-		this.getJSON('../../../learn.json');
 	};
 
 	appendSourceLink();
