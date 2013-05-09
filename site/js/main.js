@@ -217,13 +217,12 @@
 	};
 
 	Learn.loadFramework = function (framework, options) {
-		this._loading = true;
-
 		if (framework !== this._activeFramework && this.frameworks.hasOwnProperty(framework)) {
 			this._activeFramework = framework;
 			window.location.hash = framework;
 
 			this.$el.container
+				.stop()
 				.fadeOut($.proxy(this.parseTemplate, this))
 				.fadeIn();
 		}
@@ -233,8 +232,6 @@
 				scrollTop: this.$el.container.offset().top - 10
 			}, 1000);
 		}
-
-		this._loading = false;
 	};
 
 	Learn.search = function (searchTerm) {
@@ -258,7 +255,7 @@
 
 		var matchedKey = this.search(searchKey);
 
-		if (matchedKey && !this._loading) {
+		if (matchedKey) {
 			this.loadFramework(matchedKey);
 		}
 	};
