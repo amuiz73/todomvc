@@ -34,7 +34,7 @@
 				"name": "agility.js on Stack Overflow",
 				"url": "http://stackoverflow.com/questions/tagged/agility.js"
 			}, {
-				"name": "agilityjs on Twitter",
+				"name": "Agility.js on Twitter",
 				"url": "https://twitter.com/agilityjs"
 			}, {
 				"name": "Agility.js on Google +",
@@ -670,7 +670,7 @@
 		}]
 	},
 	"duel": {
-		"name": "duel",
+		"name": "DUEL",
 		"description": "DUEL is a dual-side templating engine using HTML for layout and 100% pure JavaScript as the binding language. The same views may be executed both directly in the browser (client-side template) and on the server (server-side template).",
 		"homepage": "bitbucket.org/mckamey/duel/wiki/Home",
 		"examples": [{
@@ -686,7 +686,7 @@
 				"name": "Examples",
 				"url": "https://bitbucket.org/mckamey/duel/wiki/Examples"
 			}, {
-				"name": "duel on BitBucket",
+				"name": "DUEL on BitBucket",
 				"url": "https://bitbucket.org/mckamey/duel/src"
 			}]
 		}]
@@ -792,7 +792,7 @@
 	"epitome": {
 		"name": "Epitome",
 		"description": "Epitome is a new extensible and modular open-source MVC* framework, built out of MooTools Classes and Events.",
-		"homepage": "http://dimitarchristoff.github.io/Epitome",
+		"homepage": "dimitarchristoff.github.io/Epitome",
 		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/epitome"
@@ -832,7 +832,7 @@
 			"heading": "Official Resources",
 			"links": [{
 				"name": "Documentation",
-				"url": "http://docs.sencha.com/extjs/4.2.0/"
+				"url": "http://docs.sencha.com/extjs/4.2.0"
 			}, {
 				"name": "API Reference",
 				"url": "http://docs.sencha.com/extjs/4.1.3"

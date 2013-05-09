@@ -1,28 +1,35 @@
-# Backbone.Marionette TodoMVC app
+# Backbone.Marionette TodoMVC Example
 
-[Backbone.Marionette](http://marionettejs.com) is a composite 
-application library for Backbone.js that aims to simplify 
-the construction of large scale JavaScript applications. 
-It is a collection of common design and implementation patterns 
-found in the applications that I (Derick Bailey) have been building 
-with Backbone, and includes various pieces inspired by composite 
-application architectures, such as Microsoft's "Prism" framework.
+> Backbone.Marionette is a composite application library for Backbone.js that aims to simplify the construction of large scale JavaScript applications.
 
-## Key Benefits
+> _[Backbone.Marionette - marionettejs.com](http://marionettejs.com)_
 
-* Scale applications out with modular, event driven architecture
-* Sensible defaults, such as using Underscore templates for view rendering
-* Easy to modify to make it work with your applicaton's specific needs
-* Reduce boilerplate for views, with specialized view types
-* Build on a modular architecture with an Application and modules that attach to it
-* Compose your application's visuals at runtime, with Region and Layout
-* Nested views and layouts within visual regions
-* Built-in memory management and zombie killing in views, regions and layouts
-* Built-in event clean up with the EventBinder
-* Event-driven architecture with the EventAggregator
-* Flexible, "as-needed" architecture allowing you to pick and choose what you need
-* And much, much more
 
-This implementation of the application uses Marionette's module system. 
-Variations using RequireJS and a more classic approach to JavaScript modules 
-[are also available here](https://github.com/marionettejs/backbone.marionette/wiki/Projects-and-websites-using-marionette).
+## Learning Backbone.Marionette
+
+The [Backbone.Marionette website](http://marionettejs.com) is a great resource for getting started.
+
+Here are some links you may find helpful:
+
+* [API Reference](https://github.com/marionettejs/backbone.marionette/tree/master/docs)
+* [Applications built with Backbone.Marionette](https://github.com/marionettejs/backbone.marionette/wiki/Projects-and-websites-using-marionette)
+* [Introduction to Composite JavaScript Apps](https://github.com/marionettejs/backbone.marionette/wiki/Introduction-to-composite-javascript-apps)
+* [FAQ](https://github.com/marionettejs/backbone.marionette/wiki#frequently-asked-questions)
+* [Backbone.Marionette on GitHub](https://github.com/marionettejs/backbone.marionette)
+
+Articles and guides from the community:
+
+* [A Thorough Introduction to Backbone.Marionette](http://coding.smashingmagazine.com/2013/02/11/introduction-backbone-marionette)
+* [Backbone Marionette: Better Backbone Apps](http://www.joezimjs.com/javascript/backbone-marionette-better-backbone-apps)
+
+Get help from other Backbone.Marionette users:
+
+* [Backbone.Marionette on StackOverflow](http://stackoverflow.com/questions/tagged/backbone.marionette)
+* [Backbone.Marionette on Twitter](http://twitter.com/marionettejs)
+
+_If you have other helpful links to share, or find any of the links above no longer work, please [let us know](https://github.com/addyosmani/todomvc/issues)._
+
+
+## Implementation
+
+This implementation of the application uses Marionette's module system. Variations using RequireJS and a more classic approach to JavaScript modules [are also available here](https://github.com/marionettejs/backbone.marionette/wiki/Projects-and-websites-using-marionette).

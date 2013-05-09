@@ -4,7 +4,9 @@
 
 > _[Agility.js - agilityjs.com](http://agilityjs.com)_
 
+
 ## Learning Agility.js
+
 The [Agility.js website](http://agilityjs.com) is a great resource for getting started.
 
 Here are some links you may find helpful:
@@ -21,7 +23,7 @@ Get help from other Agility.js users:
 
 * [Google Groups mailing list](http://groups.google.com/group/agilityjs)
 * [agility.js on Stack Overflow](http://stackoverflow.com/questions/tagged/agility.js)
-* [agilityjs on Twitter](https://twitter.com/agilityjs)
+* [Agility.js on Twitter](https://twitter.com/agilityjs)
 * [Agility.js on Google +](https://plus.google.com/116251025970928820842/posts)
 
 _If you have other helpful links to share, or find any of the links above no longer work, please [let us know](https://github.com/addyosmani/todomvc/issues)._
