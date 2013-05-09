@@ -35,4 +35,90 @@
 
 	appendSourceLink();
 	redirect();
+
+	var Learn = {};
+	Learn.saveJSON = function (json) {
+		this.json = JSON.parse(json);
+	};
+
+	Learn.prepareTemplate = function () {
+		var block = document.createElement();
+
+		var template = document.createElement();
+		template.innerHTML = this.json.templates.todomvc;
+
+		var header = template.cloneNode(block);
+		header.querySelector('ul').remove();
+		header.querySelectorAll('footer')[1].remove();
+
+		this.$template = {};
+		this.$template.header = header.innerHTML;
+		this.$template.links = template.cloneNode(block).querySelector('ul a').outerHTML;
+		this.$template.footer = template.cloneNode(block).querySelectorAll('footer')[1].outerHTML;
+	};
+
+	Learn.append = function () {
+		var framework = this.json[this.frameworkName];
+
+		var linksTemplate = this.$template.links;
+		var parser = this.parser;
+
+		var section = document.createElement('section');
+
+		section.innerHTML += this.$template.header.replace(parser, function (match, key) {
+			return framework[key];
+		});
+
+		section.querySelector('.source-links').innerHTML = framework.examples.map(function (example) {
+			var sourceHref = example.source_url || example.url;
+			return '<h5>' + example.name + '</h5><p><a href="https://github.com/addyosmani/todomvc/tree/gh-pages/' + sourceHref + '">Source</a></p>';
+		}).join('');
+
+		if (framework.link_groups) {
+			section.querySelector('.learn').innerHTML += framework.link_groups.map(function (linkGroup) {
+				var links = '<h4>' + linkGroup.heading + '</h4>';
+				links += '<ul>';
+				links += linkGroup.links.map(function (link) {
+					return '<li>' + linksTemplate.replace(parser, function (match, key) {
+						return link[key];
+					}) + '</li>';
+				}).join('');
+				links += '</ul>';
+				return links;
+			}).join('');
+
+			section.querySelector('.learn').innerHTML += this.$template.footer;
+		}
+
+		this.$el.container.innerHTML = section.innerHTML;
+		this.$el.container.style.display = 'block';
+	};
+
+	Learn.getJSON = function (path) {
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', path, true);
+		xhr.send(null);
+
+		xhr.onload = function () {
+			this.saveJSON(xhr.responseText);
+			this.prepareTemplate();
+			this.append();
+		}.bind(this);
+	};
+
+	Learn.init = function (container, options) {
+		this.parser = /\{\{([^}]*)\}\}/g;
+
+		this.$el = {};
+		this.$el.container = document.querySelector('body > aside');
+		this.frameworkName = this.$el.container && this.$el.container.dataset.framework;
+
+		if (!this.frameworkName) {
+			return;
+		}
+
+		this.getJSON('../../../learn.json');
+	};
+
+	Learn.init();
 })();

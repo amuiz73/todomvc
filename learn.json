@@ -1786,5 +1786,8 @@
 				"url": "http://twitter.com/yuilibrary"
 			}]
 		}]
+	},
+	"templates": {
+		"todomvc": "<section class=\"learn\"><header><h3>{{name}}</h3><span class=\"source-links\"></span></header><hr><blockquote class=\"quote speech-bubble\"><p>{{description}}</p><footer><a href=\"http://{{homepage}}\">{{name}}</a></footer></blockquote><hr><ul><li><a href=\"{{url}}\">{{name}}</a></li></ul><footer><hr><em>If you have other helpful links to share, or find any of the links above no longer work, please <a href=\"https://github.com/addyosmani/todomvc/issues\">let us know</a>.</em></footer></section>"
 	}
 }
