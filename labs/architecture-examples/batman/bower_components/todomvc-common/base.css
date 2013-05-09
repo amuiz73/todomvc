@@ -536,7 +536,7 @@ hr {
 	border-top-color: rgba(0, 0, 0, .04);
 }
 
-body > aside {
+body.learn-bar > aside {
 	position: absolute;
 	width: 280px;
 	top: 0;
@@ -546,20 +546,20 @@ body > aside {
 	transition-duration: 500ms;
 }
 
-body > article {
+body.learn-bar > article {
 	position: relative;
 	width: 550px;
 	left: 0;
 }
 
 @media (min-width: 899px) {
-	body {
+	body.learn-bar {
 		width: 900px;
 	}
-	body > aside {
+	body.learn-bar > aside {
 		left: auto;
 	}
-	body > article {
+	body.learn-bar > article {
 		left: 325px;
 	}
 }

@@ -33,9 +33,6 @@
 		}
 	}
 
-	appendSourceLink();
-	redirect();
-
 	var Learn = {};
 	Learn.saveJSON = function (json) {
 		this.json = JSON.parse(json);
@@ -90,8 +87,8 @@
 			section.querySelector('.learn').innerHTML += this.$template.footer;
 		}
 
+		document.body.classList.add('learn-bar');
 		this.$el.container.innerHTML = section.innerHTML;
-		this.$el.container.style.display = 'block';
 	};
 
 	Learn.getJSON = function (path) {
@@ -100,13 +97,17 @@
 		xhr.send(null);
 
 		xhr.onload = function () {
+			if (xhr.status !== 200) {
+				return;
+			}
+
 			this.saveJSON(xhr.responseText);
 			this.prepareTemplate();
 			this.append();
 		}.bind(this);
 	};
 
-	Learn.init = function (container, options) {
+	Learn.init = function () {
 		this.parser = /\{\{([^}]*)\}\}/g;
 
 		this.$el = {};
@@ -120,5 +121,7 @@
 		this.getJSON('../../../learn.json');
 	};
 
+	appendSourceLink();
+	redirect();
 	Learn.init();
 })();
