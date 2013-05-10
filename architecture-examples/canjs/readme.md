@@ -5,13 +5,15 @@
 > _[CanJS - canjs.com](http://canjs.com)_
 
 
-## CanJS and JavaScriptMVC
+## Implementation
 
-*CanJS* is the extracted, more modern and more library-like MVC parts of [JavaScriptMVC](http://javascriptmvc.com)
-(formerly known as *jQueryMX*).
+### CanJS and JavaScriptMVC
 
-*JavaScriptMVC 3.3* uses CanJS for the MVC structure so this TodoMVC example **applies to JavaScriptMVC** as well.
-Additionally JavaScriptMVC contains:
+CanJS is the extracted, more modern and more library-like MVC parts of [JavaScriptMVC](http://javascriptmvc.com), formerly known as jQueryMX.
+
+JavaScriptMVC 3.3 uses CanJS for the MVC structure so this TodoMVC example applies to JavaScriptMVC as well.
+
+Additionally, JavaScriptMVC contains:
 
 - [CanJS](http://canjs.com) - For the MVC parts
 - [jQuery++](http://jquerypp.com) - jQuery's missing utils and special events
@@ -20,18 +22,18 @@ Additionally JavaScriptMVC contains:
 - [FuncUnit](http://funcunit.com) - jQuery style functional unit testing
 
 
-## View engines
+### View engines
 
 CanJS supports both live binding [EJS](http://canjs.us/#can_ejs) and [Mustache/Handlebars](http://canjs.us/#can_mustache)
 templates. By default the Mustache view will be used but an EJS example is available as well.
 You can easily change it by modifying the `view` option in the `js/app.js` file:
 
 ```js
-Models.Todo.findAll({}, function(todos) {
+Models.Todo.findAll({}, function (todos) {
 	new Todos('#todoapp', {
 		todos: todos,
-		state : can.route,
-		view : 'views/todos.ejs'
+		state: can.route,
+		view: 'views/todos.ejs'
 	});
 });
 ```
