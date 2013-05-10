@@ -1543,7 +1543,7 @@
 	"somajs": {
 		"name": "soma.js",
 		"description": "soma.js is a framework created to build scalable and maintainable javascript applications.",
-		"homepage": "http://somajs.github.io/somajs",
+		"homepage": "somajs.github.io/somajs",
 		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/somajs"
@@ -1620,7 +1620,7 @@
 	"stapes": {
 		"name": "Stapes.js",
 		"description": "A (really) tiny Javascript MVC microframework.",
-		"homepage": "",
+		"homepage": "hay.github.io/stapes",
 		"examples": [{
 			"name": "Architecture Example",
 			"url": "labs/architecture-examples/stapes"
