@@ -34,15 +34,11 @@
 	}
 
 	function findRoot() {
-		var path;
+		var base = ['labs', 'architecture-examples', 'dependency-examples'].filter(function (href) {
+			return location.href.match(new RegExp(href));
+		})[0];
 
-		['labs', 'architecture-examples', 'dependency-examples'].forEach(function (href) {
-			if (!path && location.href.match(new RegExp(href))) {
-				path = href;
-			}
-		});
-
-		return location.href.substr(0, location.href.indexOf(path));
+		return location.href.substr(0, location.href.indexOf(base));
 	}
 
 	function getFile(file, callback) {

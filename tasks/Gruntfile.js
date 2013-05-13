@@ -12,9 +12,10 @@ module.exports = function (grunt) {
 		// find all of the other `bower_components/todomvc-common` directories, and
 		// update them with what Batman has.
 		//
-		// I also added Bower up top, for in the future, as that might come in handy
+		// I also added Bower up top for in the future, as that might come in handy
 		// to correctly fetch and install the latest todomvc-common, without relying
 		// on this weird Batman system.
+		var sourceTodoMvcCommon = 'labs/architecture-examples/batman/bower_components/todomvc-common';
 
 		grunt.file.setBase('../');
 
@@ -31,10 +32,13 @@ module.exports = function (grunt) {
 
 		directories.forEach(function (destPath) {
 			wrench.copyDirSyncRecursive(
-				'labs/architecture-examples/batman/bower_components/todomvc-common', destPath, {
+				sourceTodoMvcCommon,
+				destPath,
+				{
 					forceDelete: true,
 					preserveFiles: false
-				}, function () {
+				},
+				function () {
 					console.log(arguments);
 				});
 		});
