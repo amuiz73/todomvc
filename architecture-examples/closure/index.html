@@ -7,36 +7,41 @@
 	<link rel="stylesheet" href="bower_components/todomvc-common/base.css">
 </head>
 <body>
-	<section id="todoapp">
-		<header id="header">
-			<h1>todos</h1>
-			<input id="new-todo" placeholder="What needs to be done?" autofocus>
-		</header>
-		<section id="main">
-			<input id="toggle-all" type="checkbox">
-			<label for="toggle-all">Mark all as complete</label>
-			<ul id="todo-list">
-			</ul>
+	<aside data-framework="closure">
+		<!-- Informational Bar -->
+	</aside>
+	<article>
+		<section id="todoapp">
+			<header id="header">
+				<h1>todos</h1>
+				<input id="new-todo" placeholder="What needs to be done?" autofocus>
+			</header>
+			<section id="main">
+				<input id="toggle-all" type="checkbox">
+				<label for="toggle-all">Mark all as complete</label>
+				<ul id="todo-list">
+				</ul>
+			</section>
+			<footer id="footer">
+				<ul id="filters">
+					<li>
+						<a class="selected" href="#/">All</a>
+					</li>
+					<li>
+						<a href="#/active">Active</a>
+					</li>
+					<li>
+						<a href="#/completed">Completed</a>
+					</li>
+				</ul>
+			</footer>
 		</section>
-		<footer id="footer">
-			<ul id="filters">
-				<li>
-					<a class="selected" href="#/">All</a>
-				</li>
-				<li>
-					<a href="#/active">Active</a>
-				</li>
-				<li>
-					<a href="#/completed">Completed</a>
-				</li>
-			</ul>
+		<footer id="info">
+			<p>Double-click to edit a todo</p>
+			<p>Created by <a href="http://www.scottlogic.co.uk/blog/chris/">Chris Price</a></p>
+			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
-	</section>
-	<footer id="info">
-		<p>Double-click to edit a todo</p>
-		<p>Created by <a href="http://www.scottlogic.co.uk/blog/chris/">Chris Price</a></p>
-		<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-	</footer>
+	</article>
 	<script src="bower_components/todomvc-common/base.js"></script>
 	<!-- The compiled version (to update run java -jar build/plovr.jar build plovr.json > js/compiled.js) -->
 	<script type="text/javascript" src="js/compiled.js"></script>

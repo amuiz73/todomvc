@@ -547,7 +547,7 @@ body.learn-bar > aside {
 	transition-duration: 500ms;
 }
 
-body.learn-bar > article {
+body.learn-bar article {
 	position: relative;
 	width: 550px;
 	left: 0;
@@ -560,7 +560,7 @@ body.learn-bar > article {
 	body.learn-bar > aside {
 		left: auto;
 	}
-	body.learn-bar > article {
+	body.learn-bar article {
 		left: 325px;
 	}
 }

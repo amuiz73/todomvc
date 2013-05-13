@@ -8,20 +8,25 @@
 		<link rel="stylesheet" href="css/app.css">
 	</head>
 	<body>
-		<section id="todoapp">
-			<header id="header"></header>
-			<section id="main"></section>
-			<footer id="footer"></footer>
-		</section>
-		<footer id="info">
-			<p>Double-click to edit a todo</p>
-			<p>
-				Created by <a href="http://github.com/jsoverson">Jarrod Overson</a>
-				and <a href="http://github.com/derickbailey">Derick Bailey</a>
-				using <a href="http://marionettejs.com">Backbone.Marionette</a>
-			</p>
-			<p>Further variations on the Backbone.Marionette app are also <a href="https://github.com/marionettejs/backbone.marionette/wiki/Projects-and-websites-using-marionette">available</a>.</p>
-		</footer>
+		<aside data-framework="marionettejs">
+			<!-- Informational Bar -->
+		</aside>
+		<article>
+			<section id="todoapp">
+				<header id="header"></header>
+				<section id="main"></section>
+				<footer id="footer"></footer>
+			</section>
+			<footer id="info">
+				<p>Double-click to edit a todo</p>
+				<p>
+					Created by <a href="http://github.com/jsoverson">Jarrod Overson</a>
+					and <a href="http://github.com/derickbailey">Derick Bailey</a>
+					using <a href="http://marionettejs.com">Backbone.Marionette</a>
+				</p>
+				<p>Further variations on the Backbone.Marionette app are also <a href="https://github.com/marionettejs/backbone.marionette/wiki/Projects-and-websites-using-marionette">available</a>.</p>
+			</footer>
+		</article>
 		<script type="text/html" id="template-footer">
 			<span id="todo-count"><strong></strong><span></span></span>
 			<ul id="filters">

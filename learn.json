@@ -167,7 +167,7 @@
 		"homepage": "backbonejs.org",
 		"examples": [{
 			"name": "Architecture Example",
-			"url": "architecture-examples/backbonejs"
+			"url": "architecture-examples/backbone"
 		}, {
 			"name": "Dependency Example",
 			"url": "dependency-examples/backbone_require"
@@ -443,7 +443,7 @@
 		"homepage": "dartlang.org",
 		"examples": [{
 			"name": "Architecture Example",
-			"url": "architecture-examples/dart"
+			"url": "architecture-examples/dart/web"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
