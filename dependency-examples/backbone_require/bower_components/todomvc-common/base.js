@@ -33,41 +33,31 @@
 		}
 	}
 
-	function getFile(file, options) {
-		var xhr = new XMLHttpRequest();
-		var messageThrown = false;
-		var attempts = 0;
+	function findRoot() {
+		var path;
 
-		var trying = function (file) {
-			if (++attempts > options.depth) {
-				return;
+		['labs', 'architecture-examples', 'dependency-examples'].forEach(function (href) {
+			if (!path && location.href.match(new RegExp(href))) {
+				path = href;
 			}
+		});
 
-			xhr.open('GET', file, true);
-			xhr.send();
+		return location.href.substr(0, location.href.indexOf(path));
+	}
 
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState !== 4) {
-					return;
-				}
+	function getFile(file, callback) {
+		var xhr = new XMLHttpRequest();
 
-				if (xhr.status === 200 && options.callback) {
-					options.callback(xhr.responseText);
-				}
+		file = findRoot() + file;
 
-				if (xhr.status === 404) {
-					if (!messageThrown) {
-						console.warn('We are trying to find the learn.json file. Ignore these warnings!');
-						messageThrown = true;
-					}
+		xhr.open('GET', file, true);
+		xhr.send();
 
-					// If the file wasn't found, try going a directory up.
-					trying('../' + file);
-				}
+		xhr.onload = function () {
+			if (xhr.status === 200 && callback) {
+				callback(xhr.responseText);
 			}
 		};
-
-		trying(file);
 	}
 
 	function Learn(learnJSON, config) {
@@ -181,5 +171,5 @@
 
 	appendSourceLink();
 	redirect();
-	getFile('../../learn.json', { depth: 2, callback: Learn });
+	getFile('learn.json', Learn);
 })();
