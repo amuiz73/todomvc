@@ -59,22 +59,32 @@
 			return new Learn(learnJSON, config);
 		}
 
-		var framework;
+		var template, framework;
 
 		if (typeof learnJSON !== 'object') {
-			learnJSON = JSON.parse(learnJSON);
+			try {
+				learnJSON = JSON.parse(learnJSON);
+			} catch (e) {
+				return;
+			}
 		}
 
 		if (config) {
-			this.template = config.template;
+			template = config.template;
 			framework = config.framework;
 		}
 
-		this.template = this.template || learnJSON.templates && learnJSON.templates.todomvc;
-		framework = framework || document.body.parentNode.getAttribute('data-framework');
+		if (!template && learnJSON.templates) {
+			template = learnJSON.templates.todomvc;
+		}
 
-		if (learnJSON[framework]) {
+		if (!framework && document.querySelector('[data-framework]')) {
+			framework = document.querySelector('[data-framework]').getAttribute('data-framework');
+		}
+
+		if (template && learnJSON[framework]) {
 			this.frameworkJSON = learnJSON[framework];
+			this.template = template;
 
 			this.append();
 		}

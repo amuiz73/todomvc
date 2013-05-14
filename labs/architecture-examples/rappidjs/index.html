@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-framework="rappidjs">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,13 +11,13 @@
 	<![endif]-->
 	<script src="app/lib/rappidjs.min.js"></script>
 	<script>
-		rAppid.bootStrap( 'app/Todo.xml', 'config.json', function ( err, systemManager, application ) {
-			if ( !err ) {
-				application.start( null, function() {
-					application.render( document.body );
+		rAppid.bootStrap('app/Todo.xml', 'config.json', function (err, systemManager, application) {
+			if (!err) {
+				application.start(null, function () {
+					application.render(document.body);
 				});
 			} else {
-				console.warn( err );
+				console.warn(err);
 			}
 		});
 	</script>
