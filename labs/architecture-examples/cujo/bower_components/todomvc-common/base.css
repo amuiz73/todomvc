@@ -68,8 +68,7 @@ body {
 
 #todoapp h1 {
 	position: absolute;
-	margin: 0;
-	margin-top: -77px;
+	top: -120px;
 	width: 100%;
 	font-size: 70px;
 	font-weight: bold;
@@ -421,14 +420,6 @@ hr {
 	border-bottom: 1px dashed #F7F7F7;
 }
 
-.learn {
-	position: relative;
-	z-index: 2;
-	background-color: rgba(255, 255, 255, .6);
-	border-radius: 5px;
-	padding: 10px;
-}
-
 .learn a {
 	font-weight: normal;
 	text-decoration: none;
@@ -537,30 +528,28 @@ hr {
 	border-top-color: rgba(0, 0, 0, .04);
 }
 
-body.learn-bar > aside {
+/**body*/.learn-bar > .learn {
 	position: absolute;
-	width: 280px;
-	top: 0;
+	width: 272px;
+	top: 8px;
 	left: -300px;
 	padding: 10px;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, .6);
 	transition-property: left;
 	transition-duration: 500ms;
 }
 
-body.learn-bar article {
-	position: relative;
-	width: 550px;
-	left: 0;
-}
-
 @media (min-width: 899px) {
-	body.learn-bar {
-		width: 900px;
+	/**body*/.learn-bar {
+		width: auto;
+		margin: 0 0 0 300px;
 	}
-	body.learn-bar > aside {
-		left: auto;
+	/**body*/.learn-bar > .learn {
+		left: 8px;
 	}
-	body.learn-bar article {
-		left: 325px;
+	/**body*/.learn-bar #todoapp {
+		width: 550px;
+		margin: 130px auto 40px auto;
 	}
 }

@@ -44,9 +44,7 @@
 	function getFile(file, callback) {
 		var xhr = new XMLHttpRequest();
 
-		file = findRoot() + file;
-
-		xhr.open('GET', file, true);
+		xhr.open('GET', findRoot() + file, true);
 		xhr.send();
 
 		xhr.onload = function () {
@@ -69,13 +67,11 @@
 
 		if (config) {
 			this.template = config.template;
-			this.container = config.container;
 			framework = config.framework;
 		}
 
 		this.template = this.template || learnJSON.templates && learnJSON.templates.todomvc;
-		this.container = this.container || document.querySelector('body > aside');
-		framework = framework || this.container && this.container.getAttribute('data-framework');
+		framework = framework || document.body.parentNode.getAttribute('data-framework');
 
 		if (learnJSON[framework]) {
 			this.frameworkJSON = learnJSON[framework];
@@ -90,14 +86,14 @@
 		var block = aside.cloneNode(aside);
 		block.innerHTML = this.template;
 
-		var header = block.cloneNode(aside).querySelector('.learn');
+		var header = block.cloneNode(aside);
 		header.removeChild(header.querySelector('ul'));
 		header.removeChild(header.querySelectorAll('footer')[1]);
 
 		return {
-			header: header.outerHTML,
-			links: block.cloneNode(aside).querySelector('ul a').outerHTML,
-			footer: block.cloneNode(aside).querySelectorAll('footer')[1].outerHTML
+			header: header,
+			links: block.cloneNode(aside).querySelector('ul a'),
+			footer: block.cloneNode(aside).querySelectorAll('footer')[1]
 		};
 	};
 
@@ -110,12 +106,12 @@
 		var template = this._prepareTemplate();
 
 		var aside = document.createElement('aside');
-		var linksTemplate = template.links;
+		var linksTemplate = template.links.outerHTML;
 		var parser = /\{\{([^}]*)\}\}/g;
 
 		var header, examples, links;
 
-		header = template.header.replace(parser, function (match, key) {
+		header = template.header.innerHTML.replace(parser, function (match, key) {
 			return frameworkJSON[key];
 		});
 
@@ -149,20 +145,20 @@
 				+ '</ul>';
 			}).join('');
 
-			aside.querySelector('.learn').innerHTML += links;
-			aside.querySelector('.learn').innerHTML += template.footer;
+			aside.innerHTML += links;
+			aside.innerHTML += template.footer.outerHTML;
 		}
 
-		return aside.innerHTML;
+		return aside;
 	};
 
 	Learn.prototype.append = function () {
-		var innerHTML = this._parseTemplate();
+		var aside = this._parseTemplate();
 
-		if (typeof innerHTML === 'string') {
-			document.body.className = (document.body.className + ' learn-bar').trim();
-			this.container.innerHTML = innerHTML;
-		}
+		aside.className = 'learn';
+
+		document.body.className = (document.body.className + ' learn-bar').trim();
+		document.body.insertAdjacentElement('afterBegin', aside);
 	};
 
 	appendSourceLink();
