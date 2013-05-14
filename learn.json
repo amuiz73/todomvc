@@ -506,8 +506,8 @@
 		}, {
 			"heading": "Articles and Guides",
 			"links": [{
-				"name": "http://www.briankotek.com/blog/index.cfm/2012/5/8/Exploring-ExtJS-with-DeftJS",
-				"url": "Exploring ExtJS with DeftJS"
+				"name": "Exploring ExtJS with DeftJS",
+				"url": "http://www.briankotek.com/blog/index.cfm/2012/5/8/Exploring-ExtJS-with-DeftJS"
 			}]
 		}, {
 			"heading": "Community",
@@ -1086,6 +1086,9 @@
 		}, {
 			"name": "Dependency Example",
 			"url": "labs/dependency-examples/knockoutjs_require"
+		}, {
+			"name": "Knockout.js & Class Binding Provider",
+			"url": "labs/architecture-examples/knockoutjs_classBindingProvider"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
