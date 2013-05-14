@@ -4,8 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Dojo • TodoMVC</title>
-	<link rel="stylesheet" href="../../assets/base.css">
-	<!-- CSS overrides - remove if you don't need it -->
+	<link rel="stylesheet" href="bower_components/todomvc-common/base.css">
 	<link rel="stylesheet" href="css/app.css">
 	<!--[if IE]>
 	<script>
@@ -33,19 +32,19 @@
 		<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 	</footer>
 
-	<script src="../../assets/base.js"></script>
+	<script src="bower_components/todomvc-common/base.js"></script>
 	<script>
 		require = {
 			async: true,
 			parseOnLoad: true,
-			locale: "en",
+			locale: 'en',
 			paths: {
-				"dijit": "../dijit-1.8"
+				dijit: '../dijit-1.8'
 			},
-			deps: ["dojo/parser", "dojo/domReady!"],
-			mvc: {debugBindings: true}
+			deps: ['dojo/parser', 'dojo/domReady!'],
+			mvc: { debugBindings: true }
 		};
 	</script>
-	<script src="js/lib/dojo-1.8/dojo.js"></script>
+	<script src="components/dojo/dojo.js"></script>
 </body>
 </html>
