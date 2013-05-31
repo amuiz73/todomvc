@@ -136,6 +136,10 @@
 	}
 
 	function getFile(file, callback) {
+		if (!location.host) {
+			return;
+		}
+
 		var xhr = new XMLHttpRequest();
 
 		xhr.open('GET', findRoot() + file, true);
