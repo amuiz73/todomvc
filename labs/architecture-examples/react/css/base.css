@@ -414,8 +414,12 @@ body {
 }
 
 #benchmark {
-	position: absolute;
-	left: 0;
-	top: 0;
-	padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+}
+
+.submitButton {
+  display: none;
 }
