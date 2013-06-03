@@ -1,19 +1,33 @@
 /**
  * @jsx React.DOM
  */
+'use strict';
 
 var Utils = {
-	// https://gist.github.com/1308368
-	uuid: function(a,b){for(b=a='';a++<36;b+=a*51&52?(a^15?8^Math.random()*(a^20?16:4):4).toString(16):'-');return b},
-	pluralize: function( count, word ) {
+	uuid: function () {
+		/*jshint bitwise:false */
+		var i, random;
+		var uuid = '';
+
+		for (i = 0; i < 32; i++) {
+			random = Math.random() * 16 | 0;
+			if (i === 8 || i === 12 || i === 16 || i === 20) {
+				uuid += '-';
+			}
+			uuid += (i === 12 ? 4 : (i === 16 ? (random & 3 | 8) : random)).toString(16);
+		}
+
+		return uuid;
+	},
+	pluralize: function (count, word) {
 		return count === 1 ? word : word + 's';
 	},
-	store: function( namespace, data ) {
-		if ( arguments.length > 1 ) {
-			return localStorage.setItem( namespace, JSON.stringify( data ) );
+	store: function (namespace, data) {
+		if (arguments.length > 1) {
+			return localStorage.setItem(namespace, JSON.stringify(data));
 		} else {
-			var store = localStorage.getItem( namespace );
-			return ( store && JSON.parse( store ) ) || [];
+			var store = localStorage.getItem(namespace);
+			return (store && JSON.parse(store)) || [];
 		}
 	}
 };
@@ -32,7 +46,7 @@ function cx(obj) {
 }
 
 var TodoItem = React.createClass({
-	handleSubmit: React.autoBind(function() {
+	handleSubmit: React.autoBind(function () {
 		var val = this.state.editText;
 		if (val) {
 			this.props.onSave(val);
@@ -40,25 +54,25 @@ var TodoItem = React.createClass({
 		}
 		return false;
 	}),
-	handleEdit: React.autoBind(function() {
+	handleEdit: React.autoBind(function () {
 		this.props.onEdit();
 		this.refs.editField.getDOMNode().focus();
 	}),
-	handleKey: React.autoBind(function(event) {
+	handleKey: React.autoBind(function (event) {
 		if (event.nativeEvent.keyCode === 27) {
 			this.handleSubmit();
 		}
 		this.setState({editText: event.target.value});
 	}),
-	getInitialState: function() {
+	getInitialState: function () {
 		return {editText: this.props.todo.title};
 	},
-	componentWillReceiveProps: function(nextProps) {
+	componentWillReceiveProps: function (nextProps) {
 		if (nextProps.todo.title !== this.props.todo.title) {
 			this.setState(this.getInitialState());
 		}
 	},
-	render: function() {
+	render: function () {
 		return (
 			<li class={cx({completed: this.props.todo.completed, editing: this.props.editing})}>
 				<div class='view'>
@@ -87,7 +101,7 @@ var TodoItem = React.createClass({
 });
 
 var TodoFooter = React.createClass({
-	render: function() {
+	render: function () {
 		var activeTodoWord = Utils.pluralize(this.props.count, 'todo');
 		var clearButton = null;
 
@@ -107,14 +121,14 @@ var TodoFooter = React.createClass({
 });
 
 var TodoApp = React.createClass({
-	getInitialState: function() {
+	getInitialState: function () {
 		return {
 			todos: Utils.store('react-todos'),
 			editing: {}
 		};
 	},
 
-	handleSubmit: React.autoBind(function() {
+	handleSubmit: React.autoBind(function () {
 		var val = this.refs.newField.getDOMNode().value.trim();
 		if (val) {
 			var todos = this.state.todos;
@@ -129,52 +143,52 @@ var TodoApp = React.createClass({
 		return false;
 	}),
 
-	toggleAll: function(event) {
+	toggleAll: function (event) {
 		var checked = event.nativeEvent.target.checked;
-		this.state.todos.map(function(todo) {
+		this.state.todos.map(function (todo) {
 			todo.completed = checked;
 		});
 		this.setState({todos: this.state.todos});
 	},
 
-	toggle: function(todo) {
+	toggle: function (todo) {
 		todo.completed = !todo.completed;
 		this.setState({todos: this.state.todos});
 	},
 
-	destroy: function(todo) {
-		var newTodos = this.state.todos.filter(function(candidate) {
+	destroy: function (todo) {
+		var newTodos = this.state.todos.filter(function (candidate) {
 			return candidate.id !== todo.id;
 		});
 		this.setState({todos: newTodos});
 	},
 
-	edit: function(todo) {
-		this.state.todos.map(function(todo) {
+	edit: function (todo) {
+		this.state.todos.map(function (todo) {
 			this.state.editing[todo.id] = false;
 		}.bind(this));
 		this.state.editing[todo.id] = true;
 		this.setState({editing: this.state.editing});
 	},
 
-	save: function(todo, text) {
+	save: function (todo, text) {
 		todo.title = text;
 		this.state.editing[todo.id] = false;
 		this.setState({todos: this.state.todos, editing: this.state.editing});
 	},
 
-	clearCompleted: function() {
-		var newTodos = this.state.todos.filter(function(todo) {
+	clearCompleted: function () {
+		var newTodos = this.state.todos.filter(function (todo) {
 			return !todo.completed;
 		});
 		this.setState({todos: newTodos});
 	},
 
-	render: function() {
+	render: function () {
 		Utils.store('react-todos', this.state.todos);
 		var footer = null;
 		var main = null;
-		var todoItems = this.state.todos.map(function(todo) {
+		var todoItems = this.state.todos.map(function (todo) {
 			return (
 				<TodoItem
 					todo={todo}
@@ -187,7 +201,7 @@ var TodoApp = React.createClass({
 			);
 		}.bind(this));
 
-		var activeTodoCount = this.state.todos.filter(function(todo) {
+		var activeTodoCount = this.state.todos.filter(function (todo) {
 			return !todo.completed;
 		}).length;
 		var completedCount = todoItems.length - activeTodoCount;
@@ -241,15 +255,3 @@ var TodoApp = React.createClass({
 });
 
 React.renderComponent(<TodoApp />, document.getElementById('todoapp'));
-
-// Some benchmarking that requires either a custom build of React or more
-// modules exposed from React.*
-// var initTime = ReactMount.totalInstantiationTime + ReactMount.totalInjectionTime;
-// var benchmark = document.getElementById('benchmark');
-// setInterval(function() {
-//	 benchmark.innerHTML = (
-//		 'Init render time = ' + initTime + 'ms' +
-//		 '<br />' +
-//		 'Post-init render time = ' + (ReactMount.totalInstantiationTime + ReactMount.totalInjectionTime - initTime) + 'ms'
-//	 );
-// }, 1000);
