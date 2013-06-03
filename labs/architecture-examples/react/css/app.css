@@ -1,37 +1,15 @@
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-
-button {
-	margin: 0;
-	padding: 0;
-	border: 0;
+/** Reset base.css #todoapp */
+#todoapp {
 	background: none;
-	font-size: 100%;
-	vertical-align: baseline;
-	font-family: inherit;
-	color: inherit;
-	-webkit-appearance: none;
-	/*-moz-appearance: none;*/
-	-ms-appearance: none;
-	-o-appearance: none;
-	appearance: none;
+	margin: auto;
+	border: 0;
+	position: static;
+	box-shadow: none;
 }
 
-body {
-	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	line-height: 1.4em;
-	background: #eaeaea url('bg.png');
-	color: #4d4d4d;
-	width: 550px;
-	margin: 0 auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
-	-ms-font-smoothing: antialiased;
-	-o-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+#todoapp:before {
+	display: none;
+	left: 100%;
 }
 
 .todoapp {
@@ -55,32 +33,6 @@ body {
 	top: 0;
 	left: 40px;
 	height: 100%;
-}
-
-.todoapp input::-webkit-input-placeholder {
-	font-style: italic;
-}
-
-.todoapp input:-moz-placeholder {
-	font-style: italic;
-	color: #a9a9a9;
-}
-
-.todoapp h1 {
-	position: absolute;
-	top: -120px;
-	width: 100%;
-	font-size: 70px;
-	font-weight: bold;
-	text-align: center;
-	color: #b3b3b3;
-	color: rgba(255, 255, 255, 0.3);
-	text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
-	-webkit-text-rendering: optimizeLegibility;
-	-moz-text-rendering: optimizeLegibility;
-	-ms-text-rendering: optimizeLegibility;
-	-o-text-rendering: optimizeLegibility;
-	text-rendering: optimizeLegibility;
 }
 
 .header {
@@ -109,8 +61,7 @@ body {
 	border-top-right-radius: 1px;
 }
 
-.new-todo,
-.edit {
+.new-todo {
 	position: relative;
 	margin: 0;
 	width: 100%;
@@ -409,17 +360,21 @@ body {
 	}
 }
 
-.hidden{
-	display:none;
+@media (min-width: 899px) {
+	/**body*/.learn-bar .todoapp {
+		width: 550px;
+		margin: 130px auto 40px auto;
+	}
 }
 
+
 #benchmark {
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 10px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 10px;
 }
 
 .submitButton {
-  display: none;
+	display: none;
 }
